@@ -1843,6 +1843,34 @@ footer .aw-wordmark__emblem { width: 34px; height: 34px; }
   .aw-tagline { display: none; }
 }
 
+/* ---- Phone header: Hero Logo and a centred button ----------------------
+   Tom's September 2026 action plan. Below 768px the header shows the Hero
+   Logo instead of the Corporate Mark and live-text lockup. The swap itself is
+   the <picture> in the HEADER block, so a phone downloads only the Hero Logo
+   and a desktop only the Corporate Mark; this block hides the live text and
+   sizes the artwork. The footer lockup is untouched.
+
+   The Hero Logo is square and carries its own wordmark, so it is sized by
+   height: large enough for AIRWARM to read, small enough that the header does
+   not become a hero of its own.
+
+   "Check my home" moves under the navigation and is centred on its own row.
+   In the base layout it sat on the identity's row pushed to the right, which
+   read as an accident rather than a decision. Wording, colour and nav order
+   are unchanged. Tablet and up keep the existing layout. */
+@media (max-width: 767px) {
+  .aw-header .aw-wordmark__text { display: none; }
+  .aw-header .aw-wordmark { padding: 0; }
+  .aw-header .aw-wordmark__emblem { width: 96px; height: 96px; }
+  .aw-header__cta {
+    order: 4;
+    flex: 1 1 100%;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 /* Adding the emblem widened the identity, which pushed the last nav item onto
    a second line between roughly 1000px and 1400px. Tighten the nav gap and the
    emblem in that band rather than shrinking the type, which would hurt

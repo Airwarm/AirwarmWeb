@@ -64,8 +64,15 @@
            Tagline rules are FIXED: ENGINEERED DESIGN blue, SMARTER
            HEATING amber, GREENER FUTURES green, all three on ONE line,
            never stacked, no punctuation added. -->
-      <a class="aw-wordmark" href="../../">
-        <img class="aw-wordmark__emblem" src="../../assets/airwarm-mark.svg" alt="" width="44" height="44">
+      <a class="aw-wordmark" href="../../" aria-label="Airwarm home">
+        <!-- On phones the Hero Logo replaces the Corporate Mark and the
+             live-text wordmark (which the CSS hides below 768px), so the
+             link carries its own name. <picture> means only one of the
+             two images is ever downloaded. -->
+        <picture>
+          <source media="(max-width: 767px)" srcset="../../assets/airwarm-hero-logo.svg">
+          <img class="aw-wordmark__emblem" src="../../assets/airwarm-mark.svg" alt="" width="44" height="44">
+        </picture>
         <span class="aw-wordmark__text">
         <span class="aw-wordmark__name">AIRWARM</span>
         <span class="aw-tagline"><span class="design">ENGINEERED DESIGN</span><span class="aw-sep" aria-hidden="true">|</span><span class="heating">SMARTER HEATING</span><span class="aw-sep" aria-hidden="true">|</span><span class="futures">GREENER FUTURES</span></span>
@@ -505,10 +512,10 @@
 
       <div class="aw-footer__base">
         <p>
-          Airwarm is a new West Yorkshire business preparing for its official
-          launch in April 2027. We are not carrying out installations yet.
-          The Home Energy Assessment is still worth doing: it tells you where
-          your property stands and what would need to change.
+          Airwarm is a new West Yorkshire business. Installations begin in
+          April 2027, but Home Energy Assessments, Desktop Reviews, heat-loss
+          surveys and system design are happening now, so suitable homes can
+          plan and book an installation for the launch period.
         </p>
         <p class="aw-small">
           AIRWARM LTD is a company registered in England and Wales, company
