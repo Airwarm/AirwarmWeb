@@ -1,38 +1,47 @@
-# /card/ — Airwarm contact card (NFC endpoint)
+# Airwarm contact card (NFC endpoint)
 
 ## The rule this directory exists to protect
 
-**`https://airwarm.co.uk/card/airwarm.vcf` is written into physical NFC cards.**
+**`https://airwarm.co.uk/contact/Airwarm.vcf` is the permanent NFC destination.**
+Tom's action plan of 15 September 2026 fixed that exact URL, capital A
+included — GitHub Pages is case-sensitive, so `airwarm.vcf` there would 404.
 
 Once a card is programmed and handed to somebody, its destination can never be
-changed. Renaming this directory, moving `airwarm.vcf`, or deleting either one
-silently breaks every card already in circulation — the person taps it and gets
-a 404, and there is no way to reach them to apologise.
+changed. Moving or renaming that file, or deleting it, silently breaks every
+card already in circulation — the person taps it and gets a 404, and there is
+no way to reach them to apologise.
 
-If the site is restructured later, **keep these two URLs working**:
+The same file is also published at the earlier location, and both must keep
+working:
 
+- `/contact/Airwarm.vcf` — the contact file; **programme this one**
+- `/card/airwarm.vcf` — the September 2026 location, kept so nothing that
+  already points at it breaks
 - `/card/` — the human-readable landing page
-- `/card/airwarm.vcf` — the contact file itself
 
-Redirect them to wherever things move. Do not delete them.
+If the site is restructured later, redirect these to wherever things move. Do
+not delete them.
 
 ## What to programme into the NFC cards
 
-    https://airwarm.co.uk/card/airwarm.vcf
+    https://airwarm.co.uk/contact/Airwarm.vcf
 
-That points straight at the contact file, so a tap goes directly to "Add
-contact" on both iPhone and Android without an intermediate page.
+It points straight at the contact file, so a tap goes directly to "Add contact"
+on both iPhone and Android without an intermediate page. GitHub Pages serves it
+as `text/x-vcard`.
 
-Use `https://airwarm.co.uk/card/` instead if you would rather people land on a
-page that explains what they are saving before they save it. Both work; the
-first is one tap shorter.
+**Do not programme the batch until the live URL has been tested on an iPhone and
+an Android phone** and both offer to add Airwarm with the name, telephone,
+e-mail, website, note and Hero Mark filled in.
 
-## Regenerating airwarm.vcf
+## Regenerating the card
 
 The file is **generated, not hand-edited**. It carries the Hero Mark as an
 embedded base64 PNG, which is why it is 120 KB of mostly unreadable text.
 
-To change the details or the photo, edit `make-vcard.py` and re-run it:
+The script writes the same bytes to both `contact/Airwarm.vcf` and
+`card/airwarm.vcf`, so they cannot drift apart. To change the details or the
+photo, edit `make-vcard.py` and re-run it:
 
     python3 card/make-vcard.py
 

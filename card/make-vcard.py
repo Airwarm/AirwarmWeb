@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 """
-Generates card/airwarm.vcf — the Airwarm contact card served at
-https://airwarm.co.uk/card/airwarm.vcf and programmed into the physical NFC
-cards.
+Generates the Airwarm contact card, written byte-identical to two paths:
+
+    contact/Airwarm.vcf  https://airwarm.co.uk/contact/Airwarm.vcf
+                         THE permanent NFC destination, per Tom's action plan
+                         of 15 Sep 2026. This is the URL to programme.
+    card/airwarm.vcf     https://airwarm.co.uk/card/airwarm.vcf
+                         the September 2026 location, kept working so any
+                         card or link already pointing at it does not break.
 
 Run from the repository root:
 
@@ -35,7 +40,7 @@ NOTE = ("Air source heat pump design, installation & servicing. "
 MARK_SVG = "assets/brand/hero-mark.svg"
 PHOTO_PX = 400                 # enough for a retina contact photo
 
-OUT = "card/airwarm.vcf"
+OUTS = ["contact/Airwarm.vcf", "card/airwarm.vcf"]
 
 
 def rasterise(svg_path, px):
@@ -96,10 +101,10 @@ def main():
         folded.extend(fold(line))
 
     # CRLF is required by the spec, hence newline="" to stop Python translating.
-    with open(OUT, "w", newline="") as fh:
-        fh.write("\r\n".join(folded) + "\r\n")
-
-    print("wrote %s (%d bytes)" % (OUT, os.path.getsize(OUT)))
+    for out in OUTS:
+        with open(out, "w", newline="") as fh:
+            fh.write("\r\n".join(folded) + "\r\n")
+        print("wrote %s (%d bytes)" % (out, os.path.getsize(out)))
 
 
 if __name__ == "__main__":

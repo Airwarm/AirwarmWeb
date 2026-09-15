@@ -151,49 +151,72 @@
         </div>
       </section>
 
-      <section class="aw-section aw-section--light">
-        <div class="aw-wrap">
-          <figure class="aw-figure">
-            <img class="aw-diagram" src="../assets/diagram-process.svg" alt="The eight stages of an Airwarm project in order: Home Energy Assessment, our review of your property, your decision, detailed home survey, design and proposal, planned installation, commissioning and handover, then servicing and support.">
-            <figcaption class="aw-figure__caption">
-              Stages one to three cost you nothing but a few minutes and a
-              conversation. The survey is the first point at which anything is
-              committed, and it only happens where it is justified.
-            </figcaption>
-          </figure>
-        </div>
-      </section>
+      <!-- GRAPHIC A — Airwarm Project Journey. Layout hook only; no artwork
+           exists yet, so nothing is rendered here. The previous process
+           diagram showed an older stage list and has come off this page; the
+           file is still in assets/ but no longer matches the journey below.
+           When the bespoke graphic is supplied, put it back here in its own
+           <section class="aw-section aw-section--light"> as a
+           <figure class="aw-figure"> with <img class="aw-diagram"> and an
+           alt text naming all eight stages. Spec: a customer-friendly,
+           left-to-right (stacking on phones) sequence in the Airwarm visual
+           language —
+             Check My Home → Desktop Review → Heat-Loss Survey → Design →
+             MCS & Project Setup → Installation → Commissioning → Aftercare
+           Airwarm branding only; no Ample logo, no internal software names. -->
 
-      <!-- THE EIGHT STEPS. This sequence is specified in the brand pack.
-           Do not reorder or merge steps. -->
+      <!-- THE EIGHT STAGES. Aligned to the approved project journey
+           (September 2026). Do not reorder or merge stages, and keep the
+           summary table below in step with them. -->
       <section class="aw-section" id="sequence">
         <div class="aw-wrap">
           <h2>The eight stages</h2>
-          <ol class="aw-steps aw-measure" style="margin-top:24px">
+
+          <!-- PARTNER: ample — see data/partners.json. One short introduction
+               before stage five mentions the partnership. Never state that
+               Airwarm itself is MCS certified, or that Ample checks every
+               design. -->
+          <div class="aw-callout aw-measure" style="margin-top:24px">
+            <h3><svg class="aw-icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#icon-check"></use></svg> Professional installation. Independent Airwarm design. MCS-backed delivery.</h3>
+            <p>
+              Airwarm works in partnership with Ample, who provide the MCS
+              framework and compliance route behind installations delivered
+              through the partnership. Airwarm stays responsible for your
+              survey, the engineering design, the installation and the
+              aftercare, and the partnership adds an additional layer of
+              independent compliance oversight alongside our own engineering
+              and design process. <a href="../about/#partnership">More about the partnership</a>.
+            </p>
+          </div>
+
+          <ol class="aw-steps aw-measure" style="margin-top:40px">
 
             <li class="aw-step">
-              <h3 class="aw-step__title">Quick Home Energy Assessment</h3>
+              <h3 class="aw-step__title">Check My Home</h3>
               <p>
-                Four short stages online, a few minutes, no photographs and
-                nothing to measure. You get an indicative view of where your
-                property stands straight away.
+                The online Home Energy Assessment: four short stages, a few
+                minutes, no photographs needed at this stage and nothing to
+                measure. You get an initial view of whether your property looks
+                suitable straight away.
               </p>
               <p>
                 Your answers are worked out in your own browser. Nothing is sent
-                to Airwarm unless you choose to send it &mdash; either with the
-                short form at the end or by e-mailing us &mdash; which means you
-                decide what to share and when.
+                to Airwarm unless you choose to submit it with the short form
+                at the end, which means you decide what to share and when.
+                Completing the assessment does not book anything.
               </p>
               <p class="aw-small">
-                <strong>Your decision:</strong> whether to send us a note about
-                your result. <a href="../home-energy-assessment/">start your Airwarm assessment</a>.
+                <strong>Your decision:</strong> whether to submit your
+                assessment for a Desktop Engineering Review.
+                <a href="../home-energy-assessment/">Start your Airwarm assessment</a>.
               </p>
             </li>
 
             <li class="aw-step">
-              <h3 class="aw-step__title">Airwarm reviews the information</h3>
+              <h3 class="aw-step__title">Desktop Engineering Review</h3>
               <p>
-                A person reads your answers. If something looks like it needs
+                A person at Airwarm reviews the property information you
+                submitted and the evidence available. If something needs
                 clarifying, or looks like a genuine obstacle, we would rather
                 find it now than three visits later.
               </p>
@@ -204,39 +227,31 @@
                 or leasehold property where permission comes before design, and
                 an address at the edge of the area we can properly cover.
               </p>
+              <p>
+                You get the review in writing: what we found, what we assumed,
+                what would need to change and whether a heat-loss survey is
+                worth anyone&rsquo;s time. If it is not, we say so and explain
+                why. Sometimes the sensible order is insulation or emitter work
+                first and a heat pump afterwards, and that is a useful answer
+                even though it is not the quick one.
+              </p>
               <p class="aw-small">
-                <strong>Your decision:</strong> nothing yet. Ours is whether a
-                call is worth your time.
+                <strong>Your decision:</strong> whether to book a survey, in
+                your own time. There is no call to sit through and nothing to
+                sign.
               </p>
             </li>
 
             <li class="aw-step">
-              <h3 class="aw-step__title">You decide</h3>
+              <h3 class="aw-step__title">Heat-Loss Survey</h3>
               <p>
-                You get our review in writing: what we found, what we assumed,
-                what would need to change and whether a full survey is worth
-                anyone&rsquo;s time. If it is not, we say so and explain why.
-                Then it is your decision, in your own time. There is no call to
-                sit through and nothing to sign.
-              </p>
-              <p>
-                This is also where we are honest about sequence. Sometimes the
-                sensible order is insulation or emitter work first and a heat
-                pump afterwards, and that is a useful answer even though it is
-                not the quick one.
-              </p>
-              <p class="aw-small">
-                <strong>Your decision:</strong> whether to book a survey.
-              </p>
-            </li>
-
-            <li class="aw-step">
-              <h3 class="aw-step__title">Detailed home survey, where it is justified</h3>
-              <p>
-                Room dimensions, construction, insulation, windows, existing
-                emitters, pipe routes, cylinder options, outdoor-unit
-                positions, condensate, electrical supply and access. This is an
-                engineering visit, not a sales appointment.
+                A room-by-room heat-loss calculation, what each room&rsquo;s
+                radiators or other emitters need to do, the flow temperature the
+                system can run at, where the outdoor unit can go, and checks on
+                the existing system: pipe routes, cylinder options, condensate,
+                electrical supply and access. This is an engineering visit, not
+                a sales appointment, and it only happens where the review says it
+                is justified.
               </p>
               <p>
                 Digital measuring tools, voice notes and photographs are used as
@@ -252,20 +267,27 @@
             </li>
 
             <li class="aw-step">
-              <h3 class="aw-step__title">Design and a clear proposal</h3>
+              <h3 class="aw-step__title">Detailed Design &amp; Fixed Quote</h3>
               <p>
-                Heat loss, emitter sizing, flow temperature, hydraulics, hot
-                water, controls and siting are designed and reviewed before
-                anything is issued. You get the assumptions as well as the
-                answers, in writing.
+                Airwarm develops the detailed system design and the final
+                project specification: heat loss, emitter sizing, flow
+                temperature, hydraulics, hot water, controls and siting,
+                designed and reviewed before anything is issued. You get the
+                assumptions as well as the answers, in writing.
               </p>
               <p>
                 The proposal sets out the property summary, what you said you
                 wanted, the design assumptions, the recommended equipment and
                 its output, the emitter schedule, the cylinder, the controls,
                 the electrical scope, what is excluded, the expected programme,
-                warranty, aftercare and the payment schedule. It also says what
-                could change it and why.
+                warranty, aftercare and the payment schedule, with a fixed quote
+                for the work it describes.
+              </p>
+              <p>
+                <strong>Flexible ways to pay.</strong> Depending on your project,
+                payment options may be available through our Ample partnership.
+                Available options can be presented alongside your final
+                quotation.
               </p>
               <p class="aw-small">
                 <strong>Your decision:</strong> whether to proceed, ask for a
@@ -274,28 +296,46 @@
             </li>
 
             <li class="aw-step">
-              <h3 class="aw-step__title">Planned installation</h3>
+              <h3 class="aw-step__title">MCS &amp; Project Setup</h3>
               <p>
-                Design confirmed, equipment ordered and checked in, any
-                subcontracted work arranged, and access, parking, protection,
-                pipe routes, welfare and your expectations agreed before anyone
-                arrives.
+                Where your project proceeds through our Ample partnership, the
+                appropriate MCS, compliance and project process is completed
+                before work starts. You do not need to manage any of it
+                yourself.
               </p>
               <p>
-                On site: floors and furniture protected, tidy storage, dust and
-                noise controlled, concealed pipework photographed before it is
-                covered, components labelled, changes recorded with the reason,
-                a daily update, and the property left safe each evening.
+                At the same time the job is planned: design confirmed, equipment
+                ordered and checked in, any subcontracted work arranged, and
+                access, parking, protection, pipe routes, welfare and your
+                expectations agreed before anyone arrives. Airwarm installations
+                begin in April 2027; surveys, design and this setup work can all
+                happen beforehand, so a suitable project can be planned and
+                booked for the launch period.
               </p>
               <p class="aw-small">
-                <strong>Your decision:</strong> the dates, and anything you want
-                handled differently in your home.
-                <a href="../heat-pump-installation/">How installation works</a>.
+                <strong>Your decision:</strong> the installation dates, and
+                anything you want handled differently in your home.
               </p>
             </li>
 
             <li class="aw-step">
-              <h3 class="aw-step__title">Commissioning, handover and optimisation</h3>
+              <h3 class="aw-step__title">Installation</h3>
+              <p>
+                Airwarm delivers the installation that was designed. On site:
+                floors and furniture protected, tidy storage, dust and noise
+                controlled, concealed pipework photographed before it is
+                covered, components labelled, changes recorded with the reason,
+                a daily update, and the property left safe each evening.
+              </p>
+              <p class="aw-small">
+                <strong>Your decision:</strong> nothing new, but you hear about
+                any change on the day it happens.
+                <a href="../heat-pump-installation/#standard">Our installation standard</a>.
+              </p>
+            </li>
+
+            <li class="aw-step">
+              <h3 class="aw-step__title">Commissioning &amp; Certification</h3>
               <p>
                 Flushing, filling, pressure testing, electrical confirmation,
                 control setup, weather compensation, balancing, hot-water
@@ -307,12 +347,10 @@
                    into an explainer about umbrella business models, and never
                    state that Airwarm holds MCS certification itself. -->
               <p>
-                Where an installation qualifies for MCS certification, Airwarm
-                currently plans to deliver it through Ample&rsquo;s MCS umbrella:
-                Airwarm does the survey, the design and the installation, and
-                the umbrella arrangement provides the certification route. What
-                that means for your project is confirmed before you commit.
-                <a href="../about/#faqs">More on that</a>.
+                The system is then documented and progressed through the
+                applicable certification route. For installations delivered
+                through our Ample partnership, that is the MCS route Ample
+                provides. <a href="../about/#partnership">More on that</a>.
               </p>
               <p>
                 Handover is a conversation, not a folder. What the settings do,
@@ -330,11 +368,13 @@
             </li>
 
             <li class="aw-step">
-              <h3 class="aw-step__title">Ongoing servicing and support</h3>
+              <h3 class="aw-step__title">Aftercare &amp; Annual Servicing</h3>
               <p>
-                Follow-up contact shortly after handover, a comfort review once
+                Airwarm remains your technical contact after installation:
+                follow-up within 48 hours of handover, a comfort review once
                 you have lived with it, seasonal optimisation where it is
-                needed and an annual service reminder.
+                needed and an annual service reminder, so the system is looked
+                after every year.
               </p>
               <p>
                 The two-week review is the useful one. It is when the controls
@@ -377,35 +417,35 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1. Assessment</th>
-                  <td>An indicative outcome and a suggested next step</td>
+                  <th scope="row">1. Check My Home</th>
+                  <td>An initial suitability view, and the option to submit it for review</td>
                 </tr>
                 <tr>
-                  <th scope="row">2. Review</th>
+                  <th scope="row">2. Desktop Engineering Review</th>
                   <td>A written view on whether a survey is worthwhile, and what to check</td>
                 </tr>
                 <tr>
-                  <th scope="row">3. You decide</th>
-                  <td>Your decision: survey, improve something first, or stop</td>
+                  <th scope="row">3. Heat-Loss Survey</th>
+                  <td>Room-by-room heat loss, emitter requirements, flow temperature and siting options</td>
                 </tr>
                 <tr>
-                  <th scope="row">4. Survey</th>
-                  <td>Recorded dimensions, construction, emitters, routes and siting options</td>
+                  <th scope="row">4. Detailed Design &amp; Fixed Quote</th>
+                  <td>A written design and proposal with assumptions, scope, exclusions, programme and a fixed quote</td>
                 </tr>
                 <tr>
-                  <th scope="row">5. Design and proposal</th>
-                  <td>A written proposal with assumptions, scope, exclusions and programme</td>
+                  <th scope="row">5. MCS &amp; Project Setup</th>
+                  <td>The applicable MCS and project process completed, and installation dates agreed</td>
                 </tr>
                 <tr>
                   <th scope="row">6. Installation</th>
                   <td>The installed system, daily updates and a record of concealed work</td>
                 </tr>
                 <tr>
-                  <th scope="row">7. Commissioning</th>
-                  <td>A commissioning record and a handover pack you can actually use</td>
+                  <th scope="row">7. Commissioning &amp; Certification</th>
+                  <td>A commissioning record, the applicable certification and a handover pack you can actually use</td>
                 </tr>
                 <tr>
-                  <th scope="row">8. Support</th>
+                  <th scope="row">8. Aftercare &amp; Annual Servicing</th>
                   <td>A system that keeps performing, and a record that it does</td>
                 </tr>
               </tbody>
@@ -442,9 +482,13 @@
             <div class="aw-card">
               <h3 class="aw-card__title">Imply cover we do not offer</h3>
               <p>
-                There is no 24-hour or emergency call-out service. You will not
-                be pressured at your kitchen table either, or left to work out
-                the controls on your own after handover.
+                There is no general public emergency call-out service. Existing
+                customers get a response within 24 hours, and a genuine fault
+                that cannot be fixed remotely may get emergency support or a
+                visit as appropriate &mdash; a response, not a promise of
+                attendance within 24 hours. Nor will you be pressured at your
+                kitchen table, or left to work out the controls on your own
+                after handover.
               </p>
             </div>
           </div>
@@ -482,15 +526,6 @@
                 <li>A handover pack explaining how the system is meant to be operated</li>
                 <li>Your service schedule</li>
               </ul>
-            </div>
-            <!-- PHOTOGRAPH NEEDED: a real handover — engineer and customer at
-                 the controls, or the handover pack on a kitchen table in a real
-                 home. Airwarm's own work only. No stock photography. -->
-            <div class="aw-photo-placeholder" style="margin-top:24px">
-              <p>
-                <strong>Photograph to come:</strong> a real handover in a real
-                West Yorkshire home. Published when there is one to photograph.
-              </p>
             </div>
           </div>
         </div>
@@ -564,11 +599,10 @@
           <div class="aw-faq" style="margin-top:24px">
 
             <details class="aw-faq__item">
-              <summary class="aw-faq__question">What if the assessment says my home is unlikely to be suitable?</summary>
+              <summary class="aw-faq__question">What if the assessment says my home is potentially unsuitable?</summary>
               <div class="aw-faq__answer">
                 <p>
-                  You will be told which constraint caused that and what would
-                  resolve it. It is a statement about the property&rsquo;s
+                  You will be told which of your answers led to that result. It is a statement about the property&rsquo;s
                   condition today, not a permanent verdict, and there is nearly
                   always something worth doing even if a heat pump is not the
                   immediate next step.
@@ -580,7 +614,7 @@
               <summary class="aw-faq__question">Do I have to have a survey to get advice?</summary>
               <div class="aw-faq__answer">
                 <p>
-                  No. The assessment and our written review come first, and
+                  No. The assessment and our written Desktop Review come first, and
                   both are there to work out whether a survey makes sense at
                   all.
                 </p>

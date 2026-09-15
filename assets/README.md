@@ -52,7 +52,6 @@ of a domain, so a path beginning with `/` resolves to the wrong place and
 | `diagram-weather-compensation.svg` | A compensation curve against a flat fixed-temperature line. Axes named, **no numeric scale**. |
 | `diagram-emitter-comparison.svg` | Single panel, double panel, fan assisted and underfloor compared by proportion: a bar for relative output, four markers for how well each suits a lower flow temperature. **No output figures.** |
 | `diagram-cylinder-siting.svg` | The space a hot water cylinder needs around it, and the three places it usually goes: airing cupboard, loft, utility room. |
-| `diagram-outdoor-unit-siting.svg` | Plan view of the clear space around an outdoor unit — front, sides, rear, and above in a small side view — plus the condensate route and the distance to a neighbour's window. **No dimensions: every clearance is the manufacturer's minimum for the unit specified.** |
 | `diagram-process.svg` | The eight steps from assessment to servicing, four across and two down. |
 | `diagram-assessment-outcomes.svg` | The three assessment outcomes as a calm three-state graphic. Green for the positive one only; blue and mid grey for the others; **no red anywhere**. |
 | `icons.svg` | One sprite holding the twenty line icons. See [The icon sprite](#the-icon-sprite). |

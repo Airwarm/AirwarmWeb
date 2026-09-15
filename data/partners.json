@@ -51,23 +51,25 @@
     {
       "id": "ample",
       "name": "Ample",
-      "role": "MCS umbrella and compliance framework for launch",
+      "role": "MCS framework and compliance route for installations delivered through the partnership",
       "url": "https://www.backedbyample.com/",
       "status": "current",
-      "description": "Trading name of Fornax Energy Ltd. Airwarm plans to deliver qualifying installations through Ample's MCS umbrella rather than holding its own MCS certification at launch.",
-      "relationship": "Compliance framework provider. Airwarm carries out the survey, design and installation within that framework.",
+      "description": "Trading name of Fornax Energy Ltd. Airwarm works in partnership with Ample, who provide the MCS framework, compliance route and project infrastructure behind installations delivered through the partnership. Flexible payment options may be available through the partnership. Onboarding review completed September 2026.",
+      "relationship": "Compliance framework provider. Airwarm carries out the survey, engineering design, installation and aftercare and remains the customer-facing brand.",
       "appearsOn": [
         "about/index.html",
         "advice/grants-and-funding/index.html",
+        "air-source-heat-pumps/index.html",
+        "contact/index.html",
+        "heat-pump-installation/index.html",
         "how-it-works/index.html"
       ],
       "notes": [
-        "NEVER state or imply Airwarm holds MCS certification itself. It is not independently",
-        "certified and must not be described as such.",
-        "Only claim responsibilities verified by the actual agreement. The exact",
-        "contractual division is NOT in this repository, so the site wording is",
-        "deliberately cautious and says responsibilities are confirmed before a",
-        "customer commits. Tighten it only against the signed agreement."
+        "NEVER state or imply Airwarm holds MCS certification itself.",
+        "Never claim Ample checks or approves every Airwarm design unless that process is confirmed.",
+        "No Carno or Instool references in customer-facing copy, no Ample logos, no homepage takeover.",
+        "Finance wording stays generic: no products, APRs, repayment examples or eligibility promises.",
+        "Approved positioning and limits: Tom's post-Ample action plan, 15 Sep 2026."
       ]
     }
   ]
