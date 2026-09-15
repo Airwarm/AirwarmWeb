@@ -176,37 +176,54 @@ var AIRWARM_TRIAGE_CONFIG = {
   /* ---- Step 3: answers that stop a "Likely suitable" outcome ----------
      These are the practical obstacles listed in the Airwarm operating
      manual as common reasons a property is not currently a good candidate.
-     Each one caps the result at "May be suitable" or lower, whatever
+     Each one caps the result at "Needs a closer look" or lower, whatever
      the score, and each one produces a named explanation for the visitor so
-     they always know WHY. Nothing here produces a blunt rejection. */
+     they always know WHY. Nothing here produces a blunt rejection.
+
+     `kind` decides which result can show the explanation:
+       "constraint"  — a known answer that creates a significant concern.
+                       Shown on AMBER and BLUE.
+       "uncertainty" — something that needs checking. Shown on BLUE only,
+                       and never enough on its own to produce AMBER.
+
+     THE CYLINDER RULE. Airwarm installs Sunamp thermal storage where a
+     conventional cylinder will not fit, so "I cannot see where a cylinder
+     would go" is an uncertainty, not a constraint. It caps at BLUE and must
+     never be the reason a home is shown as AMBER. */
   constraintsThatCapTheOutcome: [
     {
       id: "noOutdoorLocation",
       field: "outdoorSpace",
       value: "noObviousLocation",
       capAt: "notCurrently",
-      explanation: "There is no obvious outdoor position for the unit. This is " +
-        "usually the first thing to solve, and it is often solvable once " +
-        "someone has looked at the property properly."
+      kind: "constraint",
+      explanation: "You told us there is no obvious outdoor position for the " +
+        "heat pump unit. The unit has to sit outside with clear air around " +
+        "it, so without a workable position an installation may not be " +
+        "possible."
     },
     {
       id: "noHotWaterSpace",
       field: "hotWaterSpace",
       value: "noSpaceIdentified",
       capAt: "potentially",
-      explanation: "No location for a hot-water cylinder has been identified " +
-        "yet. A cylinder is needed, so finding a sensible position is one of " +
-        "the main practical questions for your home."
+      kind: "uncertainty",
+      explanation: "You could not see where a hot-water cylinder would go. " +
+        "That needs checking rather than ruling anything out: where a " +
+        "conventional cylinder will not fit, we can consider compact " +
+        "thermal storage such as Sunamp. Whether that suits your home " +
+        "depends on how much hot water the household uses and on the design."
     },
     {
       id: "emittersNotNegotiable",
       field: "emitterWillingness",
       value: "notWilling",
       capAt: "notCurrently",
-      explanation: "Keeping the existing radiators exactly as they are is a " +
-        "real constraint, because a heat pump runs at a lower temperature " +
-        "than a boiler and some rooms usually need a larger emitter to stay " +
-        "comfortable."
+      kind: "constraint",
+      explanation: "You would rather keep the radiators exactly as they are. " +
+        "A heat pump runs at a lower temperature than a boiler, and most " +
+        "homes need at least some larger radiators to stay comfortable, so " +
+        "this could make an efficient installation difficult."
     },
     {
       id: "poorFabricNoPlan",
@@ -214,21 +231,131 @@ var AIRWARM_TRIAGE_CONFIG = {
       value: "limited",
       requiresAlso: { field: "renovationPlans", value: "noWorkPlanned" },
       capAt: "potentially",
-      explanation: "Limited insulation with no improvement work planned means " +
-        "the home would lose heat faster than the system could comfortably " +
-        "replace it. Fabric improvements first usually make a much bigger " +
-        "difference than the choice of heat pump."
+      kind: "constraint",
+      explanation: "You told us the home has very little insulation and no " +
+        "improvement work is planned. The home would lose heat faster than a " +
+        "heat pump could comfortably replace it, and improving the fabric " +
+        "first usually makes a much bigger difference than the choice of " +
+        "heat pump."
     },
     {
       id: "restrictedProperty",
       field: "propertyRestrictions",
       value: "yes",
       capAt: "potentially",
-      explanation: "Listed-building, conservation-area or leasehold " +
-        "restrictions do not rule a heat pump out, but they change what is " +
-        "permitted and where the unit can go, so they need checking early."
+      kind: "uncertainty",
+      explanation: "You told us the property is listed, in a conservation " +
+        "area or leasehold. None of those rules a heat pump out, but they can " +
+        "change what is permitted and where the unit can go, so they need " +
+        "checking."
     }
   ],
+
+  /* ---- Step 3b: why a score-driven result came out below GREEN ---------
+     Added 15 Sep 2026 for "Why you got this result".
+
+     A result that is not capped above is decided by the score, and the score
+     is lowered by answers that earn fewer points than the best answer to the
+     same question. This table gives each of those answers its explanation,
+     so the list the visitor sees is built from what they actually said and
+     from the points that actually moved their result. Nothing here changes a
+     single point.
+
+     Only answers that score BELOW the best answer to their question belong
+     here; collectReasons() ignores anything else, so an entry for a
+     top-scoring answer can never be shown by mistake. Answers
+     about the visitor's plans rather than the property (current heating,
+     building work, timescale) are left out: they move the score a little,
+     but they are not something a Desktop Review investigates.
+
+     "Not sure" is always an uncertainty. It earns no points, so it does hold
+     a score down, but it is not a finding about the home and it must never
+     be presented as one.
+
+     If a field has a cap rule above for the same answer, the cap's
+     explanation is used and this one is skipped. */
+  resultReasons: {
+    propertyType: {
+      backToBack: { kind: "uncertainty", text: "Back-to-back terraces " +
+        "usually have little outside wall to choose from, so finding a " +
+        "workable position for the outdoor unit needs checking." },
+      flat: { kind: "uncertainty", text: "Flats and maisonettes often have " +
+        "limited choice over where an outdoor unit can go, and may need the " +
+        "building owner's agreement, so that needs checking." }
+    },
+    propertyAge: {
+      pre1919: { kind: "uncertainty", text: "Your home was built before 1919. " +
+        "Older homes can still be well suited to a heat pump when the system " +
+        "is properly designed, but how the walls are built and how much heat " +
+        "the home loses needs checking." },
+      interwar1919to1944: { kind: "uncertainty", text: "Your home was built " +
+        "between 1919 and 1944. Homes of that age can still be well suited to " +
+        "a heat pump when the system is properly designed, but how the walls " +
+        "are built and how much heat the home loses needs checking." },
+      postwar1945to1975: { kind: "uncertainty", text: "Your home was built " +
+        "between 1945 and 1975. Homes of that age can still be well suited to " +
+        "a heat pump when the system is properly designed, but how much heat " +
+        "the home loses needs checking." },
+      notSure: { kind: "uncertainty", text: "You were not sure when the home " +
+        "was built. That is not a mark against it; the age helps us " +
+        "understand how it was built, so it is something we check." }
+    },
+    insulationConfidence: {
+      partial: { kind: "uncertainty", text: "You told us the insulation has " +
+        "only partly been done, so how much heat the home loses, and what " +
+        "might be worth improving, needs checking." },
+      limited: { kind: "constraint", text: "You told us the home has very " +
+        "little insulation. A poorly insulated home loses heat quickly, which " +
+        "makes a heat pump harder to size and more expensive to run until the " +
+        "fabric is improved." },
+      notSure: { kind: "uncertainty", text: "You were not sure how well " +
+        "insulated the home is. That is normal and not a mark against it; " +
+        "it is one of the first things a Desktop Review looks into." }
+    },
+    windows: {
+      mixed: { kind: "uncertainty", text: "The windows are a mixture, so how " +
+        "much heat is lost through them needs checking room by room." },
+      mostlySingle: { kind: "constraint", text: "You told us the windows are " +
+        "mostly single glazed. That adds considerably to the heat the home " +
+        "loses, which makes a heat pump harder to size and run efficiently." },
+      notSure: { kind: "uncertainty", text: "You were not sure what the " +
+        "windows are like. That is something we can check." }
+    },
+    radiators: {
+      standard: { kind: "uncertainty", text: "Your radiators are standard " +
+        "sized. Some rooms may need a larger radiator to stay comfortable at " +
+        "heat-pump temperatures; the room-by-room design works that out." },
+      smallOrOld: { kind: "uncertainty", text: "You described the radiators " +
+        "as small, old or a mixture. Some are likely to need replacing with " +
+        "larger ones, and which ones is worked out in the design." },
+      notSure: { kind: "uncertainty", text: "You were not sure what the " +
+        "radiators are like. Whether any would need changing is something we " +
+        "check." }
+    },
+    outdoorSpace: {
+      possiblyTight: { kind: "uncertainty", text: "You told us space outside " +
+        "for the unit might be tight. Whether a position works depends on the " +
+        "equipment chosen and the manufacturer's requirements, so it needs " +
+        "checking." },
+      notSure: { kind: "uncertainty", text: "You were not sure whether there " +
+        "is space outside for the unit. Finding a workable position is " +
+        "something we check." }
+    },
+    hotWaterSpace: {
+      spaceAvailable: { kind: "uncertainty", text: "There is no cylinder at " +
+        "the moment, so the position you have in mind for one needs checking." },
+      notSure: { kind: "uncertainty", text: "You were not sure whether there " +
+        "is space for a hot-water cylinder. That is something we check, and " +
+        "where a conventional cylinder will not fit we can consider compact " +
+        "thermal storage such as Sunamp." }
+    },
+    emitterWillingness: {
+      maybeWithExplanation: { kind: "uncertainty", text: "You would want any " +
+        "radiator changes explained first. That is reasonable: whether any " +
+        "are needed comes out of the room-by-room design, and we would " +
+        "explain why before recommending them." }
+    }
+  },
 
   /* ---- Step 4: how far outside West Yorkshire we still respond --------
      Only the outward part of the postcode is asked for, and it is never
@@ -240,17 +367,20 @@ var AIRWARM_TRIAGE_CONFIG = {
   /* ---- Step 5: wording of the outcome labels --------------------------
      These three labels are fixed by the Airwarm pack. Do not reword them. */
   outcomeLabels: {
-    /* Customer-facing wording, confirmed by Thomas Robinson 20 Aug 2026.
-       The two replaced labels read like scoring categories; these read like
-       something a person would say. The CSS
-       uppercases them, so keep sentence case here.
+    /* Customer-facing wording, per Tom's action plan of 15 Sep 2026:
+         GREEN  likely       — Likely suitable
+         BLUE   potentially  — Needs a closer look
+         AMBER  notCurrently — Potentially unsuitable
+       The keys are unchanged so the payload and the endpoint keep working.
+       The CSS uppercases the labels, so keep sentence case here.
 
-       "Unlikely to be suitable" is deliberately not "Not suitable". This is a
-       questionnaire, not a heat-loss survey, and it must not present itself as
-       a final engineering judgement on somebody's house. */
+       "Potentially unsuitable" deliberately stops short of "Not suitable".
+       This is a questionnaire, not a heat-loss survey, and it must not
+       present itself as a final engineering judgement on somebody's house.
+       There is no questionnaire-level RED result. */
     likely: "Likely suitable",
-    potentially: "May be suitable",
-    notCurrently: "Unlikely to be suitable"
+    potentially: "Needs a closer look",
+    notCurrently: "Potentially unsuitable"
   },
 
   /* ---- Step 6: intake questions that deliberately do NOT score ---------
@@ -658,6 +788,41 @@ var AIRWARM_TRIAGE_CONFIG = {
     return notes;
   }
 
+  /* ---- Why the result came out the way it did --------------------------
+     Builds the "Why you got this result" list. Every entry is tied to one
+     answer the visitor gave, and to the rule or the points that answer
+     contributed: the cap rules that fired, then each answer that scored below
+     the best answer to its question and has an entry in resultReasons.
+
+     Returns { field, value, kind, text } objects in question order. One entry
+     per question at most. */
+  function collectReasons(answers, cappedRules) {
+    var cfg = AIRWARM_TRIAGE_CONFIG;
+    var out = [];
+    var covered = {};
+
+    cappedRules.forEach(function (rule) {
+      covered[rule.field] = true;
+      out.push({ field: rule.field, value: rule.value, kind: rule.kind, text: rule.explanation });
+    });
+
+    Object.keys(cfg.answerPoints).forEach(function (field) {
+      if (covered[field]) { return; }
+      var given = answers[field];
+      var points = cfg.answerPoints[field];
+      var table = cfg.resultReasons[field];
+      if (!given || !table || !Object.prototype.hasOwnProperty.call(table, given)) { return; }
+      if (!Object.prototype.hasOwnProperty.call(points, given)) { return; }
+
+      var best = Math.max.apply(null, Object.keys(points).map(function (k) { return points[k]; }));
+      if (points[given] >= best) { return; }
+
+      out.push({ field: field, value: given, kind: table[given].kind, text: table[given].text });
+    });
+
+    return out;
+  }
+
   /* ---- Applying the placeholder logic -------------------------------- */
   function assess(answers) {
     var cfg = AIRWARM_TRIAGE_CONFIG;
@@ -680,17 +845,32 @@ var AIRWARM_TRIAGE_CONFIG = {
       outcome = "potentially";
     }
 
-    var reasons = [];
+    var capped = [];
     cfg.constraintsThatCapTheOutcome.forEach(function (rule) {
       if (answers[rule.field] !== rule.value) { return; }
       if (rule.requiresAlso && answers[rule.requiresAlso.field] !== rule.requiresAlso.value) {
         return;
       }
-      reasons.push(rule.explanation);
+      capped.push(rule);
       if (order.indexOf(rule.capAt) < order.indexOf(outcome)) {
         outcome = rule.capAt;
       }
     });
+
+    var reasons = collectReasons(answers, capped);
+
+    /* AMBER NEEDS A KNOWN CONSTRAINT. Added 15 Sep 2026.
+       AMBER means the visitor's answers identified a significant known
+       constraint, and it has to name that constraint. A low score made up of
+       "Not sure" answers and small shortfalls has not identified one: it has
+       identified things to check, which is what BLUE means. So when the
+       score alone would give AMBER but no answer is a constraint, the result
+       is BLUE instead. The score and the thresholds are untouched; this only
+       stops AMBER being shown without a reason that could justify it. */
+    var hasConstraint = reasons.some(function (r) { return r.kind === "constraint"; });
+    if (outcome === "notCurrently" && !hasConstraint) {
+      outcome = "potentially";
+    }
 
     /* Service-area note only. This never changes the outcome. */
     var outward = (answers.postcodeArea || "").trim().toUpperCase();
@@ -724,10 +904,11 @@ var AIRWARM_TRIAGE_CONFIG = {
   }
 
   /* ---- The outcome copy ---------------------------------------------
-     This wording comes from website/06_Home_Energy_Assessment/Result_Copy.md
-     and is approved. The least-positive version deliberately is
-     not a rejection screen: it explains the constraint and gives a route
-     forward. Do not turn it into one. */
+     GREEN is the approved wording from Result_Copy.md and is deliberately
+     unchanged. BLUE and AMBER follow Tom's action plan of 15 Sep 2026.
+
+     `why` introduces the "Why you got this result" list and `after` closes
+     it. GREEN has neither: it does not get a reasons list. */
   var OUTCOME_COPY = {
     likely: {
       className: "aw-outcome--likely",
@@ -738,27 +919,33 @@ var AIRWARM_TRIAGE_CONFIG = {
     potentially: {
       className: "aw-outcome--potentially",
       heading: "There are a few things we would want to understand better",
-      body: "Some of your answers suggest a heat pump could work, but there " +
-        "are points we would want to look at more closely before " +
-        "recommending a survey."
+      body: "Nothing in your answers rules a heat pump out, but some of them " +
+        "leave questions we would want to answer before recommending a " +
+        "survey.",
+      why: "These are the answers that need a closer look. Where you " +
+        "answered &ldquo;Not sure&rdquo;, that is treated as something to " +
+        "check, not as a problem with your home.",
+      after: "None of these is a reason to rule out a heat pump. They are " +
+        "exactly what our Desktop Review investigates."
     },
     notCurrently: {
       className: "aw-outcome--not-currently",
-      heading: "Your answers have highlighted some issues",
-      body: "Based on the information you have given us, there are currently " +
-        "some significant barriers to a heat pump installation. That does " +
-        "not necessarily mean it cannot be done, but we would not recommend " +
-        "moving straight to a heat-loss survey without looking at those " +
-        "issues first."
+      heading: "Your answers have identified some significant issues",
+      body: "Based on the information you have given, one or more of your " +
+        "answers point to issues that could make a heat pump installation " +
+        "difficult or unsuitable.",
+      why: "These are the answers that led to this result:",
+      after: "This does not prove that a heat pump could never work at your " +
+        "property. This online assessment is not a final engineering " +
+        "judgement. But based on the information you have given so far, we " +
+        "would not recommend progressing to the next stage."
     }
   };
 
-  /* The invitation that sits directly above the form. It is the only thing
-     that changes between routes: same journey, same form, same button.
-
-     The third one asks a different question on purpose. Somebody who has just
-     been told their home has barriers is deciding whether to give up, not
-     whether to press on, so the offer has to meet them there. */
+  /* The invitation that sits directly above the form, for the two results
+     that get one. AMBER deliberately has no entry: an AMBER result must not
+     invite the visitor to submit for a Desktop Review, so renderResult does
+     not mount the form for it at all. */
   var NEXT_STEP = {
     likely: {
       heading: "Want us to take a closer look?",
@@ -768,18 +955,11 @@ var AIRWARM_TRIAGE_CONFIG = {
         "think a heat-loss survey is worthwhile."
     },
     potentially: {
-      heading: "Want us to take a closer look?",
-      body: "Send us your details below and we will review your property " +
-        "alongside your answers and available public property information. " +
-        "We will come back to you with what we have found and whether we " +
-        "think a heat-loss survey is worthwhile."
-    },
-    notCurrently: {
-      heading: "Want us to check before you rule it out?",
-      body: "Send us your details below and we will review your property " +
-        "alongside your answers and the issues the assessment has " +
-        "highlighted. We will tell you whether we think there is a realistic " +
-        "route forward before you arrange a survey."
+      heading: "Send us your assessment and we will look into it",
+      body: "Send us your details below and we will investigate the points " +
+        "above in a Desktop Review, alongside your answers and available " +
+        "public property information. We will come back to you in writing " +
+        "with what we have found and whether a heat-loss survey is worthwhile."
     }
   };
 
@@ -904,6 +1084,65 @@ var AIRWARM_TRIAGE_CONFIG = {
     return html;
   }
 
+  /* Household needs, added 15 Sep 2026 from the post-Ample action plan.
+
+     Asked here, in the form that requests a Desktop Review, because this is
+     the first point at which the visitor is asking Airwarm to start planning
+     real work at their property. It is NOT an assessment question: it lives
+     outside the scored form, it is not in answerPoints, and nothing here can
+     change the result.
+
+     An answer of "yes", or anything typed in the details box, can be health
+     information, which is special category data under UK GDPR. The general
+     consent box below does not cover it, so this has its own unticked box,
+     required only when something sensitive has actually been given. The
+     privacy policy's assessment-form section describes this; keep the two in
+     step. No internal classification is shown to the visitor. */
+  function buildHouseholdNeedsFields() {
+    var html = "";
+    html += '<fieldset class="aw-fieldset">';
+    html += "<legend>Is there anyone at the property whose age, health, " +
+      "mobility or reliance on heating, hot water or essential equipment " +
+      "means we should take additional care when planning the work?</legend>";
+    html += '<span class="aw-field__hint">Optional. This does not affect ' +
+      "your result. It helps us plan visits and any time without heating or " +
+      "hot water around the people who live there.</span>";
+    [["yes", "Yes"], ["no", "No"], ["notSure", "Not sure"]].forEach(function (o) {
+      html += '<label class="aw-choice"><input type="radio" ' +
+        'name="enqHouseholdNeeds" value="' + o[0] + '"> ' + o[1] + "</label>";
+    });
+    html += '<div class="aw-field">';
+    html += '<label for="enqHouseholdDetails">Anything you would like us to ' +
+      "know (optional)</label>";
+    html += '<span class="aw-field__hint" id="enqHouseholdDetails-hint">A ' +
+      "short note is plenty. Only tell us what you are comfortable sharing.</span>";
+    html += '<textarea id="enqHouseholdDetails" name="enqHouseholdDetails" ' +
+      'maxlength="500" aria-describedby="enqHouseholdDetails-hint"></textarea>';
+    html += "</div>";
+    html += '<div class="aw-consent">';
+    html += '<input type="checkbox" id="enqHouseholdConsent" name="enqHouseholdConsent">';
+    html += '<label for="enqHouseholdConsent">If I have answered yes or added ' +
+      "details, I agree Airwarm may record that information and use it only " +
+      "to plan the work safely. I can ask for it to be removed at any time.</label>";
+    html += "</div>";
+    html += "</fieldset>";
+    return html;
+  }
+
+  /* The household-needs answer for the payload. Details are sent only with
+     the explicit consent box ticked; submitEnquiry refuses to send before
+     that point, so this never has to drop anything silently. */
+  function readHouseholdNeeds() {
+    var checked = document.querySelector('input[name="enqHouseholdNeeds"]:checked');
+    var detailsEl = document.getElementById("enqHouseholdDetails");
+    var consentEl = document.getElementById("enqHouseholdConsent");
+    return {
+      answer: checked ? checked.value : "notAnswered",
+      details: detailsEl ? detailsEl.value.trim() : "",
+      explicitConsent: !!(consentEl && consentEl.checked)
+    };
+  }
+
   function buildEnquiryForm(outcome) {
     var html = "";
     /* The invitation changes with the route; everything below it does not.
@@ -946,6 +1185,8 @@ var AIRWARM_TRIAGE_CONFIG = {
        after the contact details because they are the less important half:
        an enquiry with no radiator count is still a usable enquiry. */
     html += buildPropertyFields();
+
+    html += buildHouseholdNeedsFields();
 
     /* PREFERRED CONTACT METHOD REMOVED, 20 Aug 2026. It asked the customer to
        choose between e-mail and a telephone call at the exact point in the
@@ -1048,6 +1289,19 @@ var AIRWARM_TRIAGE_CONFIG = {
       return;
     }
 
+    /* Household needs: sensitive information needs its own consent. Checked
+       after the general consent so each message is about one thing. */
+    var household = readHouseholdNeeds();
+    if ((household.answer === "yes" || household.details) && !household.explicitConsent) {
+      var householdConsent = document.getElementById("enqHouseholdConsent");
+      errorEl.textContent = "You have told us about someone at the property " +
+        "who may need extra care. Please tick the box to say we may record " +
+        "that, or clear the answer if you would rather not share it.";
+      markInvalid([householdConsent]);
+      householdConsent.focus();
+      return;
+    }
+
     /* Read these before the honeypot check: the reference is now derived from
        the address, postcode and date rather than generated at random, so both
        the real path and the bot path need them. */
@@ -1094,9 +1348,17 @@ var AIRWARM_TRIAGE_CONFIG = {
         rooms: readPropertyField("enqRooms"),
         radiators: readPropertyField("enqRadiators")
       },
+      /* Household needs (15 Sep 2026). Its own block, like `property`: not
+         scored, not part of `answers`. See buildHouseholdNeedsFields. */
+      householdNeeds: household,
       assessmentOutcome: result.outcome,
       assessmentOutcomeLabel: AIRWARM_TRIAGE_CONFIG.outcomeLabels[result.outcome],
       assessmentScore: result.score,
+      /* The "Why you got this result" lines exactly as the visitor saw them,
+         so the Desktop Review starts from the same list. GREEN shows none. */
+      resultReasonsShown: result.outcome === "potentially"
+        ? result.reasons.map(function (r) { return r.text; })
+        : [],
       /* The readable question-and-answer transcript. `answers` keeps the raw
          machine values alongside it, because those are what any later
          re-scoring would need. */
@@ -1164,8 +1426,14 @@ var AIRWARM_TRIAGE_CONFIG = {
          journey whose whole point is that the customer does not have to
          phone anybody, and it sat oddly beside "there is nothing else you
          need to do". The number is on /contact/ and in the footer. */
-      '<p class="aw-small">Airwarm begins installations in April 2027, so ' +
-      "this is a review of your property rather than a booking.</p>";
+      '<p class="aw-small">We normally reply within 2 working days.</p>' +
+      /* Pre-launch progression, per the 15 Sep 2026 action plan. Sending the
+         assessment does not book anything, but it is not a dead end until
+         April 2027 either: reviews, surveys and design happen now. */
+      '<p class="aw-small">Installations begin in April 2027. Desktop ' +
+      "Reviews, heat-loss surveys and system design are happening now, so " +
+      "if your home is suitable you can plan and book an installation for " +
+      "the launch period. Sending this does not book an installation.</p>";
     formEl.parentNode.replaceChild(sent, formEl);
     sent.focus();
   }
@@ -1186,39 +1454,34 @@ var AIRWARM_TRIAGE_CONFIG = {
     html += "<h3>" + copy.heading + "</h3>";
     html += "<p>" + copy.body + "</p>";
 
-    /* A result must never appear without a reason attached to it. If no
-       specific obstacle was identified, say that plainly rather than leaving
-       the visitor with a bare label. */
-    if (result.reasons.length) {
-      html += "<h4>What is driving that</h4><ul class=\"aw-ticks\">";
-      result.reasons.forEach(function (reason) {
-        html += "<li>" + reason + "</li>";
+    /* WHY YOU GOT THIS RESULT — BLUE and AMBER only.
+       Every line comes from result.reasons, which collectReasons() builds
+       from the visitor's own answers and the rule or points each answer
+       contributed. There is no generic list to fall back on, on purpose.
+       AMBER shows only the constraints: the uncertainties are real, but they
+       are not what made the result AMBER. assess() guarantees AMBER always
+       has at least one constraint and BLUE at least one reason. */
+    var isAmber = result.outcome === "notCurrently";
+    var shown = result.outcome === "likely" ? [] : result.reasons.filter(function (r) {
+      return !isAmber || r.kind === "constraint";
+    });
+    if (shown.length) {
+      html += "<h4>Why you got this result</h4>";
+      html += "<p>" + copy.why + "</p>";
+      html += '<ul class="aw-ticks">';
+      shown.forEach(function (reason) {
+        html += "<li>" + reason.text + "</li>";
       });
       html += "</ul>";
-    } else if (result.outcome !== "likely") {
-      html += "<h4>What is driving that</h4>";
-      if (result.notSureCount >= 3) {
-        html += "<p>Nothing in your answers stands out as a specific " +
-          "obstacle. What is holding the result back is missing information " +
-          "&mdash; you answered &ldquo;not sure&rdquo; to several questions, " +
-          "which is completely normal and not a mark against your home. Most " +
-          "people do not know how their walls were built. Those gaps are " +
-          "exactly what our review fills in, and the answer could easily " +
-          "improve.</p>";
-      } else {
-        html += "<p>There is no single obstacle here. The result reflects the " +
-          "overall picture rather than one particular problem, which usually " +
-          "means a few things would each need a small improvement rather than " +
-          "one thing needing a big one. That is often the most fixable " +
-          "situation of the three.</p>";
-      }
+      html += "<p>" + copy.after + "</p>";
     }
 
     if (!result.inServiceArea) {
       html += "<p class=\"aw-small\">Your postcode area looks as though it " +
         "may be outside the Bradford, Leeds and Shipley area Airwarm is " +
-        "starting with. Send your details anyway &mdash; we will tell you " +
-        "straight away whether we can help.</p>";
+        "starting with." +
+        (isAmber ? "" : " Send your details anyway &mdash; we will tell you " +
+          "straight away whether we can help.") + "</p>";
     }
 
     /* NO COMPETING CONTACT CTAs HERE. This card used to end with an
@@ -1235,15 +1498,16 @@ var AIRWARM_TRIAGE_CONFIG = {
 
     html += '<p class="aw-small" style="margin-top:24px">This result is an ' +
       "indicative first step produced from your answers. It is not a " +
-      "technical heat-loss survey and it is not a final decision &mdash; a " +
-      "person at Airwarm makes that judgement, and will explain the " +
-      "reasoning either way.</p>";
+      "technical heat-loss survey and it is not a final decision" +
+      (isAmber ? ".</p>" : " &mdash; a person at Airwarm makes that " +
+        "judgement, and will explain the reasoning either way.</p>");
 
     /* This sentence is a privacy claim, so it has to track what the page
-       actually does. Unconfigured, nothing can be transmitted at all. With
-       the form present, the answers are still local until the visitor
-       submits it — which is a different promise, and worth stating exactly. */
-    if (ENQUIRY_ENDPOINT) {
+       actually does. Unconfigured, or on AMBER where no form is shown,
+       nothing can be transmitted at all. With the form present, the answers
+       are still local until the visitor submits it — which is a different
+       promise, and worth stating exactly. */
+    if (ENQUIRY_ENDPOINT && !isAmber) {
       html += '<p class="aw-small">Your answers are still on your device. ' +
         "They reach Airwarm only if you fill in the form below and send it. " +
         "Closing this page without sending discards everything.</p>";
@@ -1274,8 +1538,13 @@ var AIRWARM_TRIAGE_CONFIG = {
        this back into resultBox.
        ------------------------------------------------------------------ */
     var mount = document.getElementById("aw-enquiry-mount");
-    if (ENQUIRY_ENDPOINT && mount) {
-      mount.innerHTML = buildEnquiryForm(result.outcome);
+    if (mount) {
+      /* AMBER gets no form, and the mount is emptied rather than left alone:
+         someone who saw BLUE, went back and changed an answer to reach AMBER
+         must not still have the BLUE invitation sitting under the result. */
+      mount.innerHTML = ENQUIRY_ENDPOINT && NEXT_STEP[result.outcome]
+        ? buildEnquiryForm(result.outcome)
+        : "";
     }
   }
 

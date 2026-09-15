@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Home Energy Assessment | Airwarm</title>
-  <meta name="description" content="An indicative first step in four short stages: see whether an air source heat pump is worth exploring for your West Yorkshire home. No photographs, and nothing is sent to us unless you choose to send it.">
+  <meta name="description" content="An indicative first step in four short stages: see whether an air source heat pump is worth exploring for your West Yorkshire home. No photographs needed at this stage, and nothing is sent to us unless you choose to send it.">
   <link rel="canonical" href="https://airwarm.co.uk/home-energy-assessment/">
 
   <!-- Open Graph: how the page looks when shared in a message or post. -->
@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="Airwarm">
   <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Home Energy Assessment | Airwarm">
-  <meta property="og:description" content="An indicative first step in four short stages: see whether an air source heat pump is worth exploring for your West Yorkshire home. No photographs, and nothing is sent to us unless you choose to send it.">
+  <meta property="og:description" content="An indicative first step in four short stages: see whether an air source heat pump is worth exploring for your West Yorkshire home. No photographs needed at this stage, and nothing is sent to us unless you choose to send it.">
   <meta property="og:url" content="https://airwarm.co.uk/home-energy-assessment/">
   <!-- OG IMAGE GOES HERE once a real Airwarm share image exists, e.g.
        <meta property="og:image" content="https://airwarm.co.uk/img/share.png">
@@ -126,7 +126,7 @@
           <p class="aw-hero__support">
             A quick first step to understand whether a heat pump is worth
             exploring for your property. Four short stages, a few minutes, no
-            photographs and nothing to measure. You get an honest first view of
+            photographs needed at this stage and nothing to measure. You get an honest first view of
             where your property stands and what a sensible next step would be.
           </p>
           <p class="aw-small" style="margin-top:24px">
@@ -135,10 +135,11 @@
           </p>
           <!-- LAUNCH STATUS. This is the page people arrive on ready to act,
                so it has to be clear that completing the assessment is not the
-               same as booking an installation. -->
+               same as booking an installation, and equally that nothing has
+               to wait for April 2027 except the installation itself. -->
           <p class="aw-hero__launch">
-            Preparing for our April 2027 launch. The assessment is worth doing
-            now: it tells you where your property stands.
+            Installations begin in April 2027. Desktop Reviews, surveys and
+            design are happening now, so you can plan ahead for the launch.
           </p>
         </div>
       </section>
@@ -582,26 +583,11 @@
               </section>
 
               <!-- ---------- STAGE 4: RESULT AND NEXT STEP ----------
-                   Stage 4 in the original flow was a contact form asking for
-                   name, e-mail, phone, preferred contact time and consent.
-                   It is deliberately NOT built yet, because Airwarm has no
-                   CRM, no privacy policy and no registered data controller,
-                   so there is nobody to be responsible for the data. Instead
-                   the visitor sees their result and is invited to e-mail us,
-                   which keeps them in control of their own details.
-
-                   The contact fields and the endpoint go here when those
-                   decisions are made. See the WIRE-UP POINT comment in
-                   /js/assessment.js.
-
-                   WHEN THOSE FIELDS ARE ADDED, they must have:
-                     - a real <label for="..."> each, not a placeholder;
-                     - autocomplete="name", autocomplete="email" and
-                       autocomplete="tel" respectively;
-                     - their own <fieldset> and <legend>;
-                     - an unticked consent checkbox with its own <label>.
-                   The first three are WCAG 2.2 AA requirements, not
-                   preferences.
+                   The result is rendered into #aw-result by /js/assessment.js.
+                   GREEN and BLUE results are followed by the optional
+                   submission form, which mounts below this form at
+                   #aw-enquiry-mount; AMBER results get no form. See the
+                   WIRE-UP POINT comment in /js/assessment.js.
                    -------------------------------------------------- -->
               <section class="aw-stage" id="aw-stage-4" aria-label="Stage 4: your result">
                 <h2>Your result</h2>
@@ -671,7 +657,7 @@
                 if you do send them is set out in our
                 <a href="../privacy/">privacy policy</a>.
               </p>
-              <h3>No photographs needed</h3>
+              <h3>No photographs needed at this stage</h3>
               <p>
                 We do not ask for pictures at this stage. Nothing to measure,
                 nothing to look up.
@@ -700,15 +686,17 @@
         <div class="aw-wrap">
           <h2>What the three results mean</h2>
           <p class="aw-measure">
-            There is no pass and no fail. The three outcomes describe what
-            happens next, and every one of them has a route forward attached.
+            There is no pass and no fail. Each result is a first view based on
+            your answers, not a final engineering judgement, and the blue and
+            amber results explain why they came out that way using the answers
+            you actually gave.
           </p>
 
           <figure class="aw-figure" style="margin-top:24px">
-            <img class="aw-diagram" src="../assets/diagram-assessment-outcomes.svg" alt="The three assessment outcomes and what follows each: likely suitable leads to a written review and then a survey if you want one; may be suitable leads to an explanation of the specific details that need checking; unlikely to be suitable leads to an explanation of the constraint and the improvements that would change it.">
+            <img class="aw-diagram" src="../assets/diagram-assessment-outcomes.svg" alt="The three assessment results: likely suitable, in green; needs a closer look, in blue, where some answers need checking; and potentially unsuitable, in amber, where significant issues were found. Blue and amber results explain why, using your own answers.">
             <figcaption class="aw-figure__caption">
-              The outcome decides the next conversation, not whether there is
-              one. The colour is a supporting indicator, never the whole
+              Each result carries a label and an explanation as well as a
+              colour. The colour is a supporting indicator, never the whole
               message.
             </figcaption>
           </figure>
@@ -737,28 +725,31 @@
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row">May be suitable</th>
+                  <th scope="row">Needs a closer look</th>
                   <td>
-                    A heat pump could work, but there are points we would want
-                    to look at more closely first. This is the most common
-                    outcome and it is not a problem.
+                    Nothing in your answers rules a heat pump out, but one or
+                    more of them leaves something uncertain that needs
+                    checking. &ldquo;Not sure&rdquo; counts as uncertain, not
+                    as a problem.
                   </td>
                   <td>
-                    We explain which details matter and what may need improving
-                    before a survey would be worthwhile.
+                    The result lists the answers that need a closer look. Send
+                    us your assessment and we investigate them in a Desktop
+                    Review.
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row">Unlikely to be suitable</th>
+                  <th scope="row">Potentially unsuitable</th>
                   <td>
-                    The assessment has found significant barriers. Note the
-                    word <em>unlikely</em> &mdash; this is a questionnaire
-                    rather than a survey, and it describes the property&rsquo;s
-                    condition now, not for ever.
+                    Your answers have identified one or more significant issues
+                    that could make an installation difficult or unsuitable.
+                    This is a questionnaire rather than a survey, so it does
+                    not prove a heat pump could never work.
                   </td>
                   <td>
-                    We name the main constraint, explain what would resolve it,
-                    and suggest practical improvements or alternatives.
+                    The result names the issues from your answers. Based on
+                    that information we would not recommend going on to the
+                    next stage.
                   </td>
                 </tr>
               </tbody>
@@ -772,7 +763,8 @@
                 Plenty of people do not know how their walls are built or
                 whether the loft was topped up. The assessment is designed to
                 cope with that: uncertainty moves the result towards
-                &ldquo;needs checking&rdquo; rather than counting against you.
+                &ldquo;needs a closer look&rdquo; rather than counting as a
+                problem with your home.
               </p>
             </div>
             <div class="aw-callout aw-callout--caution">
@@ -783,54 +775,6 @@
                 neighbour&rsquo;s window or produce a price. All of that needs a
                 survey, and the survey needs measurements rather than
                 recollections.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- WHAT HAPPENS AFTERWARDS ----------------------------------- -->
-      <section class="aw-section">
-        <div class="aw-wrap aw-split">
-          <div class="aw-prose">
-            <h2>What happens after you get your result</h2>
-            <p class="aw-measure">
-              Nothing, unless you decide otherwise. Because the assessment sends
-              us nothing, the next move is yours: read the result, and if it is
-              worth a conversation, e-mail us and say what you got.
-            </p>
-            <p class="aw-measure">
-              A person then reads what you have described &mdash; not a scoring
-              engine. If something in it looks like it needs clarifying, or
-              looks like a genuine obstacle, we would rather find it in an
-              e-mail than three visits later. If a survey is not justified, we
-              will say so and explain why.
-            </p>
-            <p class="aw-measure">
-              <a href="../how-it-works/">The full eight-stage process is here</a>,
-              including what a survey covers and what you receive afterwards.
-            </p>
-            <!-- On a light section the secondary button is aw-btn--outline.
-                 aw-btn--secondary is white text on a transparent background
-                 with a white border, which is correct on navy and invisible
-                 here. -->
-            <div class="aw-btn-row">
-              <a class="aw-btn aw-btn--outline" href="mailto:hello@airwarm.co.uk?subject=Home%20Energy%20Assessment%20enquiry">E-mail us about your result</a>
-            </div>
-          </div>
-          <div>
-            <div class="aw-card">
-              <h3 class="aw-card__title">Useful things to put in that e-mail</h3>
-              <ul class="aw-ticks">
-                <li>The outcome the assessment gave you</li>
-                <li>The town or postcode area</li>
-                <li>What kind of property it is, and roughly how old</li>
-                <li>How it is heated at the moment</li>
-                <li>Anything you already suspect might be a problem</li>
-              </ul>
-              <p class="aw-small" style="margin-top:16px">
-                You do not have to include any of it. It just means the first
-                reply is useful rather than a round of questions.
               </p>
             </div>
           </div>
@@ -851,14 +795,14 @@
             </details>
 
             <details class="aw-faq__item">
-              <summary class="aw-faq__question">What if the assessment says my home is unlikely to be suitable?</summary>
+              <summary class="aw-faq__question">What if the assessment says my home is potentially unsuitable?</summary>
               <div class="aw-faq__answer">
                 <p>
-                  You will be told which constraint caused that and what would
-                  resolve it. It is a statement about the property&rsquo;s
-                  condition today, not a permanent verdict, and there is nearly
-                  always something worth doing even if a heat pump is not the
-                  immediate next step.
+                  You will be shown which of your answers led to that result.
+                  It means those answers point to significant issues, not that
+                  a heat pump could never work: the online assessment is not a
+                  final engineering judgement. Based on the information given,
+                  though, we would not recommend going on to the next stage.
                 </p>
               </div>
             </details>
@@ -867,24 +811,17 @@
               <summary class="aw-faq__question">What happens to my answers?</summary>
               <div class="aw-faq__answer">
                 <p>
-                  Nothing. They are held in your browser while you fill the form
-                  in and they are gone when you close the tab. There is no form
-                  submission, no e-mail sent automatically, no database, no
-                  cookie and no analytics anywhere on this site. If you want us
-                  to see your answers, you tell us yourself.
+                  Your answers and your result stay in your browser. Nothing is
+                  saved and nothing reaches Airwarm while you work through the
+                  assessment, and closing the tab discards it.
                 </p>
-              </div>
-            </details>
-
-            <details class="aw-faq__item">
-              <summary class="aw-faq__question">Why not just ask for my details at the end?</summary>
-              <div class="aw-faq__answer">
                 <p>
-                  Because Airwarm is not yet registered as a company and has not
-                  yet published a privacy policy, so there is nobody who could
-                  properly be responsible for your personal data today. Rather
-                  than collect it anyway and sort the paperwork out afterwards,
-                  the form has been built to work without it.
+                  After your result you can choose to send it to us using the
+                  optional form, which sends your assessment and contact
+                  details to Airwarm. That is the only point at which anything
+                  is sent. AIRWARM LTD is a registered company, and our
+                  <a href="../privacy/">privacy policy</a> explains how we
+                  handle what you send.
                 </p>
               </div>
             </details>
@@ -942,7 +879,7 @@
           <h2>Start with your home, not a product</h2>
           <p class="aw-hero__support">
             The Home Energy Assessment takes a few minutes, asks for no
-            photographs and gives you an honest first view of whether an air
+            photographs at this stage and gives you an honest first view of whether an air
             source heat pump is worth exploring for your property.
           </p>
           <div class="aw-btn-row">

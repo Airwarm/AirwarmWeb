@@ -1031,11 +1031,15 @@ select {
   padding: var(--airwarm-space-md);
   background: var(--airwarm-white);
 }
+/* GREEN / BLUE / AMBER, per Tom's action plan of 15 Sep 2026. The class
+   names still carry the old outcome keys so the script and payload did not
+   have to change: --potentially is BLUE, "Needs a closer look", and
+   --not-currently is AMBER, "Potentially unsuitable". Never red: AMBER is an
+   explanation, not a refusal. The label text also carries the meaning, so
+   nothing depends on colour alone. */
 .aw-outcome--likely      { border-left-color: var(--airwarm-green); }
-.aw-outcome--potentially { border-left-color: var(--airwarm-orange); }
-/* "Not currently suitable" uses navy, not red. It is an explanation, not a
-   refusal, and the copy always offers a route forward. */
-.aw-outcome--not-currently { border-left-color: var(--airwarm-navy); }
+.aw-outcome--potentially { border-left-color: var(--airwarm-blue); }
+.aw-outcome--not-currently { border-left-color: var(--airwarm-orange); }
 
 .aw-outcome__label {
   display: inline-block;
@@ -1049,11 +1053,13 @@ select {
   color: var(--airwarm-dark-text);
 }
 .aw-outcome--likely .aw-outcome__label      { background: var(--airwarm-green); }
-.aw-outcome--potentially .aw-outcome__label { background: var(--airwarm-orange); }
-.aw-outcome--not-currently .aw-outcome__label {
-  background: var(--airwarm-navy);
-  color: var(--airwarm-white);
+/* Navy text on the blue label: 4.7:1. Dark text is 4.0:1 and white 4.1:1,
+   both short of AA for text this small. */
+.aw-outcome--potentially .aw-outcome__label {
+  background: var(--airwarm-blue);
+  color: var(--airwarm-navy);
 }
+.aw-outcome--not-currently .aw-outcome__label { background: var(--airwarm-orange); }
 
 /* ==========================================================================
    09. FOOTER

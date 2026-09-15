@@ -132,6 +132,32 @@ function buildBody(d) {
   L.push("  The scoring behind this is still the unapproved placeholder");
   L.push("  logic. Treat it as a conversation starter, not a finding.");
   L.push("");
+
+  /* "Why you got this result", as the customer saw it. BLUE only; GREEN
+     shows no list and AMBER has no form. Customer-reported, not verified. */
+  var why = d.resultReasonsShown;
+  if (why && why.length) {
+    L.push("  Shown to the customer as \"Why you got this result\":");
+    L.push("");
+    for (var w = 0; w < why.length; w++) {
+      L.push(wrap(clean(why[w]), "  - ", "    "));
+    }
+    L.push("");
+  }
+
+  L.push(line());
+  L.push("HOUSEHOLD NEEDS (for planning the work, not scored)");
+  L.push(line());
+  var h = d.householdNeeds || {};
+  L.push("  Extra care needed: " + householdAnswer(h.answer));
+  if (h.explicitConsent === true && h.details) {
+    L.push(wrap(clean(h.details), "  Details:  ", "            "));
+  }
+  L.push("  Explicit consent to record: " + (h.explicitConsent === true ? "yes" : "no"));
+  L.push("");
+  L.push("  May be health information. Record only what is needed to plan");
+  L.push("  the work safely, and delete it on request.");
+  L.push("");
   L.push(line());
   L.push("QUESTIONNAIRE");
   L.push(line());
@@ -263,6 +289,14 @@ function count(value) {
   var more = v.match(/^moreThan(\d+)$/);
   if (more) { return "More than " + more[1]; }
   return v;
+}
+
+/** The household-needs answer in words. Older cached forms send nothing. */
+function householdAnswer(v) {
+  if (v === "yes") { return "yes"; }
+  if (v === "no") { return "no"; }
+  if (v === "notSure") { return "not sure"; }
+  return "not answered";
 }
 
 function prefer(v) {

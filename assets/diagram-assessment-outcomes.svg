@@ -4,10 +4,11 @@
   AIRWARM — diagram-assessment-outcomes.svg
   The three possible outcomes of the Home Energy Assessment.
 
-  IMPORTANT, and set by the Airwarm pack: green is used for the positive
-  outcome only. The other two use blue and mid grey. There is no red anywhere,
-  and "unlikely to be suitable" is never presented as a rejection: it always
-  comes with an explanation and a next step.
+  IMPORTANT: green is used for the positive outcome only. Since Tom's action
+  plan of 15 Sep 2026 the other two are BLUE, "Needs a closer look", and
+  AMBER, "Potentially unsuitable". There is no red anywhere. AMBER is not a
+  rejection, but it does not invite a Desktop Review either, so this drawing
+  must not promise every outcome a next step.
 
   Each outcome carries a shape as well as a colour (a tick, a question mark, a
   level dash) and a plain label, so the meaning survives in black and white and
@@ -34,10 +35,10 @@
   <title id="ao-title">The three possible outcomes of the assessment</title>
   <desc id="ao-desc">Three calm outcome cards side by side. The first, likely suitable, is
     marked in green with a tick: the next step is a home survey. The
-    second, may be suitable, is marked in blue with a question
-    mark: there are a few things to look at first. The third, unlikely to be suitable, is marked in mid grey with a level dash: it
-    comes with an explanation of what would need to change. None of
-    the three is a refusal.</desc>
+    second, needs a closer look, is marked in blue with a question
+    mark: some answers need checking. The third, potentially unsuitable,
+    is marked in amber with a level dash: significant issues were
+    found. Blue and amber results explain why, using your own answers.</desc>
 
   <style>
     /* ---------------------------------------------------------------------
@@ -125,14 +126,14 @@
        of the disc has contrast against the panel. */
     .d-disc-good  { fill: #689E14; stroke: #010F23; stroke-width: 1.5; }
     .d-disc-maybe { fill: #017FE1; stroke: #010F23; stroke-width: 1.5; }
-    .d-disc-notyet{ fill: #65717C; stroke: #010F23; stroke-width: 1.5; }
+    .d-disc-notyet{ fill: #F76201; stroke: #010F23; stroke-width: 1.5; }
     .d-glyph { fill: none; stroke: #010F23; stroke-width: 2.5;
                stroke-linecap: round; stroke-linejoin: round; }
     .d-glyph-text { font-family: Montserrat, 'Segoe UI', Arial, sans-serif;
                     font-size: 26px; font-weight: 700; fill: #010F23; }
     .d-accent-good  { fill: #689E14; }
     .d-accent-maybe { fill: #017FE1; }
-    .d-accent-notyet{ fill: #65717C; }
+    .d-accent-notyet{ fill: #F76201; stroke: #010F23; stroke-width: 1; }
   </style>
 
   <defs>
@@ -174,17 +175,17 @@
   <text class="d-sub"   x="112" y="240" text-anchor="middle">the next step is</text>
   <text class="d-sub"   x="112" y="258" text-anchor="middle">a home survey</text>
 
-  <!-- ======================= 2. MAY BE SUITABLE (blue) ============= -->
+  <!-- ======================= 2. NEEDS A CLOSER LOOK (blue) ========== -->
   <rect class="d-box" x="227" y="60" width="185" height="220" rx="10"/>
   <rect class="d-accent-maybe" x="239" y="57" width="161" height="6" rx="3"/>
   <circle class="d-disc-maybe" cx="319" cy="118" r="24"/>
   <text class="d-glyph-text" x="319" y="128" text-anchor="middle">?</text>
-  <text class="d-label" x="319" y="188" text-anchor="middle">May be</text>
-  <text class="d-label" x="319" y="212" text-anchor="middle">suitable</text>
-  <text class="d-sub"   x="319" y="240" text-anchor="middle">a few things to</text>
-  <text class="d-sub"   x="319" y="258" text-anchor="middle">look at first</text>
+  <text class="d-label" x="319" y="188" text-anchor="middle">Needs a</text>
+  <text class="d-label" x="319" y="212" text-anchor="middle">closer look</text>
+  <text class="d-sub"   x="319" y="240" text-anchor="middle">some answers</text>
+  <text class="d-sub"   x="319" y="258" text-anchor="middle">need checking</text>
 
-  <!-- ======================= 3. UNLIKELY TO BE SUITABLE (mid grey) =======
+  <!-- ======================= 3. POTENTIALLY UNSUITABLE (amber) =======
        A level dash, not a cross. This outcome is an explanation, never a
        refusal, so it is never drawn in red and never drawn as a rejection.
        =================================================================== -->
@@ -192,12 +193,12 @@
   <rect class="d-accent-notyet" x="446" y="57" width="161" height="6" rx="3"/>
   <circle class="d-disc-notyet" cx="526" cy="118" r="24"/>
   <path class="d-glyph" d="M514 118 H538"/>
-  <text class="d-label" x="526" y="188" text-anchor="middle">Unlikely to be</text>
-  <text class="d-label" x="526" y="212" text-anchor="middle">suitable</text>
-  <text class="d-sub"   x="526" y="240" text-anchor="middle">we explain what</text>
-  <text class="d-sub"   x="526" y="258" text-anchor="middle">would change that</text>
+  <text class="d-label" x="526" y="188" text-anchor="middle">Potentially</text>
+  <text class="d-label" x="526" y="212" text-anchor="middle">unsuitable</text>
+  <text class="d-sub"   x="526" y="240" text-anchor="middle">significant</text>
+  <text class="d-sub"   x="526" y="258" text-anchor="middle">issues found</text>
 
   <!-- ======================= CAPTION ==================================== -->
-  <text class="d-cap" x="320" y="322" text-anchor="middle">Every outcome comes with an explanation</text>
-  <text class="d-cap" x="320" y="344" text-anchor="middle">and a next step. None of them is a refusal.</text>
+  <text class="d-cap" x="320" y="322" text-anchor="middle">Blue and amber results explain why,</text>
+  <text class="d-cap" x="320" y="344" text-anchor="middle">using the answers you actually gave.</text>
 </svg>
