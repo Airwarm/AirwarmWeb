@@ -2467,8 +2467,9 @@ body.home .aw-hero-pattern::before {
    interactive surfaces respond to the pointer.
    ========================================================================== */
 @keyframes aw-emblem-breathe {
-  0%,100% { transform: translateY(-50%) scale(1); opacity:.10; }
-  50% { transform: translateY(-52%) scale(1.025); opacity:.125; }
+  0% { transform: translateY(-50%) rotate(0deg) scale(1); opacity:.10; }
+  50% { transform: translateY(-50%) rotate(180deg) scale(1.015); opacity:.115; }
+  100% { transform: translateY(-50%) rotate(360deg) scale(1); opacity:.10; }
 }
 @keyframes aw-tech-drift {
   0%,100% { transform: translateY(-50%) translateX(0); }
@@ -2495,7 +2496,7 @@ body.home .aw-hero-pattern::before {
 
 /* Very slow background motion — texture, not a moving graphic. */
 .aw-hero::after {
-  animation: aw-emblem-breathe 12s ease-in-out infinite;
+  animation: aw-emblem-breathe 48s linear infinite;
 }
 .aw-section--light::after {
   animation: aw-tech-drift 18s ease-in-out infinite;
