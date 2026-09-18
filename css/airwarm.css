@@ -2124,3 +2124,11 @@ h4 > .aw-icon--lg, h5 > .aw-icon--lg, h6 > .aw-icon--lg {
     opacity: 0.04;
   }
 }
+
+
+/* Exception: the standard "Start with your home, not a product" closing
+   assessment CTA stays clean navy with no emblem watermark. */
+.aw-cta-band::after {
+  content: none;
+  background: none;
+}
