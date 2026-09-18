@@ -2458,3 +2458,111 @@ body.home .aw-hero-pattern::before {
   .aw-card { padding: 28px; }
   .aw-grid { gap: 24px; }
 }
+
+
+/* ==========================================================================
+   22. PREMIUM MOTION & DEPTH — 19 Sep 2026
+   Quiet architectural motion: no gimmicks, no layout shift. The brand emblem
+   breathes gently, technical drawings drift almost imperceptibly, and useful
+   interactive surfaces respond to the pointer.
+   ========================================================================== */
+@keyframes aw-emblem-breathe {
+  0%,100% { transform: translateY(-50%) scale(1); opacity:.10; }
+  50% { transform: translateY(-52%) scale(1.025); opacity:.125; }
+}
+@keyframes aw-tech-drift {
+  0%,100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(-14px); }
+}
+@keyframes aw-lockup-enter {
+  from { opacity:0; transform:translateY(10px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+/* Homepage: make the brand lockup arrive as one composed identity. */
+.aw-hero__brand-name {
+  animation: aw-lockup-enter .55s cubic-bezier(.2,.7,.2,1) both;
+}
+.aw-hero__brand-lockup {
+  animation: aw-lockup-enter .65s .10s cubic-bezier(.2,.7,.2,1) both;
+}
+.aw-hero__support {
+  animation: aw-lockup-enter .65s .18s cubic-bezier(.2,.7,.2,1) both;
+}
+.aw-hero .aw-actions {
+  animation: aw-lockup-enter .65s .25s cubic-bezier(.2,.7,.2,1) both;
+}
+
+/* Very slow background motion — texture, not a moving graphic. */
+.aw-hero::after {
+  animation: aw-emblem-breathe 12s ease-in-out infinite;
+}
+.aw-section--light::after {
+  animation: aw-tech-drift 18s ease-in-out infinite;
+}
+
+/* More tactile cards. */
+.aw-card--link {
+  will-change: transform;
+}
+.aw-card--link:hover {
+  transform: translateY(-6px);
+}
+.aw-card--link::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, transparent 20%, rgba(0,168,255,.045) 48%, transparent 72%);
+  transform:translateX(-120%);
+  transition:transform .65s ease;
+  pointer-events:none;
+}
+.aw-card--link:hover::after {
+  transform:translateX(120%);
+}
+
+/* Buttons get a controlled highlight sweep and firmer hover state. */
+.aw-btn {
+  position:relative;
+  overflow:hidden;
+}
+.aw-btn::after {
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:linear-gradient(110deg, transparent 25%, rgba(255,255,255,.22) 48%, transparent 70%);
+  transform:translateX(-130%);
+  transition:transform .55s ease;
+  pointer-events:none;
+}
+.aw-btn:hover::after {
+  transform:translateX(130%);
+}
+
+/* FAQ opening feels intentional rather than abrupt. */
+.aw-faq details[open] .aw-faq__answer {
+  animation: aw-lockup-enter .22s ease-out both;
+}
+
+/* Slight depth on substantial navy panels as the pointer interacts nearby. */
+.aw-section--navy:not(.aw-cta-band) {
+  background-image:
+    radial-gradient(circle at 82% 18%, rgba(0,168,255,.055), transparent 34%);
+}
+
+/* Never animate for users who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .aw-hero__brand-name,
+  .aw-hero__brand-lockup,
+  .aw-hero__support,
+  .aw-hero .aw-actions,
+  .aw-hero::after,
+  .aw-section--light::after,
+  .aw-faq details[open] .aw-faq__answer {
+    animation:none !important;
+  }
+  .aw-card--link::after,
+  .aw-btn::after {
+    display:none;
+  }
+}
