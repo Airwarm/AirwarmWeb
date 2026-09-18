@@ -129,8 +129,8 @@ function buildBody(d) {
   L.push("  " + clean(d.assessmentOutcomeLabel));
   L.push("");
   L.push("  Internal score: " + clean(d.assessmentScore));
-  L.push("  The scoring behind this is still the unapproved placeholder");
-  L.push("  logic. Treat it as a conversation starter, not a finding.");
+  L.push("  Screening score only — reviewed 18 September 2026.");
+  L.push("  Use it to prioritise checks, never as a substitute for survey or design.");
   L.push("");
 
   /* "Why you got this result", as the customer saw it. BLUE only; GREEN

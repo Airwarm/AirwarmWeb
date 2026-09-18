@@ -18,17 +18,16 @@
       That is the safety catch — an unconfigured deployment cannot collect
       anything, it just offers the e-mail and telephone route as before.
 
-   2. THE SCORING BELOW IS NOT APPROVED. The Airwarm pack specifies the three
-      outcomes and their wording, but it does not say which answers lead to
-      which outcome. Rather than hide an invented rule inside the code, every
-      threshold is a named value in the one config object below, and every
-      one of them is listed as a question in TRIAGE_RULES_FOR_REVIEW.md.
+   2. THE SCORING IS A SCREENING MODEL, NOT AN ENGINEERING DESIGN. It was
+      reviewed for Airwarm on 18 September 2026. Only answers that describe
+      the property or a practical installation constraint contribute to the
+      score. Commercial timing, current heating fuel and general renovation
+      intent do not make a building more or less physically suitable and
+      therefore score zero. Named constraints can still cap an outcome.
 
-      That document is NOT in this repository — it was removed when the site
-      started serving from GitHub Pages, because it is an internal review
-      document and this repository is public. It lives in the Airwarm working
-      pack alongside HANDOVER.md. Part 13 covers the questions added with the
-      August 2026 form additions.
+      The result remains indicative: heat loss, emitter sizing, siting, noise,
+      electrical capacity and hot-water design are confirmed by Desktop Review
+      and survey rather than by this questionnaire.
    ========================================================================== */
 
 /* ==========================================================================
@@ -72,16 +71,14 @@ var ENQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbwtF0cC5xgjLxxw5
        that AMBER is not offered the submission form;
      • that the intake fields in nonScoringIntakeFields do not score.
 
-   NOT SETTLED. The point values in answerPoints and the two numbers in
-   outcomeThresholds were chosen by the website builder as a starting point.
-   They have not been reviewed by anyone technically qualified, and no
-   Airwarm document sets them. They are deliberately left alone by the
-   September 2026 passes, which changed behaviour around the score rather
-   than the score itself.
+   REVIEWED 18 SEPTEMBER 2026. The scoring was calibrated as a conservative
+   first-stage triage tool. Physical/property indicators score; current fuel,
+   timing and general renovation intent do not. The two thresholds were
+   recalibrated against the resulting 21-point physical maximum.
 
-   This is why the page tells the visitor, in the outcome text, that the
-   result is indicative and that a person makes the real judgement. Do not
-   remove those sentences while the numbers above remain unreviewed.
+   The page must still tell the visitor that the result is indicative and that
+   a person makes the real judgement. A screening score is not a heat-loss
+   calculation or a substitute for survey and design.
    ========================================================================== */
 var AIRWARM_TRIAGE_CONFIG = {
 
@@ -110,14 +107,14 @@ var AIRWARM_TRIAGE_CONFIG = {
       notSure: 0
     },
     currentHeating: {
-      mainsGasBoiler: 1,
-      oilBoiler: 2,
-      lpgBoiler: 2,
-      electricStorageHeaters: 2,
-      directElectric: 2,
-      solidFuel: 1,
-      existingHeatPump: 1,
-      noHeating: 1
+      mainsGasBoiler: 0,
+      oilBoiler: 0,
+      lpgBoiler: 0,
+      electricStorageHeaters: 0,
+      directElectric: 0,
+      solidFuel: 0,
+      existingHeatPump: 0,
+      noHeating: 0
     },
 
     /* Stage 2 — condition */
@@ -155,13 +152,13 @@ var AIRWARM_TRIAGE_CONFIG = {
 
     /* Stage 3 — plans */
     renovationPlans: {
-      majorRenovation: 2,
-      someWork: 1,
+      majorRenovation: 0,
+      someWork: 0,
       noWorkPlanned: 0
     },
     timescale: {
-      withinSixMonths: 1,
-      sixToTwelveMonths: 1,
+      withinSixMonths: 0,
+      sixToTwelveMonths: 0,
       overTwelveMonths: 0,
       justResearching: 0
     },
@@ -178,10 +175,10 @@ var AIRWARM_TRIAGE_CONFIG = {
      BLUE, "Needs a closer look". Below that the score alone would give
      AMBER, "Potentially unsuitable" — but see assess(), which holds AMBER
      back to BLUE unless a named constraint justifies it.
-     For reference, the maximum achievable total is about 26. */
+     For reference, the maximum physical-suitability score is 21. */
   outcomeThresholds: {
-    likelySuitableMinimumScore: 17,
-    potentiallySuitableMinimumScore: 10
+    likelySuitableMinimumScore: 14,
+    potentiallySuitableMinimumScore: 8
   },
 
   /* ---- Step 3: answers that stop a "Likely suitable" outcome ----------
@@ -834,7 +831,7 @@ var AIRWARM_TRIAGE_CONFIG = {
     return out;
   }
 
-  /* ---- Applying the placeholder logic -------------------------------- */
+  /* ---- Applying the reviewed screening logic -------------------------- */
   function assess(answers) {
     var cfg = AIRWARM_TRIAGE_CONFIG;
     var score = 0;
