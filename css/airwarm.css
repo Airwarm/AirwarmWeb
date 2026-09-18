@@ -2367,3 +2367,94 @@ body.home .aw-hero-pattern::before {
     display: none;
   }
 }
+
+
+/* ==========================================================================
+   21. PREMIUM POLISH — PASS TWO
+   Small finishing details only: improve hierarchy and tactile quality without
+   adding more visual noise or changing the established Airwarm layout.
+   ========================================================================== */
+
+/* Give major section headings a little more editorial presence. */
+.aw-section > .aw-wrap > h2 {
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.aw-section > .aw-wrap > h2 + .aw-lead,
+.aw-section > .aw-wrap > h2 + .aw-measure {
+  margin-top: 18px;
+}
+
+/* Cleaner card surfaces with a subtle top highlight. */
+.aw-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.96) 100%);
+}
+.aw-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, var(--airwarm-blue), rgba(0,168,255,0));
+  opacity: .55;
+}
+
+/* Evidence / information blocks get quieter depth than primary cards. */
+.aw-evidence-slot {
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 8px 24px rgba(0,21,46,.055);
+}
+.aw-section--navy .aw-evidence-slot {
+  background: rgba(255,255,255,.045);
+  box-shadow: none;
+}
+
+/* FAQs read as individual controls rather than one long ruled list. */
+.aw-faq {
+  border-top: 0;
+  display: grid;
+  gap: 8px;
+}
+.aw-faq details,
+.aw-faq .aw-faq__item {
+  border: 1px solid rgba(0,21,46,.10);
+  border-radius: 12px;
+  background: rgba(255,255,255,.72);
+  overflow: hidden;
+}
+.aw-faq summary,
+.aw-faq .aw-faq__question {
+  padding: 16px 48px 16px 18px;
+}
+.aw-faq details > *:not(summary),
+.aw-faq .aw-faq__answer {
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 18px;
+}
+.aw-faq details[open],
+.aw-faq .aw-faq__item[open] {
+  border-color: rgba(0,168,255,.30);
+  box-shadow: 0 8px 22px rgba(0,21,46,.055);
+}
+
+/* Keep navy FAQs appropriately dark/translucent. */
+.aw-section--navy .aw-faq details,
+.aw-section--navy .aw-faq .aw-faq__item {
+  background: rgba(255,255,255,.045);
+  border-color: rgba(255,255,255,.13);
+}
+
+/* Slightly stronger inline links in prose without making every link shout. */
+.aw-prose a:not(.aw-btn),
+.aw-measure a:not(.aw-btn) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* More composed spacing on desktop, still compact on mobile. */
+@media (min-width: 768px) {
+  .aw-card { padding: 28px; }
+  .aw-grid { gap: 24px; }
+}
