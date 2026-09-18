@@ -2296,3 +2296,25 @@ main > .aw-section:not(.aw-section--navy):not(.aw-section--light) + .aw-section:
     opacity: 0.03;
   }
 }
+
+
+/* ==========================================================================
+   19. ALTERNATING LIGHT / WHITE CONTENT BANDS — 18 Sep 2026
+   Prevent long runs of pale sections feeling repetitive. Among ordinary
+   non-navy content sections, every other band becomes clean white. Explicit
+   navy sections and CTA bands are untouched. Technical artwork remains only
+   on sections that resolve to the light-grey treatment.
+   ========================================================================== */
+main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
+  background-color: var(--airwarm-white);
+  background-image: none;
+}
+main > .aw-section--light:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even)::after {
+  content: none;
+  background: none;
+}
+main > .aw-section--light:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(odd) {
+  background:
+    linear-gradient(180deg, rgba(0, 168, 255, 0.025), transparent 180px),
+    var(--airwarm-light-bg);
+}
