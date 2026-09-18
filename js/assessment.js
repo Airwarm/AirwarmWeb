@@ -58,21 +58,30 @@
 var ENQUIRY_ENDPOINT = "https://script.google.com/macros/s/AKfycbwtF0cC5xgjLxxw5TvZn0yWYSCRLUGb6ApSHV87itDav2S0RZxQClnmRaCiDlkLEc8e/exec";
 
 /* ==========================================================================
-   UNAPPROVED PLACEHOLDER LOGIC — requires Thomas Robinson's sign-off before
-   this form goes live.
+   TRIAGE CONFIGURATION — what is settled and what is not.
    ==========================================================================
-   Every number and list in AIRWARM_TRIAGE_CONFIG below was chosen by the
-   website builder as a starting point for discussion. None of it comes from
-   the Airwarm documentation, and none of it has been reviewed by anyone
-   technically qualified.
+   SETTLED by Thomas Robinson's action plans of 15 and 17 September 2026, and
+   not to be changed without a further instruction from him:
 
-   Each entry is written out in plain English as a question in
-   TRIAGE_RULES_FOR_REVIEW.md. Answer those questions, change the numbers
-   here to match, and delete this comment block only when Thomas Robinson has
-   confirmed the logic is correct.
+     • the three outcome labels (outcomeLabels below);
+     • that there is no questionnaire-level RED result;
+     • the cylinder rule — no conventional cylinder space is an uncertainty
+       capping at BLUE, never a constraint forcing AMBER, because Airwarm
+       installs Sunamp thermal storage;
+     • that AMBER must name a real constraint from the visitor's answers, and
+       that AMBER is not offered the submission form;
+     • that the intake fields in nonScoringIntakeFields do not score.
 
-   Until then the page tells the visitor, in the outcome text, that the result
-   is indicative and that a person will make the real judgement.
+   NOT SETTLED. The point values in answerPoints and the two numbers in
+   outcomeThresholds were chosen by the website builder as a starting point.
+   They have not been reviewed by anyone technically qualified, and no
+   Airwarm document sets them. They are deliberately left alone by the
+   September 2026 passes, which changed behaviour around the score rather
+   than the score itself.
+
+   This is why the page tells the visitor, in the outcome text, that the
+   result is indicative and that a person makes the real judgement. Do not
+   remove those sentences while the numbers above remain unreviewed.
    ========================================================================== */
 var AIRWARM_TRIAGE_CONFIG = {
 
@@ -164,9 +173,11 @@ var AIRWARM_TRIAGE_CONFIG = {
   },
 
   /* ---- Step 2: the two score thresholds -------------------------------
-     A total at or above likelySuitableMinimumScore gives "Likely suitable".
-     A total at or above potentiallySuitableMinimumScore gives "May be
-     suitable". Anything below that gives "Unlikely to be suitable".
+     A total at or above likelySuitableMinimumScore gives GREEN, "Likely
+     suitable". A total at or above potentiallySuitableMinimumScore gives
+     BLUE, "Needs a closer look". Below that the score alone would give
+     AMBER, "Potentially unsuitable" — but see assess(), which holds AMBER
+     back to BLUE unless a named constraint justifies it.
      For reference, the maximum achievable total is about 26. */
   outcomeThresholds: {
     likelySuitableMinimumScore: 17,
@@ -468,7 +479,7 @@ var AIRWARM_TRIAGE_CONFIG = {
     }
   }
 };
-/* ===================== END OF UNAPPROVED PLACEHOLDER LOGIC ============== */
+/* ===================== END OF TRIAGE CONFIGURATION ====================== */
 
 
 /* ==========================================================================

@@ -25,15 +25,15 @@ contact/
 areas/bradford/                location pages
 areas/leeds/
 areas/shipley/
-privacy/  cookies/  terms/     deliberate stubs — see HANDOVER.md
+privacy/  cookies/  terms/     published; installation-terms/ is draft and noindex
 404.html                       shown for any unknown address
 css/airwarm.css                the ONLY stylesheet
 js/assessment.js               the ONLY JavaScript, used on one page
 sitemap.xml  robots.txt        for search engines
 .nojekyll                      tells GitHub Pages to serve files as they are
 README.md                      this file
-HANDOVER.md                    what is built, what is stubbed, what is needed
-TRIAGE_RULES_FOR_REVIEW.md     the assessment logic, for Tom to sign off
+card/                          NFC/vCard contact endpoint source
+endpoint/                      Google Apps Script that receives assessment submissions
 ```
 
 Each page is a folder containing `index.html`, so the address
@@ -140,9 +140,10 @@ Jekyll blog. Do not delete it.
 
 Two things to know:
 
-- **Pages is not currently enabled.** This repository is private, and GitHub
-  Pages on a private repository requires a paid plan. See `HANDOVER.md`,
-  decision 8.
+- **The site is live** at https://airwarm.co.uk, served by GitHub Pages from
+  this repository. `.nojekyll` means every file here is served exactly as it
+  is, including this one — so keep it accurate and free of anything that
+  would embarrass anyone who read it at `airwarm.co.uk/README.md`.
 - **The links assume the site is at the root of a domain.** They are written
   as `/about/`, `/contact/` and so on, because that is what the sitemap in the
   brand pack specifies and because it keeps the header identical on every
@@ -185,8 +186,8 @@ requests that name the file and the section:
 **Things to watch for.** Copilot is enthusiastic and will sometimes:
 
 - Add a cookie banner or Google Analytics. Do not let it. Both are on the
-  decisions list in `HANDOVER.md` and neither can go in until a privacy policy
-  exists.
+  decisions list, and neither goes in without a matching update to the
+  published privacy and cookies pages.
 - Invent a phone number, an address, or "trusted by 500 homeowners". Delete
   it. The business line is **01274 947 197** and the address is the registered
   office in the footer; anything else is made up. Airwarm has not started

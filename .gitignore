@@ -35,3 +35,8 @@ Airwarm/
 airwarm-pack/
 *.docx
 *.pdf
+
+# Downloaded archives. `.nojekyll` means anything committed here is served
+# from airwarm.co.uk as-is, so working copies must never be committed.
+# endpoint.zip is a stale download of endpoint/ — the directory is the source.
+*.zip
