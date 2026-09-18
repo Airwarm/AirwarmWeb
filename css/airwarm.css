@@ -2468,8 +2468,8 @@ body.home .aw-hero-pattern::before {
    ========================================================================== */
 @keyframes aw-emblem-breathe {
   0% { transform: translateY(-50%) rotate(0deg) scale(1); opacity:.10; }
-  50% { transform: translateY(-50%) rotate(180deg) scale(1.015); opacity:.115; }
-  100% { transform: translateY(-50%) rotate(360deg) scale(1); opacity:.10; }
+  50% { transform: translateY(-50%) rotate(-180deg) scale(1.015); opacity:.115; }
+  100% { transform: translateY(-50%) rotate(-360deg) scale(1); opacity:.10; }
 }
 @keyframes aw-tech-drift {
   0%,100% { transform: translateY(-50%) translateX(0); }
