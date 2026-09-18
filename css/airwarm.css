@@ -2034,3 +2034,7 @@ h4 > .aw-icon--lg, h5 > .aw-icon--lg, h6 > .aw-icon--lg {
     font-size: 1.2rem;
   }
 }
+
+.aw-hero h1 .aw-hero__brand-name,
+.aw-hero h1 .aw-hero__brand-line { display:block; }
+.aw-hero h1 .aw-hero__brand-name { margin-bottom:0.12em; }
