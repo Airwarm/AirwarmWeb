@@ -1926,3 +1926,54 @@ h4 > .aw-icon--lg, h5 > .aw-icon--lg, h6 > .aw-icon--lg {
   vertical-align: -0.1em;
   flex: 0 0 auto;
 }
+
+
+/* ==========================================================================
+   14. HEADER REFINEMENT — 18 Sep 2026
+   Use the transparent Hero mark in the header lockup and give the desktop
+   identity, navigation and CTA more deliberate breathing room.
+   ========================================================================== */
+@media (min-width: 1000px) {
+  .aw-header__inner {
+    gap: 32px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .aw-header .aw-wordmark {
+    gap: 14px;
+    min-width: 292px;
+  }
+  .aw-header .aw-wordmark__emblem {
+    width: 52px;
+    height: 52px;
+  }
+  .aw-header .aw-nav {
+    margin-left: 12px;
+  }
+  .aw-header .aw-nav__list {
+    justify-content: center;
+    gap: 28px;
+  }
+  .aw-header__cta {
+    margin-left: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .aw-header__inner {
+    gap: 40px;
+  }
+  .aw-header .aw-wordmark {
+    min-width: 310px;
+  }
+  .aw-header .aw-wordmark__emblem {
+    width: 56px;
+    height: 56px;
+  }
+  .aw-header .aw-nav__list {
+    gap: 32px;
+  }
+  .aw-header__cta {
+    margin-left: 24px;
+  }
+}
