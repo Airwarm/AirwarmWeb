@@ -1977,3 +1977,12 @@ h4 > .aw-icon--lg, h5 > .aw-icon--lg, h6 > .aw-icon--lg {
     margin-left: 24px;
   }
 }
+
+
+/* Header logo hotfix — use the supplied transparent PNG directly.
+   This deliberately bypasses the SVG wrapper so the browser fetches the
+   actual artwork as the rendered content of the existing header <img>. */
+.aw-header .aw-wordmark__emblem {
+  content: url("/assets/airwarm-header-logo.png");
+  object-fit: contain;
+}
