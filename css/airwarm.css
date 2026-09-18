@@ -1986,3 +1986,51 @@ h4 > .aw-icon--lg, h5 > .aw-icon--lg, h6 > .aw-icon--lg {
   content: url("/assets/airwarm-header-logo.png");
   object-fit: contain;
 }
+
+
+/* ==========================================================================
+   15. HOMEPAGE HERO BRAND REFINEMENT — 18 Sep 2026
+   Bring the opening proposition into the three-pillar Airwarm identity:
+   Engineered Design = blue, Smarter Heating = amber/orange,
+   Greener Futures = green. The heading remains real text for SEO/accessibility.
+   ========================================================================== */
+.aw-hero h1 {
+  max-width: 22ch;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+}
+.aw-hero h1 .aw-hero__brand-name {
+  color: var(--airwarm-white);
+}
+.aw-hero h1 .aw-hero__design {
+  color: var(--airwarm-blue);
+}
+.aw-hero h1 .aw-hero__heating {
+  color: var(--airwarm-orange);
+}
+.aw-hero h1 .aw-hero__futures {
+  color: var(--airwarm-green);
+}
+.aw-hero__support {
+  max-width: 60ch;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+.aw-positioning {
+  border-color: rgba(59, 169, 255, 0.5);
+  color: var(--airwarm-white);
+  background: rgba(0, 168, 255, 0.06);
+}
+@media (min-width: 768px) {
+  .aw-hero {
+    padding-top: 56px;
+    padding-bottom: 72px;
+  }
+  .aw-hero h1 {
+    font-size: clamp(2.6rem, 4.2vw, 4.25rem);
+    margin-bottom: 22px;
+  }
+  .aw-hero__support {
+    font-size: 1.2rem;
+  }
+}
