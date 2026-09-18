@@ -2038,3 +2038,37 @@ h4 > .aw-icon--lg, h5 > .aw-icon--lg, h6 > .aw-icon--lg {
 .aw-hero h1 .aw-hero__brand-name,
 .aw-hero h1 .aw-hero__brand-line { display:block; }
 .aw-hero h1 .aw-hero__brand-name { margin-bottom:0.12em; }
+
+
+/* Homepage hero watermark — 18 Sep 2026
+   Uses the approved Airwarm emblem as a quiet oversized watermark over the
+   existing navy/pattern background. Kept decorative and behind all content. */
+.aw-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.aw-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: clamp(-110px, -4vw, -40px);
+  width: clamp(420px, 48vw, 720px);
+  aspect-ratio: 1 / 1;
+  transform: translateY(-50%);
+  background: url("/assets/airwarm-header-logo.png") center / contain no-repeat;
+  opacity: 0.10;
+  pointer-events: none;
+}
+.aw-hero > .aw-wrap {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .aw-hero::after {
+    width: 520px;
+    right: -250px;
+    opacity: 0.07;
+  }
+}
