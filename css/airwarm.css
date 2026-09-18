@@ -2148,3 +2148,113 @@ h4 > .aw-icon--lg, h5 > .aw-icon--lg, h6 > .aw-icon--lg {
   flex: 0 0 42px;
   object-fit: contain;
 }
+
+
+/* ==========================================================================
+   17. PREMIUM VISUAL POLISH — 18 Sep 2026
+   A restrained finishing layer: more depth, rhythm and interaction without
+   turning the technical/credible Airwarm identity into a glossy sales site.
+   ========================================================================== */
+:root {
+  --aw-radius-sm: 10px;
+  --aw-radius-md: 16px;
+  --aw-shadow-soft: 0 12px 34px rgba(0, 21, 46, 0.08);
+  --aw-shadow-lift: 0 18px 44px rgba(0, 21, 46, 0.13);
+}
+
+/* Stronger section rhythm and subtle separation. */
+.aw-section {
+  position: relative;
+}
+.aw-section--light {
+  background:
+    linear-gradient(180deg, rgba(0, 168, 255, 0.025), transparent 180px),
+    var(--airwarm-light-bg);
+}
+main > .aw-section:not(.aw-section--navy):not(.aw-section--light) + .aw-section:not(.aw-section--navy) {
+  border-top: 1px solid rgba(0, 21, 46, 0.07);
+}
+
+/* Cards feel like designed components rather than bordered boxes. */
+.aw-card,
+.aw-evidence-slot,
+.aw-callout {
+  border-radius: var(--aw-radius-md);
+}
+.aw-card {
+  border-color: rgba(0, 21, 46, 0.11);
+  box-shadow: var(--aw-shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.aw-card--link:hover,
+.aw-card--link:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--aw-shadow-lift);
+  border-color: rgba(0, 168, 255, 0.45);
+}
+
+/* A fine brand accent gives ordinary headings a recognisable Airwarm cue. */
+.aw-section:not(.aw-section--navy) > .aw-wrap > h2::after,
+.aw-section:not(.aw-section--navy) .aw-prose > h2::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 3px;
+  margin-top: 12px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--airwarm-blue), var(--airwarm-orange), var(--airwarm-green));
+}
+
+/* Buttons: same palette, more intentional physical presence. */
+.aw-btn {
+  border-radius: var(--aw-radius-sm);
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+.aw-btn--primary {
+  box-shadow: 0 8px 20px rgba(255, 112, 0, 0.18);
+}
+.aw-btn:hover {
+  transform: translateY(-2px);
+}
+.aw-btn--primary:hover {
+  box-shadow: 0 12px 26px rgba(0, 21, 46, 0.14);
+}
+
+/* Positioning/eyebrow chips gain a quieter premium finish. */
+.aw-positioning,
+.aw-eyebrow {
+  letter-spacing: 0.045em;
+}
+.aw-positioning {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Process markers carry a little more visual hierarchy. */
+.aw-steps > li::before,
+.aw-steps > .aw-step::before {
+  box-shadow: 0 0 0 5px rgba(0, 168, 255, 0.08);
+}
+
+/* Navy panels: retain the watermark but add depth at the lower edge. */
+.aw-section--navy:not(.aw-cta-band) {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035), inset 0 -1px 0 rgba(255,255,255,0.035);
+}
+
+/* Footer: cleaner separation from the final content band. */
+.aw-footer {
+  border-top: 1px solid rgba(255,255,255,0.09);
+}
+
+/* Motion is decorative only; respect the user's OS preference. */
+@media (prefers-reduced-motion: reduce) {
+  .aw-card,
+  .aw-btn {
+    transition: none;
+  }
+  .aw-card--link:hover,
+  .aw-card--link:focus-visible,
+  .aw-btn:hover {
+    transform: none;
+  }
+}
