@@ -2258,3 +2258,41 @@ main > .aw-section:not(.aw-section--navy):not(.aw-section--light) + .aw-section:
     transform: none;
   }
 }
+
+
+/* ==========================================================================
+   18. TECHNICAL ASHP BACKDROP FOR LIGHT-GREY SECTIONS — 18 Sep 2026
+   Light sections use Airwarm's existing system-layout engineering drawing as
+   a very quiet technical backdrop. Dark navy keeps the emblem watermark;
+   white remains clean; the closing assessment CTA remains watermark-free.
+   ========================================================================== */
+.aw-section--light {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.aw-section--light::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: clamp(-170px, -7vw, -70px);
+  width: clamp(520px, 50vw, 820px);
+  aspect-ratio: 16 / 10;
+  transform: translateY(-50%);
+  background: url("../assets/diagram-system-layout.svg") center / contain no-repeat;
+  opacity: 0.045;
+  filter: saturate(0.45);
+  pointer-events: none;
+}
+.aw-section--light > .aw-wrap {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .aw-section--light::after {
+    width: 620px;
+    right: -360px;
+    opacity: 0.03;
+  }
+}
