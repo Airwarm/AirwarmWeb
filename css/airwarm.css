@@ -2318,3 +2318,52 @@ main > .aw-section--light:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(o
     linear-gradient(180deg, rgba(0, 168, 255, 0.025), transparent 180px),
     var(--airwarm-light-bg);
 }
+
+
+/* ==========================================================================
+   20. CLEAN HOMEPAGE HERO LOCKUP — 18 Sep 2026
+   Remove the generic wavy/tiled hero artwork on the homepage and present the
+   three brand pillars as a deliberate lockup rather than a sentence.
+   ========================================================================== */
+.home .aw-hero-pattern,
+body.home .aw-hero-pattern {
+  background-image: none;
+}
+.home .aw-hero-pattern::before,
+body.home .aw-hero-pattern::before {
+  content: none;
+  background: none;
+}
+.aw-hero__brand-lockup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.38em 0.55em;
+  margin-top: 0.22em;
+  font-size: clamp(0.78rem, 1.35vw, 1.15rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+.aw-hero__brand-lockup .aw-hero__design,
+.aw-hero__brand-lockup .aw-hero__heating,
+.aw-hero__brand-lockup .aw-hero__futures {
+  white-space: nowrap;
+}
+.aw-hero__lockup-sep {
+  color: rgba(255,255,255,0.48);
+  font-weight: 400;
+}
+@media (max-width: 640px) {
+  .aw-hero__brand-lockup {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.28rem;
+    margin-top: 0.45rem;
+    letter-spacing: 0.055em;
+  }
+  .aw-hero__lockup-sep {
+    display: none;
+  }
+}
