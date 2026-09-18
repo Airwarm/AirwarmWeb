@@ -2132,3 +2132,19 @@ h4 > .aw-icon--lg, h5 > .aw-icon--lg, h6 > .aw-icon--lg {
   content: none;
   background: none;
 }
+
+
+/* Footer identity — pair the AIRWARM wordmark with the approved Corporate Mark.
+   Uses the untouched source-of-truth brand asset. */
+.aw-footer .aw-wordmark {
+  align-items: center;
+  gap: 12px;
+}
+.aw-footer .aw-wordmark__emblem {
+  content: url("../assets/brand/corporate-mark.svg");
+  display: block;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  object-fit: contain;
+}
