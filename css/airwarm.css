@@ -2761,3 +2761,129 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
     opacity: 1 !important;
   }
 }
+
+
+/* ==========================================================================
+   25. TECHNICAL BEAUTY SYSTEM — 19 Sep 2026
+   Make Airwarm feel like an engineering practice: blueprint geometry,
+   precision labels and schematic framing. Decorative only; content remains
+   readable and the white bands stay deliberately quiet.
+   ========================================================================== */
+
+/* Blueprint sections: stronger technical identity, still extremely faint. */
+.aw-section--light {
+  --aw-grid-major: rgba(1,15,35,.026);
+  --aw-grid-minor: rgba(1,15,35,.012);
+  background-image:
+    linear-gradient(var(--aw-grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--aw-grid-major) 1px, transparent 1px),
+    linear-gradient(var(--aw-grid-minor) 1px, transparent 1px),
+    linear-gradient(90deg, var(--aw-grid-minor) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0,168,255,.028), transparent 210px);
+  background-size: 128px 128px,128px 128px,32px 32px,32px 32px,auto;
+}
+
+/* Precision corner marks make technical cards feel drawn, not templated. */
+.aw-section--light .aw-card,
+.aw-technical-card {
+  background:
+    linear-gradient(var(--airwarm-blue),var(--airwarm-blue)) 14px 14px/18px 1px no-repeat,
+    linear-gradient(var(--airwarm-blue),var(--airwarm-blue)) 14px 14px/1px 18px no-repeat,
+    linear-gradient(180deg,#fff,rgba(255,255,255,.94));
+}
+.aw-section--light .aw-card::after,
+.aw-technical-card::after {
+  content:"";
+  position:absolute;
+  right:14px;
+  bottom:14px;
+  width:18px;
+  height:18px;
+  border-right:1px solid rgba(0,168,255,.32);
+  border-bottom:1px solid rgba(0,168,255,.32);
+  pointer-events:none;
+}
+
+/* Diagrams get an intentional drawing-board frame. */
+.aw-diagram,
+.aw-system-diagram,
+img[src*="diagram-"] {
+  border: 1px solid rgba(1,15,35,.10);
+  border-radius: 16px;
+  background:
+    linear-gradient(rgba(1,15,35,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(1,15,35,.018) 1px,transparent 1px),
+    rgba(255,255,255,.82);
+  background-size: 24px 24px;
+  box-shadow: 0 18px 44px rgba(1,15,35,.08);
+}
+
+/* Tiny engineering datum line under technical labels. */
+.aw-eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .115em;
+}
+.aw-eyebrow::after {
+  content:"";
+  width:6px;
+  height:6px;
+  border:1px solid currentColor;
+  border-radius:50%;
+  opacity:.45;
+}
+
+/* Technical lists get a schematic node rather than a generic bullet. */
+.aw-section--light .aw-ticks > li::before {
+  width:8px;
+  height:8px;
+  top:.5em;
+  border:2px solid var(--airwarm-blue);
+  border-radius:50%;
+  background:#fff;
+}
+
+/* Flow-colour cue: a subtle hot/cool datum along technical diagram frames. */
+.aw-section--light .aw-diagram::before,
+.aw-section--light .aw-system-diagram::before {
+  content:"";
+  display:block;
+  height:3px;
+  background:linear-gradient(90deg,var(--airwarm-blue) 0 46%,transparent 46% 54%,var(--airwarm-orange) 54% 100%);
+}
+
+/* On wide screens, technical sections gain survey-style registration marks. */
+@media (min-width: 1000px) {
+  .aw-section--light > .aw-wrap::before,
+  .aw-section--light > .aw-wrap::after {
+    content:"+";
+    position:absolute;
+    font: 500 16px/1 monospace;
+    color:rgba(1,15,35,.16);
+    pointer-events:none;
+  }
+  .aw-section--light > .aw-wrap::before { left:-22px; top:-18px; }
+  .aw-section--light > .aw-wrap::after { right:-22px; bottom:-18px; }
+}
+
+/* White bands must remain the visual rest point. */
+main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
+  background-image:none;
+}
+
+/* Mobile: retain the engineering cues without making the page busy. */
+@media (max-width: 640px) {
+  .aw-section--light {
+    background-size:96px 96px,96px 96px,24px 24px,24px 24px,auto;
+  }
+  .aw-section--light .aw-card,
+  .aw-technical-card {
+    background:
+      linear-gradient(var(--airwarm-blue),var(--airwarm-blue)) 12px 12px/14px 1px no-repeat,
+      linear-gradient(var(--airwarm-blue),var(--airwarm-blue)) 12px 12px/1px 14px no-repeat,
+      linear-gradient(180deg,#fff,rgba(255,255,255,.96));
+  }
+}
