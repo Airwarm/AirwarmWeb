@@ -50,7 +50,7 @@
   <!-- One stylesheet for the whole site. Colours live at the top of it. -->
   <link rel="stylesheet" href="css/airwarm.css">
 </head>
-<body>
+<body class="aw-motion">
 
   <a class="aw-skip" href="#main">Skip to main content</a>
 
@@ -146,7 +146,7 @@
                whether the homepage needs it at all rather than restoring it
                by default. -->
           <span class="aw-positioning">Air Source Heat Pumps &bull; West Yorkshire</span>
-          <h1><span class="aw-hero__brand-name">Airwarm</span><span class="aw-hero__brand-lockup" aria-label="Engineered design, smarter heating, greener futures."><span class="aw-hero__design">ENGINEERED DESIGN</span><span class="aw-hero__lockup-sep" aria-hidden="true">|</span><span class="aw-hero__heating">SMARTER HEATING</span><span class="aw-hero__lockup-sep" aria-hidden="true">|</span><span class="aw-hero__futures">GREENER FUTURES</span></span></h1>
+          <h1><span class="aw-hero__brand-name">Airwarm</span><span class="aw-hero__brand-lockup" aria-label="Engineered design, smarter heating, greener futures."><span class="aw-hero__design aw-brand-reveal aw-brand-reveal--1">ENGINEERED DESIGN</span><span class="aw-hero__lockup-sep aw-brand-reveal aw-brand-reveal--2" aria-hidden="true">|</span><span class="aw-hero__heating aw-brand-reveal aw-brand-reveal--2">SMARTER HEATING</span><span class="aw-hero__lockup-sep aw-brand-reveal aw-brand-reveal--3" aria-hidden="true">|</span><span class="aw-hero__futures aw-brand-reveal aw-brand-reveal--3">GREENER FUTURES</span></span></h1>
           <p class="aw-hero__support">
             Air source heat pumps designed properly for your home, installed
             with care and supported for the long term.
@@ -178,7 +178,7 @@
            rather than pulled from /assets/icons.svg because the accent colour
            is part of the brand rule for this section.
            ------------------------------------------------------------- -->
-      <section class="aw-section">
+      <section class="aw-section aw-reveal">
         <div class="aw-wrap">
           <!-- THE THREE BRAND PILLARS. Same words, same order and same colours
                as the tagline in the header: ENGINEERED DESIGN blue, SMARTER
@@ -224,7 +224,7 @@
       <!-- 4. SUITABILITY-FIRST MESSAGE
            The opening paragraph is the approved suitability wording from the
            brand pack. Do not paraphrase it. -->
-      <section class="aw-section aw-section--light">
+      <section class="aw-section aw-section--light aw-reveal">
         <div class="aw-wrap aw-split">
           <div class="aw-prose">
             <span class="aw-eyebrow">Suitability first</span>
@@ -304,7 +304,7 @@
 
       <!-- 6. HOW AIRWARM WORKS — the eight-step sequence, summarised.
            The full version lives on /how-it-works/. Keep the two in step. -->
-      <section class="aw-section aw-section--navy">
+      <section class="aw-section aw-section--navy aw-reveal">
         <div class="aw-wrap">
           <span class="aw-eyebrow">The process</span>
           <h2>How Airwarm works</h2>
@@ -317,7 +317,7 @@
                not yet filled anything in does not need the whole project plan
                in front of them; the eight-stage version lives on /how-it-works/
                and is linked below. Do not paste the diagram back in here. -->
-          <ol class="aw-steps" style="margin-top:40px">
+          <ol class="aw-steps aw-journey" style="margin-top:40px">
             <li class="aw-step"><h3 class="aw-step__title">Check your home</h3><p>A few minutes online, in your own time.</p></li>
             <li class="aw-step"><h3 class="aw-step__title">We review it</h3><p>If you choose to send us your answers, a person reads them alongside what is on record for the property.</p></li>
             <li class="aw-step"><h3 class="aw-step__title">You decide</h3><p>You get our findings in writing &mdash; what we found, what we assumed, and whether a survey is worth doing. No call to sit through.</p></li>
@@ -612,5 +612,6 @@
   </footer>
   <!-- /FOOTER -->
 
+  <script src="js/motion.js" defer></script>
 </body>
 </html>
