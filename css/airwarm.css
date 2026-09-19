@@ -2887,3 +2887,74 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
       linear-gradient(180deg,#fff,rgba(255,255,255,.96));
   }
 }
+
+
+/* ==========================================================================
+   26. CUSTOMER-JOURNEY FINISH — 19 Sep 2026
+   Final hierarchy pass: cleaner header spacing, stronger hero focus and less
+   visual competition around the principal assessment CTA.
+   ========================================================================== */
+.aw-header__inner { column-gap: clamp(18px, 2.2vw, 34px); }
+.aw-nav__list { align-items: center; }
+.aw-header__cta .aw-btn { white-space: nowrap; }
+
+@media (min-width: 1000px) {
+  .aw-header__inner { gap: clamp(16px, 1.8vw, 28px); }
+  .aw-nav { margin-left: 0; }
+  .aw-nav__list { justify-content: center; gap: 8px clamp(14px, 1.45vw, 24px); }
+  .aw-header__cta { margin-left: 0; }
+}
+
+.aw-hero {
+  padding-block: clamp(64px, 8vw, 112px);
+}
+.aw-hero .aw-wrap {
+  max-width: 1180px;
+}
+.aw-hero h1 {
+  max-width: 17ch;
+  text-wrap: balance;
+}
+.aw-hero__support {
+  max-width: 52ch;
+}
+.aw-hero__launch {
+  margin-top: 30px;
+}
+.aw-hero .aw-btn-row {
+  gap: 14px;
+}
+
+/* Keep the primary conversion action dominant. */
+.aw-hero .aw-btn--primary {
+  padding-inline: 28px;
+}
+.aw-hero .aw-btn--secondary {
+  opacity: .92;
+}
+
+/* Reduce visual noise in long customer pages: cards remain technical but
+   decorative geometry is reserved for light technical bands. */
+.aw-section:not(.aw-section--light) .aw-card {
+  box-shadow: none;
+}
+
+@media (max-width: 767px) {
+  .aw-header__inner { row-gap: 12px; }
+  .aw-nav { order: 3; }
+  .aw-nav__list {
+    justify-content: center;
+    gap: 0 18px;
+  }
+  .aw-nav__list a { padding-block: 8px; }
+  .aw-header__cta { margin-top: 2px; }
+  .aw-header__cta .aw-btn {
+    width: min(100%, 320px);
+  }
+  .aw-hero {
+    padding-block: 56px 64px;
+  }
+  .aw-hero .aw-btn-row .aw-btn {
+    width: 100%;
+  }
+}
