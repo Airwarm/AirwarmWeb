@@ -2567,3 +2567,100 @@ body.home .aw-hero-pattern::before {
     display:none;
   }
 }
+
+
+/* ==========================================================================
+   23. SITE-WIDE SPACING & COMPOSITION FINISH — 19 Sep 2026
+   Final visual rhythm pass. Creates consistent vertical cadence across every
+   page and gives the design more editorial composition without adding clutter.
+   ========================================================================== */
+:root {
+  --aw-section-mobile: 52px;
+  --aw-section-desktop: 88px;
+  --aw-content-gap: 26px;
+}
+
+/* Consistent page rhythm. */
+.aw-section { padding-block: var(--aw-section-mobile); }
+.aw-section--tight { padding-block: 38px; }
+.aw-section > .aw-wrap > :first-child { margin-top: 0; }
+.aw-section > .aw-wrap > :last-child { margin-bottom: 0; }
+
+/* Headings and their supporting copy behave as a single composition. */
+.aw-section h2 { line-height: 1.16; letter-spacing: -.018em; }
+.aw-section h3 { line-height: 1.25; }
+.aw-section > .aw-wrap > h2 + p,
+.aw-section > .aw-wrap > h2 + .aw-lead,
+.aw-section > .aw-wrap > h2 + .aw-measure { margin-top: 18px; }
+.aw-section > .aw-wrap > .aw-grid,
+.aw-section > .aw-wrap > .aw-split,
+.aw-section > .aw-wrap > .aw-steps,
+.aw-section > .aw-wrap > .aw-faq,
+.aw-section > .aw-wrap > .aw-card-grid { margin-top: var(--aw-content-gap); }
+
+/* A touch more air around readable prose, but never huge empty gaps. */
+.aw-prose > h2:not(:first-child) { margin-top: 2.25em; }
+.aw-prose > h3:not(:first-child) { margin-top: 1.7em; }
+.aw-prose > p + p { margin-top: 4px; }
+
+/* Premium grid alignment: cards in a row finish at the same visual height. */
+.aw-grid > .aw-card,
+.aw-card-grid > .aw-card { height: 100%; }
+.aw-card { padding: 24px; }
+.aw-card h3, .aw-card__title { text-wrap: balance; }
+.aw-card p:last-child { margin-bottom: 0; }
+
+/* Brand-colour accent becomes a finer precision line rather than decoration. */
+.aw-section:not(.aw-section--navy) > .aw-wrap > h2::after,
+.aw-section:not(.aw-section--navy) .aw-prose > h2::after {
+  width: 64px;
+  height: 2px;
+  margin-top: 14px;
+}
+
+/* Split layouts feel intentionally asymmetric on wide screens. */
+@media (min-width: 900px) {
+  .aw-split {
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+    gap: clamp(44px, 6vw, 84px);
+    align-items: start;
+  }
+}
+
+/* Hero composition gets more breathing room without becoming oversized. */
+.aw-hero .aw-wrap { position: relative; }
+.aw-hero__support { max-width: 58ch; }
+.aw-hero .aw-actions,
+.aw-hero .aw-btn-row { margin-top: 28px; }
+
+/* Navigation gains a subtle premium glass effect once it becomes sticky. */
+@media (min-width: 1200px) {
+  .aw-header {
+    background: rgba(1,15,35,.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 30px rgba(0,15,35,.12);
+  }
+}
+
+/* Desktop spacing — deliberately one cadence across the entire site. */
+@media (min-width: 768px) {
+  .aw-section { padding-block: var(--aw-section-desktop); }
+  .aw-section--tight { padding-block: 58px; }
+  .aw-grid { gap: 28px; }
+  .aw-card { padding: 30px; }
+}
+
+/* Small phones: preserve polish without wasting vertical space. */
+@media (max-width: 480px) {
+  .aw-wrap { padding-inline: 20px; }
+  .aw-section { padding-block: 46px; }
+  .aw-section--tight { padding-block: 34px; }
+  .aw-card { padding: 21px; }
+  .aw-grid { gap: 18px; }
+  .aw-section > .aw-wrap > .aw-grid,
+  .aw-section > .aw-wrap > .aw-split,
+  .aw-section > .aw-wrap > .aw-steps,
+  .aw-section > .aw-wrap > .aw-faq,
+  .aw-section > .aw-wrap > .aw-card-grid { margin-top: 22px; }
+}
