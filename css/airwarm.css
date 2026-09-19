@@ -2696,27 +2696,8 @@ body.home .aw-hero-pattern::before {
   }
 }
 
-/* Large step numbers become part of the composition, not just bullets. */
-.aw-steps { counter-reset: aw-step-counter; }
-.aw-step {
-  counter-increment: aw-step-counter;
-  position: relative;
-}
-.aw-step::after {
-  content: counter(aw-step-counter, decimal-leading-zero);
-  position: absolute;
-  right: 12px;
-  top: -16px;
-  z-index: 0;
-  font-size: clamp(3.4rem, 7vw, 5.8rem);
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: -.06em;
-  color: rgba(1,15,35,.045);
-  pointer-events: none;
-}
-.aw-section--navy .aw-step::after { color: rgba(255,255,255,.055); }
-.aw-step > * { position: relative; z-index: 1; }
+/* Process steps deliberately keep the original compact numbered markers.
+   The oversized ghost-number experiment was removed after visual review. */
 
 /* Cards get more architectural depth on capable pointing devices. */
 @media (hover:hover) and (pointer:fine) {
