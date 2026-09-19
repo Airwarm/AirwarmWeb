@@ -2958,3 +2958,96 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
     width: 100%;
   }
 }
+
+
+/* ==========================================================================
+   27. AIRWARM MOTION SYSTEM — premium, restrained, accessible
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .aw-motion .aw-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 560ms cubic-bezier(.22,.61,.36,1),
+                transform 560ms cubic-bezier(.22,.61,.36,1);
+  }
+  .aw-motion .aw-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .aw-brand-reveal {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: awBrandIn 700ms cubic-bezier(.22,.61,.36,1) forwards;
+  }
+  .aw-brand-reveal--1 { animation-delay: 180ms; }
+  .aw-brand-reveal--2 { animation-delay: 330ms; }
+  .aw-brand-reveal--3 { animation-delay: 480ms; }
+
+  @keyframes awBrandIn {
+    to { opacity: 1; transform: none; }
+  }
+
+  .aw-card,
+  .aw-btn {
+    transition: transform 180ms ease, box-shadow 180ms ease,
+                border-color 180ms ease, background-color 180ms ease;
+  }
+  a.aw-card:hover,
+  a.aw-card:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(1,15,35,.09);
+  }
+  .aw-btn:hover,
+  .aw-btn:focus-visible { transform: translateY(-2px); }
+
+  .aw-header {
+    transition: box-shadow 220ms ease, background-color 220ms ease;
+  }
+  .aw-header.is-scrolled {
+    box-shadow: 0 8px 26px rgba(1,15,35,.18);
+  }
+
+  .aw-journey {
+    position: relative;
+  }
+  .aw-journey::before {
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 28px;
+    bottom: 28px;
+    width: 2px;
+    background: rgba(255,255,255,.18);
+    transform-origin: top;
+  }
+  .aw-journey::after {
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 28px;
+    bottom: 28px;
+    width: 2px;
+    background: var(--airwarm-blue);
+    transform: scaleY(var(--aw-journey-progress, 0));
+    transform-origin: top;
+    transition: transform 80ms linear;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aw-motion .aw-reveal,
+  .aw-brand-reveal { opacity: 1; transform: none; animation: none; }
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .aw-header.is-scrolled .aw-header__inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .aw-header__inner {
+    transition: padding 220ms ease;
+  }
+}
