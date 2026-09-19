@@ -2664,3 +2664,119 @@ body.home .aw-hero-pattern::before {
   .aw-section > .aw-wrap > .aw-faq,
   .aw-section > .aw-wrap > .aw-card-grid { margin-top: 22px; }
 }
+
+
+/* ==========================================================================
+   24. COMPOSITION / SCROLL POLISH — 19 Sep 2026
+   Progressive enhancement only. Adds depth as sections enter the viewport in
+   browsers supporting scroll-driven animation; unsupported browsers simply
+   receive the fully visible static design.
+   ========================================================================== */
+@keyframes aw-section-reveal {
+  from { opacity: .35; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes aw-card-reveal {
+  from { opacity: .25; transform: translateY(18px) scale(.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@supports (animation-timeline: view()) {
+  main > .aw-section:not(.aw-hero) > .aw-wrap > :is(.aw-eyebrow,h2,.aw-lede,.aw-lead,.aw-measure) {
+    animation: aw-section-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 25%;
+  }
+  main .aw-card,
+  main .aw-step,
+  main .aw-faq__item {
+    animation: aw-card-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 3% cover 22%;
+  }
+}
+
+/* Large step numbers become part of the composition, not just bullets. */
+.aw-steps { counter-reset: aw-step-counter; }
+.aw-step {
+  counter-increment: aw-step-counter;
+  position: relative;
+}
+.aw-step::after {
+  content: counter(aw-step-counter, decimal-leading-zero);
+  position: absolute;
+  right: 12px;
+  top: -16px;
+  z-index: 0;
+  font-size: clamp(3.4rem, 7vw, 5.8rem);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -.06em;
+  color: rgba(1,15,35,.045);
+  pointer-events: none;
+}
+.aw-section--navy .aw-step::after { color: rgba(255,255,255,.055); }
+.aw-step > * { position: relative; z-index: 1; }
+
+/* Cards get more architectural depth on capable pointing devices. */
+@media (hover:hover) and (pointer:fine) {
+  .aw-card--link:hover {
+    transform: translateY(-7px) scale(1.008);
+    box-shadow: 0 24px 54px rgba(0,21,46,.15);
+  }
+}
+
+/* Eyebrows read like deliberate technical labels. */
+.aw-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.aw-eyebrow::before {
+  content:"";
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: .55;
+}
+
+/* Light technical sections gain a subtle blueprint grid beneath the existing
+   ASHP artwork; white sections remain completely clean. */
+.aw-section--light {
+  background-image:
+    linear-gradient(rgba(1,15,35,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1,15,35,.018) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0,168,255,.025), transparent 180px);
+  background-size: 32px 32px, 32px 32px, auto;
+}
+
+/* Preserve the intentional white alternating bands from pass 19. */
+main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
+  background-image: none;
+}
+
+/* CTA gets a stronger focal composition while remaining deliberately free of
+   the emblem watermark requested to be excluded here. */
+.aw-cta-band .aw-wrap {
+  max-width: 900px;
+  text-align: center;
+}
+.aw-cta-band .aw-hero__support {
+  margin-inline: auto;
+}
+.aw-cta-band .aw-btn-row {
+  justify-content: center;
+}
+
+/* Accessibility: all viewport and interaction motion disappears cleanly. */
+@media (prefers-reduced-motion: reduce) {
+  main > .aw-section:not(.aw-hero) > .aw-wrap > :is(.aw-eyebrow,h2,.aw-lede,.aw-lead,.aw-measure),
+  main .aw-card,
+  main .aw-step,
+  main .aw-faq__item {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
