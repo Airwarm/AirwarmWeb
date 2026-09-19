@@ -116,6 +116,36 @@
 
     /* Extra styles for this diagram only. */
     .d-hatch { stroke: #65717C; stroke-width: 1.5; opacity: 0.5; }
+
+    /* Quiet system-flow animation. The base flow/return lines stay visible;
+       a short highlight travels along them to show circulation. */
+    .d-flow-motion {
+      fill: none;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 18 760;
+      pointer-events: none;
+      opacity: .9;
+    }
+    .d-flow-motion--hot {
+      stroke: #F76201;
+      animation: aw-flow-hot 5.5s linear infinite;
+    }
+    .d-flow-motion--cool {
+      stroke: #017FE1;
+      animation: aw-flow-cool 5.5s linear infinite;
+    }
+    @keyframes aw-flow-hot {
+      from { stroke-dashoffset: 0; }
+      to   { stroke-dashoffset: -778; }
+    }
+    @keyframes aw-flow-cool {
+      from { stroke-dashoffset: -778; }
+      to   { stroke-dashoffset: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .d-flow-motion--hot, .d-flow-motion--cool { animation: none; opacity: 0; }
+    }
   </style>
 
   <defs>
@@ -178,6 +208,8 @@
   <!-- Flow (warmer) out to the house, and return (cooler) back again. -->
   <path class="d-line d-hot"  d="M155 284 H250 V204 H596"/>
   <path class="d-line d-cool" d="M596 216 H250 V296 H155"/>
+  <path class="d-flow-motion d-flow-motion--hot" d="M155 284 H250 V204 H596"/>
+  <path class="d-flow-motion d-flow-motion--cool" d="M596 216 H250 V296 H155"/>
   <circle class="d-fill-navy" cx="206" cy="248" r="13"/>
   <text class="d-num" x="206" y="253" text-anchor="middle">2</text>
 
