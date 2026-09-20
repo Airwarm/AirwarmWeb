@@ -3136,7 +3136,7 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
    ========================================================================== */
 @keyframes aw-hero-clockwise {
   from { transform: translateY(-50%) rotate(0deg); }
-  to   { transform: translateY(-50%) rotate(360deg); }
+  to   { transform: translateY(-50%) rotate(-360deg); }
 }
 .aw-hero::after {
   animation: aw-hero-clockwise 60s linear infinite;
