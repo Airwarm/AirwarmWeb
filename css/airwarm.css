@@ -3088,8 +3088,20 @@ body::after {
 @media (max-width: 767px) {
   body::before,
   body::after {
-    height: 84px;
-    opacity: .035;
+    height: clamp(110px, 16vh, 145px);
+    opacity: .085;
+  }
+  body::before {
+    background: linear-gradient(to bottom,
+      rgba(0, 132, 255, .98) 0%,
+      rgba(0, 132, 255, .42) 48%,
+      rgba(0, 132, 255, 0) 100%);
+  }
+  body::after {
+    background: linear-gradient(to top,
+      rgba(232, 92, 38, .98) 0%,
+      rgba(242, 155, 43, .42) 48%,
+      rgba(242, 155, 43, 0) 100%);
   }
 }
 
