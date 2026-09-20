@@ -3051,3 +3051,54 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
     transition: padding 220ms ease;
   }
 }
+
+
+/* ==========================================================================
+   28. AMBIENT THERMAL EDGE GLOW
+   Brand atmosphere only: cool air above, warmth below. Fixed to the viewport,
+   non-interactive and deliberately faint so content remains dominant.
+   ========================================================================== */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 9998;
+  left: 0;
+  width: 100%;
+  height: clamp(90px, 13vh, 160px);
+  pointer-events: none;
+  opacity: .055;
+  will-change: opacity;
+}
+body::before {
+  top: 0;
+  background: linear-gradient(to bottom,
+    rgba(0, 132, 255, .95) 0%,
+    rgba(0, 132, 255, .38) 42%,
+    rgba(0, 132, 255, 0) 100%);
+}
+body::after {
+  bottom: 0;
+  background: linear-gradient(to top,
+    rgba(232, 92, 38, .95) 0%,
+    rgba(242, 155, 43, .36) 45%,
+    rgba(242, 155, 43, 0) 100%);
+}
+
+@media (max-width: 767px) {
+  body::before,
+  body::after {
+    height: 84px;
+    opacity: .035;
+  }
+}
+
+@media (prefers-contrast: more) {
+  body::before,
+  body::after { display: none; }
+}
+
+@media print {
+  body::before,
+  body::after { display: none; }
+}
