@@ -206,10 +206,10 @@
 
   <!-- ======================= 2. PIPES THROUGH THE WALL ================== -->
   <!-- Flow (warmer) out to the house, and return (cooler) back again. -->
-  <path class="d-line d-cool" d="M155 284 H250 V204 H596"/>
-  <path class="d-line d-hot"  d="M596 216 H250 V296 H155"/>
-  <path class="d-flow-motion d-flow-motion--cool" d="M155 284 H250 V204 H596"/>
-  <path class="d-flow-motion d-flow-motion--hot" d="M596 216 H250 V296 H155"/>
+  <path class="d-line d-hot"  d="M155 284 H250 V204 H596"/>
+  <path class="d-line d-cool" d="M596 216 H250 V296 H155"/>
+  <path class="d-flow-motion d-flow-motion--hot" d="M155 284 H250 V204 H596"/>
+  <path class="d-flow-motion d-flow-motion--cool" d="M596 216 H250 V296 H155"/>
   <circle class="d-fill-navy" cx="206" cy="248" r="13"/>
   <text class="d-num" x="206" y="253" text-anchor="middle">2</text>
 
