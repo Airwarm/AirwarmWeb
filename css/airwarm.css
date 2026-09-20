@@ -3175,3 +3175,63 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
     animation: none !important;
   }
 }
+
+
+/* How It Works — scan-first process table with optional depth */
+.aw-process-output { margin: 0; }
+.aw-process-detail {
+  margin-top: 12px;
+  border-top: 1px solid rgba(1,15,35,.10);
+  padding-top: 10px;
+}
+.aw-process-detail summary {
+  cursor: pointer;
+  color: var(--airwarm-blue);
+  font-weight: 700;
+  list-style-position: outside;
+  width: fit-content;
+}
+.aw-process-detail summary:hover { text-decoration: underline; }
+.aw-process-detail summary:focus-visible {
+  outline: 3px solid var(--airwarm-blue);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+.aw-process-detail__body {
+  padding: 14px 0 4px;
+  max-width: 68ch;
+}
+.aw-process-detail__body > :first-child { margin-top: 0; }
+.aw-process-detail__body > :last-child { margin-bottom: 0; }
+
+@media (max-width: 700px) {
+  .aw-process-table,
+  .aw-process-table tbody,
+  .aw-process-table tr,
+  .aw-process-table th,
+  .aw-process-table td {
+    display: block;
+    width: 100%;
+  }
+  .aw-process-table thead { display: none; }
+  .aw-process-table-wrap {
+    overflow: visible;
+    border: 0;
+  }
+  .aw-process-table .aw-process-row {
+    margin-bottom: 16px;
+    border: 1px solid rgba(1,15,35,.12);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--airwarm-white);
+  }
+  .aw-process-table .aw-process-row th {
+    padding: 16px 18px 8px;
+    border: 0;
+    font-size: 1rem;
+  }
+  .aw-process-table .aw-process-row td {
+    padding: 4px 18px 16px;
+    border: 0;
+  }
+}
