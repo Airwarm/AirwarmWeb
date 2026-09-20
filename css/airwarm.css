@@ -3354,9 +3354,9 @@ details[open] > summary { color: var(--airwarm-blue); }
 .aw-outcome__head { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
 .aw-outcome__head h3 { margin:0; font-size:1.15rem; }
 .aw-outcome__dot { width:10px; height:10px; border-radius:50%; flex:0 0 10px; }
-.aw-outcome--likely .aw-outcome__dot { background:#66a61e; }
+.aw-outcome--likely .aw-outcome__dot { background:var(--airwarm-green); }
 .aw-outcome--review .aw-outcome__dot { background:var(--airwarm-blue); }
-.aw-outcome--unlikely .aw-outcome__dot { background:#f47a20; }
+.aw-outcome--unlikely .aw-outcome__dot { background:var(--airwarm-orange); }
 .aw-outcome__next { margin-top:18px; padding-top:16px; border-top:1px solid rgba(1,15,35,.10); }
 @media (max-width:800px) {
   .aw-outcomes { grid-template-columns:1fr; gap:14px; }
