@@ -3363,3 +3363,42 @@ details[open] > summary { color: var(--airwarm-blue); }
   .aw-outcome { padding:20px; border-radius:12px; }
   .aw-outcome p { font-size:1rem; line-height:1.6; }
 }
+
+
+/* Decorative ASHP watermark for selected pale sections.
+   Uses Airwarm's own system illustration rather than a stock/manufacturer image. */
+.aw-section--light {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.aw-section--light::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(520px, 42vw);
+  aspect-ratio: 1.14;
+  right: clamp(-130px, -5vw, -50px);
+  bottom: -90px;
+  background: url("../assets/diagram-system-layout.svg") center / contain no-repeat;
+  opacity: .045;
+  filter: grayscale(1);
+  pointer-events: none;
+}
+.aw-section--light:nth-of-type(even)::after {
+  right: auto;
+  left: clamp(-150px, -6vw, -60px);
+  transform: scaleX(-1);
+}
+@media (max-width: 700px) {
+  .aw-section--light::after {
+    width: 360px;
+    right: -165px;
+    bottom: -55px;
+    opacity: .035;
+  }
+  .aw-section--light:nth-of-type(even)::after {
+    left: -180px;
+    right: auto;
+  }
+}
