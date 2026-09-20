@@ -3346,3 +3346,20 @@ details[open] > summary { color: var(--airwarm-blue); }
   .aw-card--link::after,
   details > summary { transition: none; }
 }
+
+
+/* Assessment outcomes — card layout replaces cramped three-column mobile table */
+.aw-outcomes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.aw-outcome { background:#fff; border:1px solid rgba(1,15,35,.12); border-radius:16px; padding:24px; box-shadow:0 10px 30px rgba(1,15,35,.045); }
+.aw-outcome__head { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.aw-outcome__head h3 { margin:0; font-size:1.15rem; }
+.aw-outcome__dot { width:10px; height:10px; border-radius:50%; flex:0 0 10px; }
+.aw-outcome--likely .aw-outcome__dot { background:#66a61e; }
+.aw-outcome--review .aw-outcome__dot { background:var(--airwarm-blue); }
+.aw-outcome--unlikely .aw-outcome__dot { background:#f47a20; }
+.aw-outcome__next { margin-top:18px; padding-top:16px; border-top:1px solid rgba(1,15,35,.10); }
+@media (max-width:800px) {
+  .aw-outcomes { grid-template-columns:1fr; gap:14px; }
+  .aw-outcome { padding:20px; border-radius:12px; }
+  .aw-outcome p { font-size:1rem; line-height:1.6; }
+}
