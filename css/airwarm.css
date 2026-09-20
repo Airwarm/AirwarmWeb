@@ -3129,3 +3129,49 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
     opacity: .075;
   }
 }
+
+
+/* ==========================================================================
+   29. MOTION / TECHNICAL WATERMARK REFINEMENT — 20 Sep 2026
+   ========================================================================== */
+@keyframes aw-hero-clockwise {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to   { transform: translateY(-50%) rotate(360deg); }
+}
+.aw-hero::after {
+  animation: aw-hero-clockwise 60s linear infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+/* Grey engineering bands use the refrigeration-cycle drawing rather than the
+   broader house/system illustration. It travels gently in toward the content
+   and back, remaining a watermark rather than a competing diagram. */
+@keyframes aw-technical-watermark-in {
+  0%, 100% { transform: translateY(-50%) translateX(34px); }
+  50%      { transform: translateY(-50%) translateX(-54px); }
+}
+.aw-section--light::after {
+  right: clamp(-130px, -5vw, -50px);
+  width: clamp(500px, 46vw, 760px);
+  aspect-ratio: 16 / 11;
+  background: url("../assets/diagram-how-it-works.svg") center / contain no-repeat;
+  opacity: .055;
+  filter: grayscale(1) saturate(0) contrast(.85);
+  animation: aw-technical-watermark-in 32s ease-in-out infinite;
+  will-change: transform;
+}
+@media (max-width: 767px) {
+  .aw-section--light::after {
+    width: 560px;
+    right: -300px;
+    opacity: .038;
+    animation-duration: 38s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aw-hero::after,
+  .aw-section--light::after {
+    animation: none !important;
+  }
+}
