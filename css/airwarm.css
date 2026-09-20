@@ -3055,3 +3055,59 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
 
 
 
+
+
+/* ==========================================================================
+   28. HERO / CTA REFINEMENT — 20 Sep 2026
+   Primary actions use Airwarm blue. Hero drops the generic tiled wave pattern
+   and uses restrained engineering datum geometry instead.
+   ========================================================================== */
+.aw-btn--primary {
+  background: var(--airwarm-blue);
+  border-color: var(--airwarm-blue);
+  color: var(--airwarm-navy);
+  box-shadow: 0 8px 20px rgba(0, 168, 255, .18);
+}
+.aw-btn--primary:hover,
+.aw-btn--primary:focus-visible {
+  background: var(--airwarm-white);
+  border-color: var(--airwarm-white);
+  color: var(--airwarm-navy);
+}
+
+/* Remove the legacy repeating wave/tile on every hero. */
+.aw-hero-pattern {
+  background-color: var(--airwarm-navy);
+  background-image: none;
+}
+
+/* Hero background: a quiet technical field, deliberately asymmetric.
+   No repeating pattern, no waves, no fake photography. */
+.aw-hero {
+  background-color: var(--airwarm-navy);
+  background-image:
+    linear-gradient(90deg, transparent 0 72%, rgba(0,168,255,.08) 72% 72.12%, transparent 72.12%),
+    linear-gradient(0deg, transparent 0 67%, rgba(255,255,255,.055) 67% 67.12%, transparent 67.12%),
+    radial-gradient(circle at 78% 42%, rgba(0,168,255,.10) 0 2px, transparent 3px),
+    radial-gradient(circle at 78% 42%, transparent 0 76px, rgba(0,168,255,.08) 77px 78px, transparent 79px),
+    radial-gradient(circle at 78% 42%, transparent 0 150px, rgba(255,255,255,.045) 151px 152px, transparent 153px);
+}
+
+/* Keep the approved emblem watermark, but make it static and quieter so the
+   geometry reads as engineering detail rather than decoration. */
+.aw-hero::after {
+  animation: none;
+  opacity: .055;
+}
+
+@media (max-width: 767px) {
+  .aw-hero {
+    background-image:
+      linear-gradient(90deg, transparent 0 84%, rgba(0,168,255,.07) 84% 84.18%, transparent 84.18%),
+      radial-gradient(circle at 91% 36%, rgba(0,168,255,.09) 0 2px, transparent 3px),
+      radial-gradient(circle at 91% 36%, transparent 0 72px, rgba(0,168,255,.07) 73px 74px, transparent 75px);
+  }
+  .aw-hero::after {
+    opacity: .04;
+  }
+}
