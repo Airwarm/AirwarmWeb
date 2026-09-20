@@ -3376,13 +3376,13 @@ details[open] > summary { color: var(--airwarm-blue); }
   content: "";
   position: absolute;
   z-index: -1;
-  width: min(520px, 42vw);
-  aspect-ratio: 1.14;
-  right: clamp(-130px, -5vw, -50px);
-  bottom: -90px;
-  background: url("../assets/diagram-system-layout.svg") center / contain no-repeat;
-  opacity: .045;
-  filter: grayscale(1);
+  width: min(680px, 48vw);
+  aspect-ratio: 1.5;
+  right: clamp(-150px, -5vw, -50px);
+  bottom: -70px;
+  background: url("https://images.pexels.com/photos/38067300/pexels-photo-38067300/free-photo-of-modern-heat-pump-in-residential-setting.jpeg?auto=compress&dpr=1&h=750&w=1260") center / cover no-repeat;
+  opacity: .075;
+  filter: saturate(.65) contrast(.92);
   pointer-events: none;
 }
 .aw-section--light:nth-of-type(even)::after {
@@ -3392,10 +3392,10 @@ details[open] > summary { color: var(--airwarm-blue); }
 }
 @media (max-width: 700px) {
   .aw-section--light::after {
-    width: 360px;
-    right: -165px;
-    bottom: -55px;
-    opacity: .035;
+    width: 430px;
+    right: -205px;
+    bottom: -45px;
+    opacity: .055;
   }
   .aw-section--light:nth-of-type(even)::after {
     left: -180px;
