@@ -3140,7 +3140,7 @@ body::after {
   .aw-thermal-glow {
     display: block;
     height: 165px;
-    opacity: .05;
+    opacity: .02;
   }
 }
 @media (prefers-contrast: more), print {
