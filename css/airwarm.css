@@ -3408,3 +3408,47 @@ details[open] > summary { color: var(--airwarm-blue); }
   position: relative;
   z-index: 1;
 }
+
+
+/* Stock-photo section treatment — explicit overlay so it remains visible above
+   the section fill and below all content. */
+.aw-section--light {
+  background-color: var(--aw-light, #F4F7F9);
+}
+.aw-section--light::after {
+  z-index: 0 !important;
+  width: min(760px, 55vw) !important;
+  right: -80px !important;
+  bottom: 0 !important;
+  opacity: .22 !important;
+  background-image:
+    linear-gradient(90deg, rgba(244,247,249,1) 0%, rgba(244,247,249,.72) 32%, rgba(244,247,249,.10) 78%),
+    url("https://images.pexels.com/photos/38067300/pexels-photo-38067300.jpeg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  filter: saturate(.72) contrast(.95) !important;
+}
+.aw-section--light:nth-of-type(even)::after {
+  left: -80px !important;
+  right: auto !important;
+  transform: scaleX(-1);
+}
+.aw-section--light > * {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width:700px) {
+  .aw-section--light::after {
+    width: 76vw !important;
+    right: -28vw !important;
+    bottom: 0 !important;
+    opacity: .18 !important;
+    background-image:
+      linear-gradient(90deg, rgba(244,247,249,1) 0%, rgba(244,247,249,.76) 35%, rgba(244,247,249,.14) 82%),
+      url("https://images.pexels.com/photos/38067300/pexels-photo-38067300.jpeg") !important;
+  }
+  .aw-section--light:nth-of-type(even)::after {
+    left: -30vw !important;
+    right: auto !important;
+  }
+}
