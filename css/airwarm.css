@@ -3097,7 +3097,7 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
    geometry reads as engineering detail rather than decoration. */
 .aw-hero::after {
   animation: none;
-  opacity: .055;
+  opacity: .085;
 }
 
 @media (max-width: 767px) {
@@ -3126,7 +3126,7 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
 }
 @media (max-width: 767px) {
   .aw-hero::after {
-    opacity: .075;
+    opacity: .11;
   }
 }
 
@@ -3366,7 +3366,7 @@ details[open] > summary { color: var(--airwarm-blue); }
 
 
 /* Decorative ASHP watermark for selected pale sections.
-   Uses Airwarm's own system illustration rather than a stock/manufacturer image. */
+   Uses restrained stock photography to add depth without competing with content. */
 .aw-section--light {
   position: relative;
   isolation: isolate;
@@ -3375,7 +3375,7 @@ details[open] > summary { color: var(--airwarm-blue); }
 .aw-section--light::after {
   content: "";
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   width: min(680px, 48vw);
   aspect-ratio: 1.5;
   right: clamp(-150px, -5vw, -50px);
@@ -3401,4 +3401,10 @@ details[open] > summary { color: var(--airwarm-blue); }
     left: -180px;
     right: auto;
   }
+}
+
+.aw-section--light > .aw-wrap,
+.aw-section--light > .aw-container {
+  position: relative;
+  z-index: 1;
 }
