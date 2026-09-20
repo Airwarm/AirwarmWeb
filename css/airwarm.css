@@ -3111,3 +3111,21 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
     opacity: .04;
   }
 }
+
+
+/* Hero/CTA tuning — 20 Sep 2026 */
+.aw-btn--primary {
+  color: var(--airwarm-white);
+}
+.aw-btn--primary:hover,
+.aw-btn--primary:focus-visible {
+  color: var(--airwarm-navy);
+}
+.aw-hero::after {
+  opacity: .10;
+}
+@media (max-width: 767px) {
+  .aw-hero::after {
+    opacity: .075;
+  }
+}
