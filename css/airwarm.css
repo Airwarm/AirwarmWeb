@@ -3235,3 +3235,20 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
     border: 0;
   }
 }
+
+
+/* How It Works mobile repair — caption must not become a narrow table column */
+.aw-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+@media (max-width: 700px) {
+  .aw-process-table caption.aw-visually-hidden { display: block; position: absolute !important; }
+}
