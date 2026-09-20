@@ -3252,3 +3252,97 @@ main > .aw-section:not(.aw-section--navy):not(.aw-cta-band):nth-of-type(even) {
 @media (max-width: 700px) {
   .aw-process-table caption.aw-visually-hidden { display: block; position: absolute !important; }
 }
+
+
+/* ==========================================================================
+   30. PREMIUM FINISH PASS — restrained depth and tactile detail
+   ========================================================================== */
+:root {
+  --aw-premium-shadow: 0 18px 48px rgba(1,15,35,.075);
+  --aw-premium-shadow-hover: 0 24px 58px rgba(1,15,35,.12);
+}
+
+/* Hairline highlight gives the navigation a crisper architectural edge. */
+.aw-header {
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.045);
+}
+@media (min-width: 900px) {
+  .aw-header__inner { padding-top: 15px; padding-bottom: 15px; }
+}
+
+/* More editorial heading rhythm without changing content or SEO structure. */
+.aw-section > .aw-wrap > .aw-eyebrow,
+.aw-prose > .aw-eyebrow {
+  letter-spacing: .12em;
+}
+.aw-section > .aw-wrap > h2,
+.aw-prose > h2 {
+  text-wrap: balance;
+}
+
+/* Cards gain material depth only on interaction; resting state stays calm. */
+.aw-card {
+  box-shadow: 0 1px 0 rgba(255,255,255,.85) inset;
+}
+a.aw-card,
+.aw-card--link {
+  position: relative;
+  overflow: hidden;
+}
+a.aw-card::after,
+.aw-card--link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%; bottom: 0;
+  height: 2px;
+  background: var(--airwarm-blue);
+  transition: right 320ms cubic-bezier(.22,.61,.36,1);
+}
+a.aw-card:hover::after,
+a.aw-card:focus-visible::after,
+.aw-card--link:hover::after,
+.aw-card--link:focus-visible::after { right: 0; }
+
+/* Primary controls feel more considered while retaining the approved blue. */
+.aw-btn {
+  position: relative;
+  overflow: hidden;
+  letter-spacing: .01em;
+}
+.aw-btn--primary {
+  box-shadow: 0 8px 22px rgba(0,168,255,.18);
+}
+.aw-btn--primary:hover,
+.aw-btn--primary:focus-visible {
+  box-shadow: 0 12px 30px rgba(0,168,255,.22);
+}
+
+/* Native details/summary gets a deliberate micro-interaction. */
+details > summary {
+  transition: color 180ms ease, padding-left 220ms ease;
+}
+details[open] > summary { color: var(--airwarm-blue); }
+
+/* Desktop sections get a very subtle top-light at transitions; no gradients
+   over text and no extra DOM. */
+@media (min-width: 900px) {
+  .aw-section--light {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.85);
+  }
+}
+
+/* Respect touch devices and reduced-motion users. */
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  a.aw-card:hover,
+  a.aw-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: var(--aw-premium-shadow-hover);
+  }
+  .aw-btn:hover,
+  .aw-btn:focus-visible { transform: translateY(-2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  a.aw-card::after,
+  .aw-card--link::after,
+  details > summary { transition: none; }
+}
