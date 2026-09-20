@@ -3139,8 +3139,8 @@ body::after {
   body.aw-motion::after { display: none; }
   .aw-thermal-glow {
     display: block;
-    height: 150px;
-    opacity: .42;
+    height: 165px;
+    opacity: .50;
   }
 }
 @media (prefers-contrast: more), print {
