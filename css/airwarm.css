@@ -3365,90 +3365,47 @@ details[open] > summary { color: var(--airwarm-blue); }
 }
 
 
-/* Decorative ASHP watermark for selected pale sections.
-   Uses restrained stock photography to add depth without competing with content. */
-.aw-section--light {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-.aw-section--light::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  width: min(680px, 48vw);
-  aspect-ratio: 1.5;
-  right: clamp(-150px, -5vw, -50px);
-  bottom: -70px;
-  background: url("https://images.pexels.com/photos/38067300/pexels-photo-38067300/free-photo-of-modern-heat-pump-in-residential-setting.jpeg?auto=compress&dpr=1&h=750&w=1260") center / cover no-repeat;
-  opacity: .075;
-  filter: saturate(.65) contrast(.92);
-  pointer-events: none;
-}
-.aw-section--light:nth-of-type(even)::after {
-  right: auto;
-  left: clamp(-150px, -6vw, -60px);
-  transform: scaleX(-1);
-}
-@media (max-width: 700px) {
-  .aw-section--light::after {
-    width: 430px;
-    right: -205px;
-    bottom: -45px;
-    opacity: .055;
-  }
-  .aw-section--light:nth-of-type(even)::after {
-    left: -180px;
-    right: auto;
-  }
-}
-
-.aw-section--light > .aw-wrap,
-.aw-section--light > .aw-container {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* Stock-photo section treatment — explicit overlay so it remains visible above
-   the section fill and below all content. */
-.aw-section--light {
-  background-color: var(--aw-light, #F4F7F9);
-}
-.aw-section--light::after {
-  z-index: 0 !important;
-  width: min(760px, 55vw) !important;
-  right: -80px !important;
-  bottom: 0 !important;
-  opacity: .22 !important;
+/* Homepage-only heat-pump photography. Other pale sections remain clean. */
+.aw-section--light { position:relative; overflow:hidden; }
+body.aw-motion .aw-section--light::after {
+  content:"";
+  position:absolute;
+  z-index:0;
+  width:min(720px,52vw);
+  aspect-ratio:1.35;
+  right:-70px;
+  bottom:0;
   background-image:
-    linear-gradient(90deg, rgba(244,247,249,1) 0%, rgba(244,247,249,.72) 32%, rgba(244,247,249,.10) 78%),
-    url("https://images.pexels.com/photos/38067300/pexels-photo-38067300.jpeg") !important;
-  background-size: cover !important;
-  background-position: center !important;
-  filter: saturate(.72) contrast(.95) !important;
+    linear-gradient(90deg, rgba(244,247,249,1) 0%, rgba(244,247,249,.76) 30%, rgba(244,247,249,.10) 76%),
+    url("https://cdn.trendhunterstatic.com/thumbs/514/samsung-ehs-mono-r290.jpeg?auto=webp");
+  background-size:cover;
+  background-position:center;
+  opacity:.20;
+  filter:saturate(.72) contrast(.94);
+  pointer-events:none;
 }
-.aw-section--light:nth-of-type(even)::after {
-  left: -80px !important;
-  right: auto !important;
-  transform: scaleX(-1);
+body.aw-motion .aw-section--light:nth-of-type(even)::after {
+  left:-70px; right:auto; transform:scaleX(-1);
 }
-.aw-section--light > * {
-  position: relative;
-  z-index: 1;
+body:not(.aw-motion) .aw-section--light::after { content:none !important; }
+body.aw-motion .aw-section--light > * { position:relative; z-index:1; }
+
+/* CTA contrast is fixed regardless of later cascade order. */
+.aw-cta-band .aw-btn--primary,
+.aw-cta-band .aw-btn--primary:visited { color:#fff; }
+.aw-cta-band .aw-btn--primary:hover,
+.aw-cta-band .aw-btn--primary:focus-visible { color:var(--airwarm-navy); }
+
+/* Desktop rhythm: keep major content blocks on the same visual grid. */
+@media (min-width:900px) {
+  .aw-section { padding-top:84px; padding-bottom:84px; }
+  .aw-section--tight { padding-top:56px; padding-bottom:56px; }
+  .aw-card-grid, .aw-grid, .aw-split { align-items:stretch; }
+  .aw-btn-row { align-items:center; }
 }
 @media (max-width:700px) {
-  .aw-section--light::after {
-    width: 76vw !important;
-    right: -28vw !important;
-    bottom: 0 !important;
-    opacity: .18 !important;
-    background-image:
-      linear-gradient(90deg, rgba(244,247,249,1) 0%, rgba(244,247,249,.76) 35%, rgba(244,247,249,.14) 82%),
-      url("https://images.pexels.com/photos/38067300/pexels-photo-38067300.jpeg") !important;
+  body.aw-motion .aw-section--light::after {
+    width:78vw; right:-30vw; opacity:.15;
   }
-  .aw-section--light:nth-of-type(even)::after {
-    left: -30vw !important;
-    right: auto !important;
-  }
+  body.aw-motion .aw-section--light:nth-of-type(even)::after { left:-32vw; right:auto; }
 }
