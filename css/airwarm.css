@@ -3440,3 +3440,15 @@ body.aw-motion .aw-cta-band .aw-btn-row {
   display:flex !important;
   justify-content:center !important;
 }
+
+
+/* Final CTA button contrast — keep label white in every interaction state */
+body.aw-motion .aw-cta-band .aw-btn--primary,
+body.aw-motion .aw-cta-band .aw-btn--primary:link,
+body.aw-motion .aw-cta-band .aw-btn--primary:visited,
+body.aw-motion .aw-cta-band .aw-btn--primary:hover,
+body.aw-motion .aw-cta-band .aw-btn--primary:focus,
+body.aw-motion .aw-cta-band .aw-btn--primary:focus-visible,
+body.aw-motion .aw-cta-band .aw-btn--primary:active {
+  color:#fff !important;
+}
