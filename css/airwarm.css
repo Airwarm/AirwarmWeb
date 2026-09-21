@@ -3480,3 +3480,14 @@ body.aw-motion .aw-cta-band .aw-btn--primary:active {
     transform:none !important;
   }
 }
+
+
+/* Mobile: no ASHP background photography */
+@media (max-width:700px) {
+  body.aw-motion .aw-section--light::after {
+    content:none !important;
+    display:none !important;
+    animation:none !important;
+    background-image:none !important;
+  }
+}
