@@ -3459,3 +3459,36 @@ body.aw-motion .aw-section--light:nth-of-type(even)::after {
     transform:none !important;
   }
 }
+
+
+/* Homepage ASHP photo — vertically centred with slow left-to-centre drift */
+@keyframes aw-home-ashp-drift {
+  0%,100% { transform:translate(-12%, -50%); }
+  50%     { transform:translate(4%, -50%); }
+}
+body.aw-motion .aw-section--light::after,
+body.aw-motion .aw-section--light:nth-of-type(even)::after {
+  top:50% !important;
+  bottom:auto !important;
+  left:-70px !important;
+  right:auto !important;
+  background-position:center !important;
+  animation:aw-home-ashp-drift 26s ease-in-out infinite !important;
+  will-change:transform;
+}
+@media (max-width:700px) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    top:50% !important;
+    bottom:auto !important;
+    left:-28vw !important;
+    animation:aw-home-ashp-drift 30s ease-in-out infinite !important;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    animation:none !important;
+    transform:translate(0,-50%) !important;
+  }
+}
