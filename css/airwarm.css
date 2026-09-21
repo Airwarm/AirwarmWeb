@@ -3442,3 +3442,20 @@ body.aw-motion .aw-section--light > * { position:relative; z-index:1; }
     text-align:left;
   }
 }
+
+
+/* Homepage ASHP photography: consistent left-edge treatment */
+body.aw-motion .aw-section--light::after,
+body.aw-motion .aw-section--light:nth-of-type(even)::after {
+  left:-70px !important;
+  right:auto !important;
+  transform:none !important;
+}
+@media (max-width:700px) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    left:-32vw !important;
+    right:auto !important;
+    transform:none !important;
+  }
+}
