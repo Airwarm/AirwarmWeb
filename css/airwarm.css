@@ -3611,3 +3611,51 @@ body.aw-motion .aw-section--light:nth-of-type(even)::after {
     justify-content:flex-start;
   }
 }
+
+
+/* Final homepage CTA: deliberately centred as one composition */
+body.aw-motion .aw-cta-band .aw-wrap {
+  max-width:760px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  text-align:center !important;
+}
+body.aw-motion .aw-cta-band .aw-hero__support {
+  max-width:680px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+body.aw-motion .aw-cta-band .aw-btn-row {
+  justify-content:center !important;
+}
+
+/* ASHP motion: move the pseudo-element by its LEFT coordinate.
+   This avoids transform/background-position conflicts elsewhere in the cascade. */
+@keyframes aw-ashp-left-travel {
+  0%,100% { left:-4%; }
+  50% { left:22%; }
+}
+body.aw-motion .aw-section--light::after,
+body.aw-motion .aw-section--light:nth-of-type(even)::after {
+  left:-4% !important;
+  right:auto !important;
+  transform:none !important;
+  animation-name:aw-ashp-left-travel !important;
+  animation-duration:16s !important;
+  animation-timing-function:ease-in-out !important;
+  animation-iteration-count:infinite !important;
+  animation-play-state:running !important;
+}
+@media (max-width:700px) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    animation-duration:20s !important;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    animation:none !important;
+    left:8% !important;
+  }
+}
