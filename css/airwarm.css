@@ -3416,3 +3416,27 @@ body.aw-motion .aw-cta-band .aw-btn-row { justify-content:center; }
     transform:translate3d(10%,0,0);
   }
 }
+
+
+/* CTA optical centring: reset inherited heading/paragraph offsets */
+body.aw-motion .aw-cta-band .aw-wrap {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  max-width:760px !important;
+  margin-inline:auto !important;
+  text-align:center !important;
+}
+body.aw-motion .aw-cta-band h2,
+body.aw-motion .aw-cta-band .aw-hero__support,
+body.aw-motion .aw-cta-band .aw-btn-row {
+  width:100% !important;
+  max-width:680px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  text-align:center !important;
+}
+body.aw-motion .aw-cta-band .aw-btn-row {
+  display:flex !important;
+  justify-content:center !important;
+}
