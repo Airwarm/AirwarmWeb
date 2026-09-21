@@ -3368,12 +3368,8 @@ details[open] > summary { color: var(--airwarm-blue); }
 /* Homepage-only heat-pump photography — single authoritative rule. */
 .aw-section--light { position:relative; isolation:isolate; overflow:hidden; }
 @keyframes aw-home-heatpump-left-in {
-  from { transform:translate3d(-75%,0,0); opacity:0; }
-  to   { transform:translate3d(42%,0,0); opacity:.18; }
-}
-@keyframes aw-home-heatpump-right-in {
-  from { transform:translate3d(75%,0,0); opacity:0; }
-  to   { transform:translate3d(-42%,0,0); opacity:.18; }
+  from { transform:translate3d(-100%,0,0); opacity:0; }
+  to   { transform:translate3d(0,0,0); opacity:.18; }
 }
 body.aw-motion .aw-section--light::after {
   content:"";
@@ -3392,11 +3388,6 @@ body.aw-motion .aw-section--light::after {
   pointer-events:none;
   animation:aw-home-heatpump-left-in 4s cubic-bezier(.22,.61,.36,1) 1 forwards;
   will-change:transform;
-}
-body.aw-motion .aw-section--light:nth-of-type(even)::after {
-  left:auto;
-  right:0;
-  animation-name:aw-home-heatpump-right-in;
 }
 body.aw-motion .aw-section--light > * { position:relative; z-index:1; }
 body:not(.aw-motion) .aw-section--light::after { content:none; }
