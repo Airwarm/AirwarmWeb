@@ -3452,3 +3452,31 @@ body.aw-motion .aw-cta-band .aw-btn--primary:focus-visible,
 body.aw-motion .aw-cta-band .aw-btn--primary:active {
   color:#fff !important;
 }
+
+
+/* Mobile homepage ASHP treatment — preserve the desktop idea without crowding copy */
+@media (max-width:700px) {
+  body.aw-motion .aw-section--light::after {
+    top:auto !important;
+    bottom:0 !important;
+    left:0 !important;
+    right:auto !important;
+    width:78vw !important;
+    height:58% !important;
+    background-size:contain !important;
+    background-position:left bottom !important;
+    opacity:.11 !important;
+    transform:none;
+    animation:aw-home-heatpump-left-in-mobile 3.6s cubic-bezier(.22,.61,.36,1) 1 forwards !important;
+  }
+  @keyframes aw-home-heatpump-left-in-mobile {
+    from { transform:translate3d(-100%,0,0); opacity:0; }
+    to   { transform:translate3d(0,0,0); opacity:.11; }
+  }
+}
+@media (max-width:700px) and (prefers-reduced-motion:reduce) {
+  body.aw-motion .aw-section--light::after {
+    animation:none !important;
+    transform:none !important;
+  }
+}
