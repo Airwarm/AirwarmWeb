@@ -3409,3 +3409,36 @@ body.aw-motion .aw-section--light > * { position:relative; z-index:1; }
   }
   body.aw-motion .aw-section--light:nth-of-type(even)::after { left:-32vw; right:auto; }
 }
+
+
+/* Desktop homepage optical alignment pass */
+@media (min-width: 900px) {
+  body.aw-motion .aw-section > .aw-wrap:not(.aw-split) {
+    display:block;
+  }
+  body.aw-motion .aw-section > .aw-wrap > .aw-eyebrow + h2 {
+    margin-top:10px;
+  }
+  body.aw-motion .aw-section > .aw-wrap > h2 + .aw-measure,
+  body.aw-motion .aw-section > .aw-wrap > h2 + .aw-hero__support {
+    margin-top:16px;
+  }
+  body.aw-motion .aw-card-grid {
+    gap:24px;
+  }
+  body.aw-motion .aw-card-grid > .aw-card {
+    height:100%;
+  }
+  body.aw-motion .aw-split {
+    gap:clamp(44px,6vw,84px);
+    align-items:center;
+  }
+  body.aw-motion .aw-section--navy .aw-btn-row,
+  body.aw-motion .aw-section:not(.aw-section--navy) .aw-btn-row {
+    margin-top:28px;
+  }
+  body.aw-motion .aw-cta-band .aw-wrap {
+    max-width:900px;
+    text-align:left;
+  }
+}
