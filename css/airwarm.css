@@ -3538,3 +3538,29 @@ body.aw-motion .aw-section--light:nth-of-type(even)::after {
     background-position:24% 50% !important;
   }
 }
+
+
+/* Final homepage ASHP motion — visible left-to-centre travel */
+@keyframes aw-home-ashp-pan-final {
+  0%,100% { background-position: 12% 50%; }
+  50%     { background-position: 72% 50%; }
+}
+body.aw-motion .aw-section--light::after,
+body.aw-motion .aw-section--light:nth-of-type(even)::after {
+  width:68% !important;
+  animation:aw-home-ashp-pan-final 22s ease-in-out infinite !important;
+}
+@media (max-width:700px) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    width:82% !important;
+    animation:aw-home-ashp-pan-final 26s ease-in-out infinite !important;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    animation:none !important;
+    background-position:42% 50% !important;
+  }
+}
