@@ -3564,3 +3564,50 @@ body.aw-motion .aw-section--light:nth-of-type(even)::after {
     background-position:42% 50% !important;
   }
 }
+
+
+/* ASHP movement: animate the layer itself so motion is visually obvious.
+   Previous background-position animation was effectively invisible with contain. */
+@keyframes aw-ashp-layer-travel {
+  0%,100% { transform:translateX(-8%); }
+  50%     { transform:translateX(32%); }
+}
+body.aw-motion .aw-section--light::after,
+body.aw-motion .aw-section--light:nth-of-type(even)::after {
+  left:0 !important;
+  width:52% !important;
+  background-position:center center !important;
+  animation:aw-ashp-layer-travel 20s ease-in-out infinite !important;
+  will-change:transform;
+}
+@media (max-width:700px) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    width:64% !important;
+    animation:aw-ashp-layer-travel 24s ease-in-out infinite !important;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    animation:none !important;
+    transform:translateX(12%) !important;
+  }
+}
+
+/* Final CTA desktop alignment */
+@media (min-width:900px) {
+  body.aw-motion .aw-cta-band .aw-wrap {
+    max-width:760px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  body.aw-motion .aw-cta-band .aw-hero__support {
+    max-width:680px;
+    margin-left:0;
+    margin-right:0;
+  }
+  body.aw-motion .aw-cta-band .aw-btn-row {
+    justify-content:flex-start;
+  }
+}
