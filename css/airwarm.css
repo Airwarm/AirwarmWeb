@@ -3492,3 +3492,49 @@ body.aw-motion .aw-section--light:nth-of-type(even)::after {
     transform:translate(0,-50%) !important;
   }
 }
+
+
+/* Homepage ASHP visual correction — keep the whole unit optically centred.
+   Animate background position rather than the pseudo-element itself, avoiding
+   clipping against the section bounds. */
+@keyframes aw-home-ashp-pan {
+  0%,100% { background-position: 18% 50%; }
+  50%     { background-position: 42% 50%; }
+}
+body.aw-motion .aw-section--light::after,
+body.aw-motion .aw-section--light:nth-of-type(even)::after {
+  top:0 !important;
+  bottom:0 !important;
+  left:0 !important;
+  right:auto !important;
+  width:58% !important;
+  height:100% !important;
+  aspect-ratio:auto !important;
+  transform:none !important;
+  background-size:contain !important;
+  background-repeat:no-repeat !important;
+  background-position:18% 50% !important;
+  animation:aw-home-ashp-pan 24s ease-in-out infinite !important;
+  opacity:.18 !important;
+}
+@media (max-width:700px) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    top:0 !important;
+    bottom:0 !important;
+    left:0 !important;
+    width:72% !important;
+    height:100% !important;
+    background-size:contain !important;
+    background-position:10% 50% !important;
+    animation:aw-home-ashp-pan 28s ease-in-out infinite !important;
+    opacity:.13 !important;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.aw-motion .aw-section--light::after,
+  body.aw-motion .aw-section--light:nth-of-type(even)::after {
+    animation:none !important;
+    background-position:24% 50% !important;
+  }
+}
