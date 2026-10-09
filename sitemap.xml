@@ -3,7 +3,7 @@
   Airwarm sitemap.
   One <url> block per page. When you add a page, copy a block, change the
   <loc> and update the <lastmod> date. Keep the trailing slash.
-  The legal pages are listed with a low priority because they are stubs.
+  The legal pages have a low priority because they are reference material.
   404.html is deliberately NOT listed: it is an error page, not a destination.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -83,6 +83,13 @@
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://airwarm.co.uk/installation-terms/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 
   <!-- The eleven advice articles. These are full guides, not stubs, so they
