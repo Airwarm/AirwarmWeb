@@ -7,7 +7,7 @@
   var loaded = false, choice = null;
   try { var saved = JSON.parse(localStorage.getItem(key));
     if (saved && Date.now() - saved.at < 180 * 86400000 && /^(granted|denied)$/.test(saved.value)) choice = saved.value;
-  } catch (e) { /* Storage unavailable: ask again on the next page. */ }
+  } catch (e) { /* Storage unavailable: analytics remains off on the next page. */ }
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
   window['ga-disable-' + id] = choice !== 'granted';
@@ -51,7 +51,8 @@
     panel.setAttribute('aria-label', 'Analytics cookie choices');
     panel.innerHTML = '<div class="aw-wrap"><h2>Optional analytics cookies</h2><p>May we use Google Analytics to understand visits and improve this website? It stays off unless you accept. Your assessment answers are not sent to Analytics. <a href="/cookies/">Cookie policy</a>.</p><div class="aw-btn-row"><button type="button" class="aw-btn aw-btn--outline" data-choice="denied">Reject analytics</button><button type="button" class="aw-btn aw-btn--outline" data-choice="granted">Accept analytics</button></div></div>';
     panel.querySelectorAll('[data-choice]').forEach(function (button) { button.addEventListener('click', function () { decide(button.getAttribute('data-choice')); }); });
-    document.body.appendChild(panel); panel.hidden = choice !== null;
+    // Do not interrupt arrival. Only open settings when explicitly requested.
+    panel.hidden = true; document.body.appendChild(panel);
     settings = document.createElement('button'); settings.type = 'button'; settings.className = 'aw-cookie-settings'; settings.textContent = 'Cookie settings';
     settings.addEventListener('click', function () { previousFocus = settings; panel.hidden = false; panel.querySelector('button').focus(); });
     var footer = document.querySelector('.aw-footer__base') || document.body; footer.appendChild(settings);
