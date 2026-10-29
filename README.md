@@ -186,9 +186,9 @@ requests that name the file and the section:
 **Things to watch for.** Copilot is enthusiastic and will sometimes:
 
 - Analytics was authorised on 29 October 2026. The shared /js/analytics-consent.js
-  loads GA4 G-LJW60F22LD only after acceptance through footer Cookie settings.
-  Do not show an arrival pop-up or enable GA4 by default. Keep one loader per page and
-  update privacy/cookies pages whenever collection changes. Do not add other tags.
+  loads GA4 G-LJW60F22LD by default, with opt-out through footer Cookie settings.
+  The owner requested default-on analytics with no arrival pop-up. Preserve explicit opt-outs. Keep one loader per page and
+  update privacy/cookies pages whenever collection changes. Do not add other tags.\n  This configuration has NOT been verified as qualifying for the UK statistical-purposes exception.
 - Invent a phone number, an address, or "trusted by 500 homeowners". Delete
   it. The business line is **01274 947 197** and the address is the registered
   office in the footer; anything else is made up. Airwarm has not started
