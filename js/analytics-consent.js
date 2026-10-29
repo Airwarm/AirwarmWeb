@@ -1,17 +1,17 @@
-/* GA4 basic consent: do not contact Google Analytics until accepted. */
+/* GA4 enabled by default; preserve explicit visitor opt-outs. */
 (function () {
   'use strict';
   var id = 'G-LJW60F22LD', key = 'airwarm-analytics-consent-v1';
   if (window.airwarmAnalyticsReady) return;
   window.airwarmAnalyticsReady = true;
-  var loaded = false, choice = null;
+  var loaded = false, choice = 'granted';
   try { var saved = JSON.parse(localStorage.getItem(key));
     if (saved && Date.now() - saved.at < 180 * 86400000 && /^(granted|denied)$/.test(saved.value)) choice = saved.value;
-  } catch (e) { /* Storage unavailable: analytics remains off on the next page. */ }
+  } catch (e) { /* Storage unavailable: preferences cannot persist between pages. */ }
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
   window['ga-disable-' + id] = choice !== 'granted';
-  window.gtag('consent', 'default', {analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
+  window.gtag('consent', 'default', {analytics_storage: choice, ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
   function enable() {
     if (loaded) return;
     loaded = true;
@@ -49,7 +49,7 @@
   function ui() {
     panel = document.createElement('section'); panel.className = 'aw-cookie-banner';
     panel.setAttribute('aria-label', 'Analytics cookie choices');
-    panel.innerHTML = '<div class="aw-wrap"><h2>Optional analytics cookies</h2><p>May we use Google Analytics to understand visits and improve this website? It stays off unless you accept. Your assessment answers are not sent to Analytics. <a href="/cookies/">Cookie policy</a>.</p><div class="aw-btn-row"><button type="button" class="aw-btn aw-btn--outline" data-choice="denied">Reject analytics</button><button type="button" class="aw-btn aw-btn--outline" data-choice="granted">Accept analytics</button></div></div>';
+    panel.innerHTML = '<div class="aw-wrap"><h2>Optional analytics cookies</h2><p>We use Google Analytics to understand visits and improve this website. You can turn analytics off here. Your assessment answers are not sent to Analytics. <a href="/cookies/">Cookie policy</a>.</p><div class="aw-btn-row"><button type="button" class="aw-btn aw-btn--outline" data-choice="denied">Turn analytics off</button><button type="button" class="aw-btn aw-btn--outline" data-choice="granted">Turn analytics on</button></div></div>';
     panel.querySelectorAll('[data-choice]').forEach(function (button) { button.addEventListener('click', function () { decide(button.getAttribute('data-choice')); }); });
     // Do not interrupt arrival. Only open settings when explicitly requested.
     panel.hidden = true; document.body.appendChild(panel);
