@@ -3510,3 +3510,23 @@ body.aw-motion .aw-cta-band .aw-btn--primary:active {
  .aw-nibe-training { grid-template-columns:1.25fr .75fr; gap:72px; align-items:center; }
  .aw-nibe-warranty { grid-template-columns:1fr 1fr; gap:64px; }
 }
+
+/* NIBE page reading and spacing pass. Scoped to this page only. */
+.aw-nibe-page .aw-section { padding-block:72px; }
+.aw-nibe-page .aw-hero { padding-block:80px; }
+.aw-nibe-page .aw-nibe-training { align-items:start; }
+.aw-nibe-page .aw-eyebrow { margin-bottom:14px; }
+.aw-nibe-page .aw-nibe-training h2 { margin-top:0; }
+.aw-nibe-page .aw-nibe-cover,
+.aw-nibe-page main > .aw-section > .aw-wrap > :is(.aw-eyebrow,h2) {
+  animation:none; opacity:1; transform:none;
+}
+.aw-nibe-page .aw-nibe-faq details p { margin-top:14px; line-height:1.7; max-width:72ch; }
+.aw-nibe-page .aw-nibe-contact { margin-top:24px; }
+.aw-nibe-page .aw-cta-band .aw-btn--primary { color:var(--airwarm-white); }
+@media(max-width:700px) {
+  .aw-nibe-page .aw-section { padding-block:48px; }
+  .aw-nibe-page .aw-hero { padding-block:48px; }
+  .aw-nibe-page .aw-nibe-training,.aw-nibe-page .aw-nibe-warranty { gap:32px; }
+  .aw-nibe-page .aw-nibe-faq details { padding-block:20px; }
+}
