@@ -3530,3 +3530,12 @@ body.aw-motion .aw-cta-band .aw-btn--primary:active {
   .aw-nibe-page .aw-nibe-training,.aw-nibe-page .aw-nibe-warranty { gap:32px; }
   .aw-nibe-page .aw-nibe-faq details { padding-block:20px; }
 }
+
+/* Optional analytics choices: same prominence for accept and reject. */
+.aw-cookie-banner { position:fixed; bottom:0; left:0; right:0; z-index:1000; background:#fff; color:#010F23; border-top:2px solid #017FE1; padding:20px 0; max-height:70vh; overflow:auto; box-shadow:0 -4px 20px rgba(1,15,35,.15); }
+.aw-cookie-banner[hidden] { display:none; }
+.aw-cookie-banner h2 { font-size:1.15rem; margin:0 0 8px; }
+.aw-cookie-banner p { max-width:75ch; margin:0 0 12px; }
+.aw-cookie-banner .aw-btn-row { margin:0; }
+.aw-cookie-settings { font:inherit; background:transparent; color:inherit; text-decoration:underline; border:0; padding:8px 0; cursor:pointer; }
+.aw-cookie-settings:focus-visible { outline:2px solid #017FE1; outline-offset:3px; }

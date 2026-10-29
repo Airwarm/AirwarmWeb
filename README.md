@@ -185,9 +185,9 @@ requests that name the file and the section:
 
 **Things to watch for.** Copilot is enthusiastic and will sometimes:
 
-- Add a cookie banner or Google Analytics. Do not let it. Both are on the
-  decisions list, and neither goes in without a matching update to the
-  published privacy and cookies pages.
+- Analytics was authorised on 29 October 2026. The shared /js/analytics-consent.js
+  loads GA4 G-LJW60F22LD only after acceptance. Keep one loader per page and
+  update privacy/cookies pages whenever collection changes. Do not add other tags.
 - Invent a phone number, an address, or "trusted by 500 homeowners". Delete
   it. The business line is **01274 947 197** and the address is the registered
   office in the footer; anything else is made up. Airwarm has not started
