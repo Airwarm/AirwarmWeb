@@ -3491,3 +3491,22 @@ body.aw-motion .aw-cta-band .aw-btn--primary:active {
     background-image:none !important;
   }
 }
+
+/* NIBE training and warranty page: existing Airwarm palette and components. */
+.aw-nibe-training,.aw-nibe-warranty { display:grid; gap:40px; align-items:start; }
+.aw-nibe-launch { margin-top:24px; color:var(--airwarm-white); }
+.aw-nibe-certificate { margin:0 auto; max-width:360px; }
+.aw-nibe-certificate img { display:block; width:100%; height:auto; border:1px solid rgba(1,15,35,.14); box-shadow:0 14px 36px rgba(1,15,35,.10); }
+.aw-nibe-certificate figcaption { margin-top:14px; font-size:.8rem; line-height:1.6; }
+.aw-nibe-cover { border-top:4px solid var(--airwarm-blue); }
+.aw-nibe-steps { padding-left:22px; }
+.aw-nibe-steps li { padding-left:8px; margin-top:20px; }
+.aw-nibe-steps p { margin:8px 0 0; }
+.aw-nibe-faq { max-width:850px; }
+.aw-nibe-faq details { border-bottom:1px solid rgba(1,15,35,.14); padding:22px 0; }
+.aw-nibe-faq summary { cursor:pointer; font-weight:600; line-height:1.6; }
+.aw-nibe-faq p { margin-bottom:0; }
+@media(min-width:900px) {
+ .aw-nibe-training { grid-template-columns:1.25fr .75fr; gap:72px; align-items:center; }
+ .aw-nibe-warranty { grid-template-columns:1fr 1fr; gap:64px; }
+}
