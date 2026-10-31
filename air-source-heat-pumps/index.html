@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap">
 
   <!-- One stylesheet for the whole site. Colours live at the top of it. -->
-  <link rel="stylesheet" href="../css/airwarm.css?v=20261029-ga1">
+  <link rel="stylesheet" href="../css/airwarm.css?v=20261031-slim">
 </head>
 <body>
 
@@ -102,7 +102,7 @@
   </header>
   <!-- /HEADER -->
 
-  <main id="main">
+  <main id="main" class="aw-page-compact">
   <!-- Breadcrumbs: helps people and search engines see where this
        page sits. Update if you move the page. -->
   <nav class="aw-crumbs" aria-label="Breadcrumb">
@@ -129,7 +129,7 @@
             usually needs checking first.
           </p>
           <div class="aw-btn-row">
-            <a class="aw-btn aw-btn--primary" href="../home-energy-assessment/">Start your Home Energy Assessment</a>
+            <a class="aw-btn aw-btn--primary" href="../home-energy-assessment/">Check my home</a>
             <a class="aw-btn aw-btn--secondary" href="../heat-pump-survey/">What a survey covers</a>
           </div>
         </div>
@@ -142,7 +142,7 @@
             <ol>
               <li><a href="#what-it-does">What an air source heat pump does</a></li>
               <li><a href="#vs-boiler">How it differs from a boiler</a></li>
-              <li><a href="#who-for">Who this suits, and who it does not</a></li>
+
               <li><a href="#five-things">The five things that decide whether one works well</a></li>
               <li><a href="#system">What a complete system looks like</a></li>
               <li><a href="#approach">Airwarm&rsquo;s survey-led approach</a></li>
@@ -163,7 +163,7 @@
               Because it moves heat rather than making it, it delivers several
               units of heat for each unit of electricity it uses.
             </p>
-            <p class="aw-measure">
+            <details class="aw-process-expanded"><summary>How the refrigeration cycle works</summary><p class="aw-measure">
               Inside the outdoor unit, a fan draws air across a heat exchanger
               containing a refrigerant that boils at a very low temperature. The
               refrigerant takes up heat from the air, a compressor raises its
@@ -172,7 +172,7 @@
               heating system. The refrigerant expands, cools, and goes round
               again. It is the same principle as a fridge, working in the useful
               direction.
-            </p>
+            </p></details>
             <p class="aw-measure">
               The trade-off is temperature. A gas boiler happily pushes water
               round at 70&nbsp;&deg;C or more. A heat pump is at its most
@@ -279,54 +279,7 @@
       </section>
 
       <!-- WHO FOR ------------------------------------------------------ -->
-      <section class="aw-section aw-section--light" id="who-for">
-        <div class="aw-wrap aw-split">
-          <div class="aw-prose">
-            <h2>Who this suits, and who it does not</h2>
-            <p class="aw-measure">
-              Airwarm is a good fit for households who want the heating designed
-              for the property, and who are willing to hear that a room needs a
-              bigger radiator before they hear a price. It is a poor fit for
-              anyone who wants the cheapest possible swap with nothing else
-              changed.
-            </p>
-            <p class="aw-measure">
-              That is not a judgement. It is a difference in what the two jobs
-              are, and knowing which one you want saves everybody time.
-            </p>
-            <p class="aw-measure">
-              A heat pump is often a particularly strong option where the
-              current system is oil, LPG, storage heaters or direct electric,
-              and where a boiler is close to the end of its life and something
-              has to be decided anyway.
-            </p>
-          </div>
-          <div>
-            <div class="aw-card">
-              <h3 class="aw-card__title">This suits you if</h3>
-              <ul class="aw-ticks">
-                <li>You want the heating designed for the property, not a standard package</li>
-                <li>You would consider radiator or fabric improvements where they are genuinely needed</li>
-                <li>You are replacing oil, LPG, storage heaters or an ageing boiler</li>
-                <li>You are renovating, and the heating can be planned alongside the building work</li>
-                <li>You want the calculations, not a headline claim</li>
-              </ul>
-            </div>
-            <div class="aw-card" style="margin-top:24px">
-              <h3 class="aw-card__title">It probably does not suit you if</h3>
-              <ul class="aw-ticks">
-                <li>You want the cheapest possible unit fitted with nothing else touched</li>
-                <li>Nothing about the emitters or the hot water can change</li>
-                <li>You need the work done before a survey could realistically happen</li>
-              </ul>
-              <p class="aw-small" style="margin-top:16px">
-                If that is you, we would rather say so now than take a deposit
-                and disappoint you later.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <!-- FIVE THINGS -------------------------------------------------- -->
       <section class="aw-section" id="five-things">
@@ -539,7 +492,7 @@
       </section>
 
       <!-- LIMITATIONS ------------------------------------------------- -->
-      
+
 
       <!-- FAQS -------------------------------------------------------- -->
       <section class="aw-section aw-section--light" id="faqs">
@@ -741,19 +694,7 @@
            The assessment is the primary action; e-mail is the route for
            anything unusual. This block is the same on every page: if you
            change the wording, change it everywhere. -->
-      <section class="aw-section aw-section--navy aw-cta-band">
-        <div class="aw-wrap">
-          <h2>Start with your home, not a product</h2>
-          <p class="aw-hero__support">
-            The Home Energy Assessment takes a few minutes, asks for no
-            photographs at this stage and gives you an honest first view of whether an air
-            source heat pump is worth exploring for your property.
-          </p>
-          <div class="aw-btn-row">
-            <a class="aw-btn aw-btn--primary" href="../home-energy-assessment/">Start your Home Energy Assessment</a>
-          </div>
-        </div>
-      </section>
+      <section class="aw-section aw-section--navy aw-cta-band"><div class="aw-wrap"><h2>Could a heat pump work for your home?</h2><p class="aw-hero__support">Start with our five-minute Home Energy Assessment. No photographs or measurements needed.</p><div class="aw-btn-row"><a class="aw-btn aw-btn--primary" href="../home-energy-assessment/">Check my home</a></div></div></section>
   </main>
 
   <!-- ============================================================= -->

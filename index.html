@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap">
 
   <!-- One stylesheet for the whole site. Colours live at the top of it. -->
-  <link rel="stylesheet" href="css/airwarm.css?v=20261029-ga1">
+  <link rel="stylesheet" href="css/airwarm.css?v=20261031-slim">
 </head>
 <body class="aw-motion">
 
@@ -106,221 +106,101 @@
   <!-- /HEADER -->
 
   <main id="main">
-
-      <!-- 2. HERO ------------------------------------------------------
-           Headline and supporting copy are the approved wording from the
-           brand pack. Keep the headline to two lines on desktop.
-
-           The quiet tiled pattern behind the type is the .aw-hero-pattern
-           class in the stylesheet, which puts assets/hero-pattern.svg over
-           navy. It is decoration and carries no meaning, so there is nothing
-           to describe to a screen reader. Remove that one class for a plain
-           navy panel; there is nothing else to undo.
-
-           HERO PHOTOGRAPH GOES HERE eventually: a real West Yorkshire home
-           or a finished outdoor unit, on a navy panel behind the type.
-           ------------------------------------------------------------- -->
-      <section class="aw-hero aw-hero-pattern">
-        <div class="aw-wrap">
-          <!-- The Hero Logo used to sit here, at 1254px square. Removed on
-               15 August 2026 for two reasons, and do not put it back without
-               resolving both.
-
-               1. WORDING. The file is the complete lockup as artwork, and its
-                  tagline reads SMART HEATING — the wording retired in August
-                  2026. It is outlined vector, so it cannot be corrected by
-                  editing, and altering supplied artwork is forbidden. It was
-                  therefore contradicting the header lockup a few hundred
-                  pixels above it, which correctly reads SMARTER HEATING.
-               2. SIZE. It dominated the first screen and pushed the actual
-                  proposition and the assessment call to action below the
-                  fold, which is the opposite of what the homepage is for.
-
-               The identity is still carried by the header, which is on every
-               page. When corrected artwork arrives, decide deliberately
-               whether the homepage needs it at all rather than restoring it
-               by default. -->
-          <span class="aw-positioning">Air Source Heat Pumps &bull; West Yorkshire</span>
-          <h1><span class="aw-hero__brand-name">Airwarm</span><span class="aw-hero__brand-lockup" aria-label="Engineered design, smarter heating, greener futures."><span class="aw-hero__design aw-brand-reveal aw-brand-reveal--1">ENGINEERED DESIGN</span><span class="aw-hero__lockup-sep aw-brand-reveal aw-brand-reveal--2" aria-hidden="true">|</span><span class="aw-hero__heating aw-brand-reveal aw-brand-reveal--2">SMARTER HEATING</span><span class="aw-hero__lockup-sep aw-brand-reveal aw-brand-reveal--3" aria-hidden="true">|</span><span class="aw-hero__futures aw-brand-reveal aw-brand-reveal--3">GREENER FUTURES</span></span></h1>
-          <p class="aw-hero__support">
-            Air source heat pumps designed properly for your home, installed
-            with care and supported for the long term.
-          </p>
-          <div class="aw-btn-row">
-            <a class="aw-btn aw-btn--primary" href="home-energy-assessment/">Start your Home Energy Assessment</a>
-            <a class="aw-btn aw-btn--secondary" href="how-it-works/">See how it works</a>
-          </div>
-          <p class="aw-small" style="margin-top:24px">
-            Bradford &bull; Leeds &bull; Shipley. Four short stages. No
-            photographs needed at this stage, nothing to measure.
-          </p>
-          <!-- LAUNCH STATUS. Airwarm is not trading yet and the site must
-               never imply that it is. This line is the plain statement of
-               where the business actually is; the fuller version is in the
-               honesty note further down the page. -->
-          <p class="aw-hero__launch">
-            Installations begin in April 2027. Assessments, surveys and design
-            are happening now, so you can plan ahead for the launch.
-          </p>
-        </div>
-      </section>
-
-      <section class="aw-section aw-reveal">
-        <div class="aw-wrap">
-          <!-- THE THREE BRAND PILLARS. Same words, same order and same colours
-               as the tagline in the header: ENGINEERED DESIGN blue, SMARTER
-               HEATING amber, GREENER FUTURES green. If you reorder or recolour
-               these, the lockup above stops matching the page below it.
-
-               ONE SENTENCE EACH. These used to carry two paragraphs apiece and
-               had drifted into explaining heat loss, tariffs and servicing on
-               the first screen. The detail belongs in Advice, which each card
-               links to. Do not grow them back. -->
-          <div class="aw-card-grid">
-
-            <div class="aw-card aw-benefit aw-benefit--air">
-              <h2 class="aw-card__title"><svg class="aw-icon aw-icon--air" aria-hidden="true" focusable="false"><use href="assets/icons.svg#icon-design"></use></svg> Engineered design</h2>
-              <p>
-                We start with the home, calculate what it actually needs and
-                design the heating system around it.
-              </p>
-            </div>
-
-            <div class="aw-card aw-benefit aw-benefit--heating">
-              <h2 class="aw-card__title"><svg class="aw-icon aw-icon--heating" aria-hidden="true" focusable="false"><use href="assets/icons.svg#icon-radiator"></use></svg> Smarter heating</h2>
-              <p>
-                A properly designed heat pump delivers steady, comfortable
-                heating while using electricity efficiently.
-                <a href="advice/what-determines-running-costs/">What decides running costs</a>.
-              </p>
-            </div>
-
-            <div class="aw-card aw-benefit aw-benefit--renewables">
-              <h2 class="aw-card__title"><svg class="aw-icon aw-icon--renewables" aria-hidden="true" focusable="false"><use href="assets/icons.svg#icon-solar"></use></svg> Greener futures</h2>
-              <p>
-                Lower-carbon heating today, with
-                <a href="advice/solar-and-battery/">solar and battery storage</a>
-                able to take the home further.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section class="aw-section aw-section--light aw-reveal">
-        <div class="aw-wrap aw-split">
-          <div class="aw-prose">
-            <span class="aw-eyebrow">Suitability first</span>
-            <h2>Designed around your home</h2>
-            <p class="aw-lede aw-measure">
-              A good air source heat pump installation starts with heat loss, radiators or underfloor heating, hot water, controls and the practical details of your property &mdash; not with choosing a product.
-            </p>
-            <p class="aw-measure">
-              <a href="advice/is-my-home-suitable/">See what decides heat-pump suitability</a>.
-            </p>
-          </div>
-          <div class="aw-card">
-            <h3 class="aw-card__title">What we look at</h3>
-            <ul class="aw-ticks">
-              <li>Heat loss and insulation</li>
-              <li>Radiators or underfloor heating</li>
-              <li>Hot-water requirements</li>
-              <li>Outdoor unit location</li>
-              <li>Electrical supply and pipe routes</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="aw-section aw-section--navy aw-reveal">
-        <div class="aw-wrap">
-          <span class="aw-eyebrow">The process</span>
-          <h2>Your journey, simply explained</h2>
-          <p class="aw-hero__support">
-            Four simple phases take you from the first check through to installation and long-term support.
-          </p>
-          <ol class="aw-steps aw-journey" style="margin-top:40px">
-            <li class="aw-step"><h3 class="aw-step__title">Check &amp; review</h3><p>Complete the Home Energy Assessment, then choose whether to submit it for a Desktop Engineering Review.</p></li>
-            <li class="aw-step"><h3 class="aw-step__title">Survey &amp; design</h3><p>If it looks worthwhile, we survey the property and engineer the system around your home.</p></li>
-            <li class="aw-step"><h3 class="aw-step__title">Approval &amp; installation</h3><p>The final design, proposal and compliance route are agreed before installation begins.</p></li>
-            <li class="aw-step"><h3 class="aw-step__title">Commissioning &amp; support</h3><p>We commission the system, hand it over properly and remain your technical contact afterwards.</p></li>
-          </ol>
-          <div class="aw-btn-row">
-            <a class="aw-btn aw-btn--secondary" href="how-it-works/">See the 8-stage process in detail</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="aw-section aw-section--light">
-        <div class="aw-wrap">
-          <span class="aw-eyebrow">West Yorkshire heat-pump specialists</span>
-          <h2>Air source heat pumps in Bradford, Leeds and Shipley</h2>
-          <p class="aw-measure">
-            Airwarm designs and installs air source heat pump systems across our initial West Yorkshire service area, with heat-loss-led surveys and system design for the individual property.
-          </p>
-          <div class="aw-link-row" style="margin-top:20px">
-            <a href="areas/bradford/">Bradford</a> &nbsp;&middot;&nbsp;
-            <a href="areas/leeds/">Leeds</a> &nbsp;&middot;&nbsp;
-            <a href="areas/shipley/">Shipley</a> &nbsp;&middot;&nbsp;
-            <a href="air-source-heat-pumps/">Air source heat pumps</a> &nbsp;&middot;&nbsp;
-            <a href="heat-pump-survey/">Heat pump surveys</a> &nbsp;&middot;&nbsp;
-            <a href="heat-pump-installation/">Installation</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="aw-section">
-        <div class="aw-wrap aw-split">
-          <div class="aw-prose">
-            <span class="aw-eyebrow">Grant &amp; project administration</span>
-            <h2>£7,500 Boiler Upgrade Scheme support</h2>
-            <p class="aw-measure">
-              Eligible air-source heat pump installations can receive £7,500 through the Boiler Upgrade Scheme. The grant is applied to the eligible installation cost rather than paid to you afterwards.
-            </p>
-            <p class="aw-measure">
-              For eligible Airwarm projects delivered through our Ample partnership, Ample manages the BUS process, the MCS compliance route and the required DNO process as part of the project. Eligibility remains subject to the current scheme rules and your individual property and project.
-            </p>
-            <p class="aw-measure"><a href="advice/grants-and-funding/">How the Boiler Upgrade Scheme works</a>.</p>
-          </div>
-          <div class="aw-card">
-            <h3 class="aw-card__title">Handled through the Ample partnership</h3>
-            <ul class="aw-ticks">
-              <li>Boiler Upgrade Scheme process</li>
-              <li>MCS compliance and certification route</li>
-              <li>DNO application or notification process</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="aw-section">
-        <div class="aw-wrap">
-          <span class="aw-eyebrow">Useful guidance</span>
-          <h2>Research before you decide</h2>
-          <p class="aw-measure">
-            Straightforward guidance on suitability, heat loss, radiators, running costs, grants and the practical details of changing to a heat pump.
-          </p>
-          <div class="aw-btn-row">
-            <a class="aw-btn aw-btn--outline" href="advice/">Explore the advice centre</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="aw-section aw-section--navy aw-cta-band">
-        <div class="aw-wrap">
-          <h2>Start with your home, not a product</h2>
-          <p class="aw-hero__support">
-            The Home Energy Assessment takes a few minutes, asks for no
-            photographs at this stage and gives you an honest first view of whether an air
-            source heat pump is worth exploring for your property.
-          </p>
-          <div class="aw-btn-row">
-            <a class="aw-btn aw-btn--primary" href="home-energy-assessment/">Start your Home Energy Assessment</a>
-          </div>
-        </div>
-      </section>
-  </main>
+<section class="aw-hero aw-hero-pattern">
+<div class="aw-wrap"><span class="aw-positioning">Air Source Heat Pumps &bull; West Yorkshire</span>
+<h1><span class="aw-hero__brand-name">Airwarm</span><span class="aw-hero__brand-lockup" aria-label="Engineered design, smarter heating, greener futures."><span class="aw-hero__design aw-brand-reveal aw-brand-reveal--1">ENGINEERED DESIGN</span><span class="aw-hero__lockup-sep aw-brand-reveal aw-brand-reveal--2" aria-hidden="true">|</span><span class="aw-hero__heating aw-brand-reveal aw-brand-reveal--2">SMARTER HEATING</span><span class="aw-hero__lockup-sep aw-brand-reveal aw-brand-reveal--3" aria-hidden="true">|</span><span class="aw-hero__futures aw-brand-reveal aw-brand-reveal--3">GREENER FUTURES</span></span>
+</h1>
+<p class="aw-hero__support">Air source heat pumps designed for a comfortable home, installed with care and supported for the long term.</p>
+<div class="aw-btn-row"><a class="aw-btn aw-btn--primary" href="home-energy-assessment/">Check my home</a><a class="aw-btn aw-btn--secondary" href="how-it-works/">How it works</a>
+</div>
+<p class="aw-small" style="margin-top:20px">Five-minute assessment &bull; No photographs or measurements needed</p>
+<p class="aw-hero__launch">Installations from April 2027. Assessments, surveys and design available now.</p>
+</div>
+</section>
+<section class="aw-section aw-section--light">
+<div class="aw-wrap aw-split">
+<div class="aw-prose">
+<h2>Designed around your home</h2>
+<p class="aw-lede aw-measure">Comfortable rooms, reliable hot water and a system set up to run efficiently. We check what your property needs before recommending equipment.</p>
+<p><a href="advice/is-my-home-suitable/">What makes a home suitable?</a>
+</p>
+<p class="aw-small">Serving <a href="areas/bradford/">Bradford</a>, <a href="areas/leeds/">Leeds</a> and <a href="areas/shipley/">Shipley</a>.</p>
+</div>
+<div class="aw-card">
+<h3 class="aw-card__title">What we check</h3>
+<ul class="aw-ticks">
+<li>Heat loss and insulation</li>
+<li>Radiators or underfloor heating</li>
+<li>Hot-water storage and household demand</li>
+<li>Outdoor space, pipe routes and electrical supply</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="aw-section aw-section--navy">
+<div class="aw-wrap">
+<h2>From first check to warm home</h2>
+<ol class="aw-steps" style="margin-top:32px">
+<li class="aw-step">
+<h3 class="aw-step__title">Check &amp; review</h3>
+<p>Check your home online, then choose whether to send your result to Airwarm for a written Desktop Review.</p>
+</li>
+<li class="aw-step">
+<h3 class="aw-step__title">Survey &amp; design</h3>
+<p>We measure your home, design the system and provide a detailed proposal with a fixed quote.</p>
+</li>
+<li class="aw-step">
+<h3 class="aw-step__title">Approval &amp; installation</h3>
+<p>Agree your proposal and dates. We coordinate the project paperwork and install your heating.</p>
+</li>
+<li class="aw-step">
+<h3 class="aw-step__title">Commissioning &amp; support</h3>
+<p>We test and set up the system, show you how to use it and support you afterwards.</p>
+</li>
+</ol>
+<p style="margin-top:24px"><a href="how-it-works/">What happens at each step</a>
+</p>
+</div>
+</section>
+<section class="aw-section">
+<div class="aw-wrap aw-split">
+<div class="aw-prose">
+<h2>£7,500 towards an eligible installation</h2>
+<p class="aw-measure">The Boiler Upgrade Scheme grant reduces the eligible installation cost. Eligibility depends on your property, project and the current scheme rules.</p>
+<p><a href="advice/grants-and-funding/">How the grant works</a>
+</p>
+</div>
+<div class="aw-card">
+<h3 class="aw-card__title">Project paperwork handled</h3>
+<p>For projects delivered through our Ample partnership, Ample manages the grant process, MCS compliance route and required electricity-network approvals.</p>
+<p><a href="about/#partnership">How Airwarm and Ample work together</a>
+</p>
+</div>
+</div>
+</section>
+<section class="aw-section aw-section--light">
+<div class="aw-wrap">
+<h2>Your questions, answered</h2>
+<div class="aw-grid aw-grid--3" style="margin-top:24px"><a class="aw-card aw-card--link" href="advice/what-determines-running-costs/">
+<h3 class="aw-card__title">Running costs</h3>
+<p>Efficiency, tariffs and what changes your bills.</p></a><a class="aw-card aw-card--link" href="advice/radiators-and-emitters/">
+<h3 class="aw-card__title">Radiators</h3>
+<p>Which might need changing, and why.</p></a><a class="aw-card aw-card--link" href="nibe-heat-pump-installation/">
+<h3 class="aw-card__title">Training &amp; warranty</h3>
+<p>Our NIBE training certificate and cover explained.</p></a>
+</div>
+<p style="margin-top:24px"><a href="advice/">Browse all advice</a>
+</p>
+</div>
+</section>
+<section class="aw-section aw-section--navy aw-cta-band">
+<div class="aw-wrap">
+<h2>Could a heat pump work for your home?</h2>
+<p class="aw-hero__support">Start with our five-minute Home Energy Assessment. No photographs or measurements needed.</p>
+<div class="aw-btn-row"><a class="aw-btn aw-btn--primary" href="home-energy-assessment/">Check my home</a>
+</div>
+</div>
+</section></main>
 
   <!-- ============================================================= -->
   <!-- FOOTER — keep identical across pages                            -->

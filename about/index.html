@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap">
 
   <!-- One stylesheet for the whole site. Colours live at the top of it. -->
-  <link rel="stylesheet" href="../css/airwarm.css?v=20261029-ga1">
+  <link rel="stylesheet" href="../css/airwarm.css?v=20261031-slim">
 </head>
 <body>
 
@@ -102,379 +102,82 @@
   </header>
   <!-- /HEADER -->
 
-  <main id="main">
-  <!-- Breadcrumbs: helps people and search engines see where this
-       page sits. Update if you move the page. -->
-  <nav class="aw-crumbs" aria-label="Breadcrumb">
-    <div class="aw-wrap">
-      <ol>
-        <li><a href="../">Home</a></li>
-        <li aria-current="page">About Airwarm</li>
-      </ol>
-    </div>
-  </nav>
-
-      <!-- HERO. The quiet tiled pattern behind the type comes from the
-           .aw-hero-pattern class in the stylesheet, which puts
-           assets/hero-pattern.svg over navy. Remove that one class to get a
-           plain navy panel; there is nothing else to undo. -->
-      <section class="aw-hero aw-hero-pattern">
-        <div class="aw-wrap">
-          <span class="aw-positioning">Air Source Heat Pumps &bull; West Yorkshire</span>
-          <h1>Why Airwarm is being built this way round</h1>
-          <p class="aw-hero__support">
-            Homeowners are routinely asked to make expensive heating decisions
-            using inconsistent advice. Airwarm exists to reduce that
-            uncertainty: to translate technical requirements into clear
-            choices, design around the property rather than the product, and
-            stay available after the installation is finished.
-          </p>
-        </div>
-      </section>
-
-      <section class="aw-section aw-section--tight">
-        <div class="aw-wrap">
-      <!-- LAUNCH-STAGE NOTE: preserve the April 2027 installation start date. -->
-      <div class="aw-note">
-        <h2>Built on experience. Focused on heat pumps.</h2>
-        <p class="aw-measure">
-          Airwarm is a new heat-pump business, built on more than 17 years of experience working in customers&rsquo; homes through TJR Plumbing &amp; Tiling Solutions, a Which? Trusted Trader. Airwarm installations begin in April 2027; Home Energy Assessments, Desktop Engineering Reviews, heat-loss surveys and system design are available now.
-        </p>
-        <p class="aw-measure">
-          The Airwarm approach is straightforward: understand the home first, design the system properly, document the decisions and remain involved after installation.
-        </p>
-      </div>
-        </div>
-      </section>
-
-      <section class="aw-section aw-section--tight">
-        <div class="aw-wrap">
-          <nav class="aw-toc" aria-label="On this page">
-            <h2>On this page</h2>
-            <ol>
-              <li><a href="#founder">Thomas Robinson, Founder &amp; Director</a></li>
-              <li><a href="#partnership">Airwarm and Ample</a></li>
-              <li><a href="#how-built">How the work is delivered</a></li>
-              <li><a href="#evidence">Evidence and transparency</a></li>
-              <li><a href="#faqs">Frequently asked questions</a></li>
-            </ol>
-          </nav>
-        </div>
-      </section>
-
-      <!-- FOUNDER ---------------------------------------------------- -->
-      <section class="aw-section aw-section--light" id="founder">
-        <div class="aw-wrap aw-split">
-          <div class="aw-prose">
-            <h2>Thomas Robinson, Founder &amp; Director</h2>
-            <p class="aw-measure">
-              Airwarm is being set up by Thomas Robinson, who is responsible
-              for its technical standards, the way it is run and the quality of
-              the work it puts its name to. He is the director of AIRWARM LTD,
-              which is registered in England and Wales.
-            </p>
-
-            <!-- FOUNDER PHOTOGRAPH GOES HERE once a genuine one exists. No stock
-                 imagery, and nothing shown in its place until then.
-                 <img src="../img/thomas-robinson.jpg"
-                      alt="Thomas Robinson, Founder and Director of Airwarm"
-                      width="640" height="800"> -->
-          </div>
-          <div>
-            <!-- TJR BACKGROUND. Every statement in this card is taken from
-                 tjrplumbingandtiling.co.uk or TJR's Which? Trusted Traders
-                 profile (trustedtraders.which.co.uk/businesses/t-j-r-plumbing-tiling/),
-                 as checked in September 2026. Re-check both before changing a
-                 figure, and do not add dates, accreditations or claims that
-                 neither source states. -->
-            <div class="aw-card">
-              <h3 class="aw-card__title"><svg class="aw-icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#icon-install"></use></svg> Where the experience comes from</h3>
-              <p>
-                Thomas&rsquo;s background is TJR Plumbing &amp; Tiling
-                Solutions, a plumbing, bathroom and tiling business based in
-                Baildon, Shipley, with more than 17 years of experience in the
-                industry.
-              </p>
-              <ul class="aw-ticks">
-                <li>Plumbing, bathroom installations, wet rooms and tiling, carried out in people&rsquo;s homes</li>
-                <li>Complete bathroom refurbishments, where the finish is the part everyone sees</li>
-                <li>A Which? Trusted Trader, with customer reviews published on the Which? Trusted Traders site</li>
-                <li>Work for homeowners, landlords and property developers around Bradford and Shipley</li>
-              </ul>
-              <p class="aw-small" style="margin-top:16px">
-                It is practical experience of finished work in occupied homes,
-                not of selling equipment &mdash; and it is the standard of
-                preparation, tidiness and respect for the house that Airwarm
-                is carrying into heat pumps.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      
-
-      
-
-      <!-- PARTNERSHIP ---------------------------------------------- -->
-      <!-- PARTNER: ample — see data/partners.json. Keep this proportionate:
-           Airwarm is the brand, Ample is the framework behind it. No Ample
-           logo, never state that Airwarm itself is MCS certified, and never
-           state that Ample checks or approves every Airwarm design. -->
-      <section class="aw-section aw-section--light" id="partnership">
-        <div class="aw-wrap aw-split">
-          <div class="aw-prose">
-            <span class="aw-eyebrow">Airwarm and Ample</span>
-            <h2>Professional installation. Independent Airwarm design. MCS-backed delivery.</h2>
-            <p class="aw-measure">
-              Airwarm works in partnership with Ample, who provide the MCS
-              framework and compliance route behind installations delivered
-              through the partnership. For eligible projects, Ample also manages
-              the Boiler Upgrade Scheme process and the required DNO application
-              or notification process. Eligible air-source heat pump installations
-              can receive £7,500 through the Boiler Upgrade Scheme, subject to
-              the current scheme rules and the individual property and project.
-              Airwarm is not MCS certified itself, and we will not describe it
-              as though it were.
-            </p>
-            <p class="aw-measure">
-              What does not change is who you deal with. Airwarm remains
-              responsible for your survey, the engineering design, the
-              installation and the aftercare. The partnership adds an
-              additional layer of independent compliance oversight alongside
-              Airwarm&rsquo;s own engineering and design process.
-            </p>
-          </div>
-          <div>
-            <!-- GRAPHIC C — Airwarm + Ample relationship. Layout hook only; no
-                 artwork exists yet, so nothing is rendered here. When the
-                 bespoke graphic is supplied, replace this comment with a
-                 <figure class="aw-figure"> and a descriptive alt text. Spec:
-                 a three-tier conceptual hierarchy in the Airwarm visual language,
-                   AIRWARM — Survey • Design • Installation • Aftercare
-                   ↓
-                   AMPLE PARTNERSHIP — MCS framework • Compliance • Project infrastructure
-                   ↓
-                   YOUR HEAT-PUMP INSTALLATION
-                 Airwarm visually dominant, no Ample logo overpowering it, and
-                 nothing implying Airwarm holds Ample's MCS certification. Until
-                 then the card below carries the same information as text. -->
-            <div class="aw-card">
-              <h3 class="aw-card__title"><svg class="aw-icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#icon-check"></use></svg> Who does what</h3>
-              <ul class="aw-ticks">
-                <li><strong>Airwarm:</strong> survey, design, installation and aftercare</li>
-                <li><strong>Ample partnership:</strong> MCS framework and compliance, Boiler Upgrade Scheme process for eligible projects, required DNO process and project infrastructure</li>
-                <li><strong>You:</strong> one company to deal with, from the first assessment to the annual service</li>
-              </ul>
-              <p class="aw-small" style="margin-top:16px">
-                <a href="../how-it-works/">Where this fits in the eight stages</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- HOW BUILT ------------------------------------------------- -->
-      <section class="aw-section" id="how-built">
-        <div class="aw-wrap">
-          <h2>How the work is delivered</h2>
-          <div class="aw-card-grid" style="margin-top:24px">
-            <div class="aw-card">
-              <h3 class="aw-card__title"><svg class="aw-icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#icon-install"></use></svg> Qualified contractors where they are needed</h3>
-              <p>
-                Electrical work is carried out by appropriately qualified
-                contractors where required, working to Airwarm&rsquo;s design and
-                coordination. Subcontracting does not move Airwarm&rsquo;s
-                responsibility to you onto somebody else.
-              </p>
-            </div>
-            <div class="aw-card">
-              <h3 class="aw-card__title"><svg class="aw-icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#icon-survey"></use></svg> The people who install take part in the survey</h3>
-              <p>
-                Where practical, whoever would do the work is involved in or
-                reviews the survey. It removes the gap between what was promised
-                and what turns out to be possible.
-              </p>
-            </div>
-            <div class="aw-card">
-              <h3 class="aw-card__title"><svg class="aw-icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#icon-service"></use></svg> Aftercare as a service, not a favour</h3>
-              <p>
-                48-hour contact, a two-week comfort review, seasonal
-                optimisation where required and an annual service reminder. It
-                protects your outcome and it tells us what to design better next
-                time.
-              </p>
-            </div>
-            <div class="aw-card">
-              <h3 class="aw-card__title"><svg class="aw-icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#icon-question"></use></svg> Limits stated out loud</h3>
-              <p>
-                No general public emergency call-out service. No work outside
-                our competence. No properties outside the service area. No
-                projects where a genuinely necessary upgrade is refused.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- AREA ----------------------------------------------------- -->
-      
-
-      <!-- EVIDENCE ------------------------------------------------- -->
-      <section class="aw-section" id="evidence">
-        <div class="aw-wrap">
-          <h2>Evidence and transparency</h2>
-          <p class="aw-measure">
-            Airwarm is building its track record openly. We publish what can be
-            checked now, and we do not manufacture reviews, case studies or
-            credentials to make a new company look older than it is.
-          </p>
-          <div class="aw-grid aw-grid--2" style="margin-top:24px">
-            <div class="aw-evidence-slot">
-              <strong>Company registration:</strong> AIRWARM LTD is registered
-              in England and Wales, company number 17362672, with registered
-              office at 2 Aireview Crescent, Baildon, Shipley, BD17 7LS.
-            </div>
-            <div class="aw-evidence-slot">
-              <strong>MCS route:</strong> installations delivered through our
-              Ample partnership follow the MCS framework and compliance route
-              Ample provides. Airwarm does not currently hold its own MCS
-              certification. <a href="#partnership">How the partnership works</a>.
-            </div>
-            <div class="aw-evidence-slot">
-              <strong>Insurance:</strong> Airwarm holds professional indemnity insurance with
-              &pound;500,000 of cover. Relevant insurance details and
-              certificates can be provided on request.
-            </div>
-            <div class="aw-evidence-slot">
-              <strong>NIBE manufacturer training:</strong> Airwarm has completed NIBE Air Source Installation and Commissioning training on 28 October 2026. <a href="../nibe-heat-pump-installation/">View the certificate and NIBE warranty details</a>.
-            </div>
-            <div class="aw-evidence-slot">
-              <strong>Technical training:</strong> Thomas is a Level 3-qualified plumber and has completed
-              low-temperature heating and air source heat pump training as part
-              of Airwarm&rsquo;s preparation for launch. Training is kept
-              separate from certification claims: completing technical training
-              does not mean Airwarm holds its own MCS certification.
-            </div>
-            <div class="aw-evidence-slot">
-              <strong>Complaints procedure:</strong> published and available
-              now. <a href="../complaints/">Read the complaints procedure</a>.
-            </div>
-            <div class="aw-evidence-slot">
-              <strong>Customer reviews:</strong> Airwarm does not yet publish
-              Airwarm customer reviews. When genuine customer feedback exists,
-              it will be attributed and published with permission.
-            </div>
-            <div class="aw-evidence-slot">
-              <strong>Case studies:</strong> these will be added after genuine
-              Airwarm installations have been completed and the customer has
-              agreed to publication. We will not use invented projects or stock
-              examples as case studies.
-            </div>
-            <div class="aw-evidence-slot">
-              <strong>VAT registration:</strong> a VAT registration number will
-              only be displayed once registration is confirmed. We will not
-              publish a number before one exists.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQS ----------------------------------------------------- -->
-      <section class="aw-section aw-section--light" id="faqs">
-        <div class="aw-wrap">
-          <h2>Frequently asked questions</h2>
-          <div class="aw-faq" style="margin-top:24px">
-
-            <details class="aw-faq__item">
-              <summary class="aw-faq__question">How will my installation be MCS certified?</summary>
-              <div class="aw-faq__answer">
-                <!-- PARTNER: ample ------------------------------------------
-                     See data/partners.json before editing. Two hard rules:
-
-                     1. NEVER state or imply that Airwarm holds MCS
-                        certification itself. It does not, and must not be
-                        described as though it does.
-                     2. Do not claim that Ample checks or approves every
-                        Airwarm design. The approved wording is "an additional
-                        layer of independent compliance oversight".
-                     ---------------------------------------------------- -->
-                <p>
-                  Through our partnership with Ample. Ample provide the MCS
-                  framework and compliance route behind installations
-                  delivered through the partnership, while Airwarm carries out
-                  your survey, the engineering design, the installation and the
-                  aftercare.
-                </p>
-                <p>
-                  That is not the same as Airwarm holding its own MCS
-                  certification, and we are not going to blur the two. The
-                  documentation that applies to your project is set out before
-                  you commit to anything.
-                </p>
-                <p class="aw-small">
-                  Ample is a trading name of Fornax Energy Ltd.
-                  <a href="https://www.backedbyample.com/" rel="external">backedbyample.com</a>
-                </p>
-              </div>
-            </details>
-
-             <details class="aw-faq__item">
-              <summary class="aw-faq__question">Who does the electrical work?</summary>
-              <div class="aw-faq__answer">
-                <p>
-                  A heat pump is a substantial electrical load, so the incoming
-                  supply, main fuse and consumer unit are all checked at survey.
-                  Electrical work is carried out by appropriately qualified regional electrical
-                  contractors working to Airwarm&rsquo;s design and
-                  coordination, and where the network operator needs to be
-                  involved Airwarm will say so early.
-                </p>
-              </div>
-            </details>
-
-             <details class="aw-faq__item">
-              <summary class="aw-faq__question">Does Airwarm offer emergency call-out?</summary>
-              <div class="aw-faq__answer">
-                <p>
-                  Not to the general public. Airwarm does not run a 24-hour
-                  emergency call-out service, and will not imply otherwise.
-                </p>
-                <p>
-                  Existing Airwarm customers get a response within 24 hours.
-                  Where an existing customer has a genuine system fault that
-                  cannot be resolved remotely, emergency support or attendance
-                  may be provided as appropriate. That is a commitment to
-                  respond, not a guarantee that someone will attend within 24
-                  hours. If you are not yet a customer, we normally reply within
-                  2 working days.
-                </p>
-              </div>
-            </details>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- FINAL CALL TO ACTION — repeated on every page, per the blueprint.
-           The assessment is the primary action; e-mail is the route for
-           anything unusual. This block is the same on every page: if you
-           change the wording, change it everywhere. -->
-      <section class="aw-section aw-section--navy aw-cta-band">
-        <div class="aw-wrap">
-          <h2>Start with your home, not a product</h2>
-          <p class="aw-hero__support">
-            The Home Energy Assessment takes a few minutes, asks for no
-            photographs and gives you an honest first view of whether an air
-            source heat pump is worth exploring for your property.
-          </p>
-          <div class="aw-btn-row">
-            <a class="aw-btn aw-btn--primary" href="../home-energy-assessment/">Start your Home Energy Assessment</a>
-          </div>
-        </div>
-      </section>
-  </main>
+  <main id="main" class="aw-page-compact"><nav class="aw-crumbs" aria-label="Breadcrumb">
+<div class="aw-wrap">
+<ol>
+<li><a href="../">Home</a>
+</li>
+<li aria-current="page">About Airwarm</li>
+</ol>
+</div></nav>
+<section class="aw-hero aw-hero-pattern">
+<div class="aw-wrap"><span class="aw-positioning">Air Source Heat Pumps &bull; West Yorkshire</span>
+<h1>Local experience. Carefully designed heating.</h1>
+<p class="aw-hero__support">Airwarm brings practical experience in customers’ homes to heat-pump survey, design, installation and aftercare.</p>
+</div>
+</section>
+<section class="aw-section" id="founder">
+<div class="aw-wrap aw-split">
+<div class="aw-prose">
+<h2>Meet Airwarm</h2>
+<p class="aw-measure">Founded by Thomas Robinson in Baildon, Shipley, Airwarm builds on more than 17 years in plumbing, bathroom installations and tiling through TJR Plumbing &amp; Tiling Solutions, a Which? Trusted Trader.</p>
+<p class="aw-measure">That experience means careful preparation, tidy work and respect for your home.</p>
+<p class="aw-measure">Airwarm installations begin in April 2027. Home Energy Assessments, Desktop Reviews, surveys and design are available now.</p>
+</div>
+<div class="aw-card" id="evidence">
+<h2 class="aw-card__title">Qualifications &amp; training</h2>
+<ul class="aw-ticks">
+<li>Level 3-qualified plumber</li>
+<li>Low-temperature heating and air source heat pump training</li>
+<li>NIBE Air Source Installation and Commissioning training, completed 28 October 2026</li>
+<li>Professional indemnity insurance: £500,000 cover</li>
+</ul>
+<p><a href="../nibe-heat-pump-installation/">View our NIBE certificate and warranty details</a>
+</p>
+<p class="aw-small">Relevant insurance certificates are available on request.</p>
+</div>
+</div>
+</section>
+<section class="aw-section aw-section--light" id="partnership">
+<div class="aw-wrap">
+<h2>Airwarm and Ample</h2>
+<div class="aw-grid aw-grid--2" style="margin-top:24px">
+<div class="aw-card">
+<h3 class="aw-card__title">Airwarm looks after your home</h3>
+<p>Your survey, heating design, installation and aftercare are Airwarm’s responsibility. We remain your technical contact.</p>
+</div>
+<div class="aw-card">
+<h3 class="aw-card__title">Ample provides the compliance route</h3>
+<p>For projects delivered through the partnership, Ample provides the MCS framework and manages the Boiler Upgrade Scheme process for eligible installations and the required DNO application or notification.</p>
+</div>
+</div>
+<p class="aw-small" style="margin-top:24px">Airwarm does not hold its own MCS certification. The certification, grant eligibility and project arrangements are explained in your proposal. Ample is a trading name of Fornax Energy Ltd.</p>
+<p><a href="https://www.backedbyample.com/" rel="noopener" target="_blank">About Ample</a>
+</p>
+</div>
+</section>
+<section class="aw-section" id="how-built">
+<div class="aw-wrap">
+<h2>What you can expect</h2>
+<ul class="aw-ticks aw-measure">
+<li>A room-by-room survey and a written design and quote</li>
+<li>Agreed pipe routes, protection for your home and daily installation updates</li>
+<li>Electrical work by appropriately qualified contractors</li>
+<li>A proper handover, a 48-hour follow-up and a two-week comfort review</li>
+<li>Seasonal optimisation where needed and an annual service reminder</li>
+</ul>
+<p><a href="../how-it-works/">See the process and aftercare</a> &bull; <a href="../complaints/">Our complaints procedure</a>
+</p>
+</div>
+</section>
+<section class="aw-section aw-section--navy aw-cta-band">
+<div class="aw-wrap">
+<h2>Could a heat pump work for your home?</h2>
+<p class="aw-hero__support">Start with our five-minute Home Energy Assessment. No photographs or measurements needed.</p>
+<div class="aw-btn-row"><a class="aw-btn aw-btn--primary" href="../home-energy-assessment/">Check my home</a>
+</div>
+</div>
+</section></main>
 
   <!-- ============================================================= -->
   <!-- FOOTER — keep identical across pages                            -->
