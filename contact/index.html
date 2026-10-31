@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap">
 
   <!-- One stylesheet for the whole site. Colours live at the top of it. -->
-  <link rel="stylesheet" href="../css/airwarm.css?v=20261029-ga1">
+  <link rel="stylesheet" href="../css/airwarm.css?v=20261031-slim">
 </head>
 <body>
 
@@ -102,340 +102,58 @@
   </header>
   <!-- /HEADER -->
 
-  <main id="main">
-  <!-- Breadcrumbs: helps people and search engines see where this
-       page sits. Update if you move the page. -->
-  <nav class="aw-crumbs" aria-label="Breadcrumb">
-    <div class="aw-wrap">
-      <ol>
-        <li><a href="../">Home</a></li>
-        <li aria-current="page">Contact</li>
-      </ol>
-    </div>
-  </nav>
-
-      <!-- HERO. The quiet tiled pattern behind the type comes from the
-           .aw-hero-pattern class in the stylesheet, which puts
-           assets/hero-pattern.svg over navy. Remove that one class to get a
-           plain navy panel; there is nothing else to undo. -->
-      <section class="aw-hero aw-hero-pattern">
-        <div class="aw-wrap">
-          <span class="aw-positioning">Air Source Heat Pumps &bull; West Yorkshire</span>
-          <h1>Talk to Airwarm</h1>
-          <p class="aw-hero__support">
-            The best way to contact Airwarm is by email at
-            <a href="mailto:hello@airwarm.co.uk">hello@airwarm.co.uk</a>.
-            Choose the closest reason below and we&rsquo;ll pre-fill the subject
-            line for you.
-          </p>
-          <p class="aw-hero__launch">
-            Installations begin in April 2027. Home Energy Assessments,
-            Desktop Reviews, heat-loss surveys and system design are available
-            now to help plan installations from launch.
-          </p>
-        </div>
-      </section>
-
-      <section class="aw-section aw-section--tight">
-        <div class="aw-wrap aw-split">
-          <div>
-
-            <!-- REASON-FOR-CONTACT SELECTOR --------------------------------
-                 The brand pack asks for a simple reason-for-contact selector
-                 separating general enquiries, assessment enquiries, servicing
-                 and developer projects.
-
-                 It is built as a set of e-mail links rather than a <select>
-                 and a form, for one reason: there is nowhere to post a form to
-                 yet, and a form control that only works with JavaScript would
-                 exclude people. Each link carries its own subject line, so the
-                 message arrives already sorted. Every link's text names the
-                 reason, so it makes sense read out of context, and the whole
-                 group sits under the heading below which names what the group
-                 is for.
-
-                 WHEN A REAL FORM REPLACES THIS, the reason must be a <select>
-                 with a real <label for="...">, inside a <fieldset> with a
-                 <legend>, and the name, e-mail and telephone fields need
-                 autocomplete="name", autocomplete="email" and
-                 autocomplete="tel". See the prerequisites listed further down
-                 this page.
-                 ------------------------------------------------------------ -->
-            <h2 id="reason-for-contact">What are you getting in touch about?</h2>
-            <p class="aw-measure">
-              Choose the closest one. It only sets the subject line, so it does
-              not matter if you pick the wrong one.
-            </p>
-
-            <div class="aw-card-grid" style="margin-top:24px">
-
-              <a class="aw-card aw-card--link" href="mailto:hello@airwarm.co.uk?subject=General%20enquiry">
-                <h3 class="aw-card__title">A general question</h3>
-                <p>Anything that does not fit the boxes below.</p>
-              </a>
-
-              <a class="aw-card aw-card--link" href="mailto:hello@airwarm.co.uk?subject=Home%20Energy%20Assessment%20enquiry">
-                <h3 class="aw-card__title">My Home Energy Assessment</h3>
-                <p>You have completed the assessment and want to discuss the result.</p>
-              </a>
-
-              <a class="aw-card aw-card--link" href="mailto:hello@airwarm.co.uk?subject=Survey%20enquiry">
-                <h3 class="aw-card__title">Booking a survey</h3>
-                <p>For a heating survey, please complete the Home Energy Assessment first so we can review your property before arranging a visit.</p>
-              </a>
-
-              <a class="aw-card aw-card--link" href="mailto:hello@airwarm.co.uk?subject=Airwarm%20servicing%20%26%20aftercare%20enquiry">
-                <h3 class="aw-card__title">Servicing &amp; aftercare</h3>
-                <p>Servicing, optimisation and ongoing support for heat pump systems installed through Airwarm.</p>
-              </a>
-
-              <a class="aw-card aw-card--link" href="mailto:hello@airwarm.co.uk?subject=Developer%20or%20renovation%20project">
-                <h3 class="aw-card__title">A developer or renovation project</h3>
-                <p>Multiple properties, a new build, or heating as part of a larger programme.</p>
-              </a>
-
-              <a class="aw-card aw-card--link" href="mailto:hello@airwarm.co.uk?subject=An%20unusual%20property">
-                <h3 class="aw-card__title">An unusual property</h3>
-                <p>Listed, off-grid, part-renovated, or something you suspect is difficult.</p>
-              </a>
-
-            </div>
-
-            <h2 style="margin-top:40px">What to include</h2>
-            <p class="aw-measure">
-              You do not have to, but these five things let us give you a
-              useful answer first time rather than asking a round of questions:
-            </p>
-            <ul class="aw-ticks aw-measure">
-              <li>Roughly where the property is &mdash; town or postcode area is plenty</li>
-              <li>What kind of property it is, and roughly how old</li>
-              <li>How it is heated at the moment</li>
-              <li>What is prompting you to look at this now</li>
-              <li>Anything you already suspect might be a problem</li>
-            </ul>
-            <p class="aw-measure aw-small">
-              Please do not send bank details, and there is no need to send
-              photographs at this stage. If we need pictures later we will ask
-              for specific ones.
-            </p>
-
-            <h2 style="margin-top:40px">What Airwarm cannot help with</h2>
-            <!-- TWO, not four, and no preamble. This block opened with a line
-                 boasting that a quick refusal beats a slow maybe, which is the
-                 defensive register the brief asks us to drop, and
-                 listed four refusals on a page somebody reached because they
-                 want to get in touch. The two kept are the ones that genuinely
-                 save a wasted e-mail. Competence limits and refused upgrades
-                 are stated on How It Works, where they belong.
-
-                 The old third item said the service area WAS Bradford, Leeds
-                 and Shipley. Those three are the initial SEO focus, not an
-                 exclusion zone — the service area is West Yorkshire. -->
-            <div class="aw-callout aw-callout--caution" style="margin-top:24px">
-              <h3><svg class="aw-icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#icon-warning"></use></svg> Two things to know first</h3>
-              <ul class="aw-ticks">
-                <li><strong>Emergencies.</strong> There is no general public 24-hour or emergency call-out service. If you are not an Airwarm customer and you have no heating, contact an emergency heating engineer rather than waiting for us.</li>
-                <li><strong>Anything outside what we can properly support.</strong> If a system, make or fault is beyond what Airwarm can do well, you will be told rather than experimented on.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div>
-            <div class="aw-card">
-              <h2 class="aw-card__title">Contact details</h2>
-              <!-- These four details are the ones the rest of the site
-                   repeats. If any of them changes, change it here, in the
-                   footer of all 28 pages, and in the page metadata, in the
-                   same sitting. They must never disagree. -->
-              <h3>Telephone</h3>
-              <p>
-                <a href="tel:+441274947197">01274 947 197</a>
-              </p>
-              <h3>E-mail</h3>
-              <p>
-                <a href="mailto:hello@airwarm.co.uk">hello@airwarm.co.uk</a>
-              </p>
-              <h3>Website</h3>
-              <p>
-                <a href="https://airwarm.co.uk">airwarm.co.uk</a>
-              </p>
-              <h3>Area covered</h3>
-              <p>
-                West Yorkshire. Bradford, Leeds and Shipley are where we are starting.
-              </p>
-              <h3>About replies</h3>
-              <p>
-                Every call and e-mail is read and answered by a person. New
-                enquiries and assessment submissions normally get a reply
-                within 2 working days, and if something is going to take longer
-                than that we will tell you rather than leave you waiting.
-              </p>
-              <p>
-                Existing Airwarm customers get a response within 24 hours.
-              </p>
-              <p>
-                If the phone is not answered, leave a message. Voicemail and
-                e-mail are monitored, and both get a reply as quickly as we
-                can manage.
-              </p>
-              <h3>No public emergency call-out</h3>
-              <p>
-                Airwarm does not offer a general public 24-hour or emergency
-                call-out service. If you are an existing customer with a
-                genuine system fault we cannot resolve remotely, we may provide
-                emergency support or attendance as appropriate. A response
-                within 24 hours is not a promise to attend within 24 hours.
-              </p>
-            </div>
-
-            <div class="aw-card" style="margin-top:24px">
-              <h3 class="aw-card__title"><svg class="aw-icon" aria-hidden="true" focusable="false"><use href="../assets/icons.svg#icon-location"></use></svg> Registered office</h3>
-              <p>
-                AIRWARM LTD, 2 Aireview Crescent, Baildon, Shipley, BD17 7LS.
-                Registered in England and Wales, company number 17362672.
-              </p>
-              <p class="aw-small">
-                This is a registered office address for correspondence, not a
-                trade counter or a showroom. Please e-mail rather than calling
-                in.
-              </p>
-            </div>
-
-            <div class="aw-note" style="margin-top:24px">
-              <p>
-                The one form on this website is at the end of the
-                <a href="../home-energy-assessment/">Home Energy Assessment</a>,
-                where it is optional and only appears after you have already
-                seen your result. Our <a href="../privacy/">privacy policy</a>
-                sets out exactly what it collects and what happens to it.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT FORM GOES HERE when there is somewhere to send it.
-           Prerequisites, all of them: a chosen CRM or inbox endpoint, a
-           published privacy policy at privacy/, a named data controller, an
-           explicit unticked consent checkbox with its own label, a statement
-           of retention, and spam protection.
-           Accessibility requirements for that form, which are WCAG 2.2 AA
-           obligations rather than preferences: a real <label for="..."> on
-           every field; each group in a <fieldset> with a <legend>;
-           autocomplete="name", autocomplete="email" and autocomplete="tel" on
-           those three fields; validation messages that name the field and are
-           tied to it with aria-describedby and aria-invalid; and no meaning
-           carried by colour alone. -->
-
-      <!-- WHAT HAPPENS NEXT -------------------------------------------- -->
-
-      <!-- FAQS ------------------------------------------------------- -->
-      <section class="aw-section">
-        <div class="aw-wrap">
-          <h2>Frequently asked questions</h2>
-          <div class="aw-faq" style="margin-top:24px">
-
-            <details class="aw-faq__item">
-              <summary class="aw-faq__question">Does Airwarm offer emergency call-out?</summary>
-              <div class="aw-faq__answer">
-                <p>
-                  Not as a general public service. Airwarm does not offer
-                  24-hour or emergency call-out cover, and will not imply
-                  otherwise.
-                </p>
-                <p>
-                  Existing Airwarm customers get a response within 24 hours.
-                  Where a customer&rsquo;s genuine system fault cannot be
-                  resolved remotely, we may provide emergency support or
-                  attendance as appropriate. That is a response commitment,
-                  not a guarantee that we will attend within 24 hours.
-                </p>
-              </div>
-            </details>
-
-            <details class="aw-faq__item">
-              <summary class="aw-faq__question">How much does a heat pump installation cost?</summary>
-              <div class="aw-faq__answer">
-                <p>Every home is different, so we do not publish generic installation prices. Complete our Home Energy Assessment and, if you submit it to us, your Desktop Engineering Review will include an initial indication of likely project costs before you decide whether to go further.</p>
-              </div>
-            </details>
-
-            <details class="aw-faq__item">
-              <summary class="aw-faq__question">Can Airwarm handle a grant application for me?</summary>
-              <div class="aw-faq__answer">
-                <p>
-                  <!-- PARTNER: ample — see data/partners.json. Keep this in
-                       step with the About FAQ; do not state that Airwarm holds
-                       MCS certification itself. -->
-                  Eligible heat-pump installations may qualify for the Boiler
-                  Upgrade Scheme. Where a project proceeds through our Ample
-                  partnership, the relevant MCS/compliance and grant-related
-                  process is handled through the partnership route. Eligibility
-                  remains subject to the scheme rules and the individual
-                  property and project.
-                </p>
-                <p>
-                  <a href="../advice/grants-and-funding/">How grant funding works, in principle</a>
-                </p>
-              </div>
-            </details>
-
-            <details class="aw-faq__item">
-              <summary class="aw-faq__question">What if something goes wrong and I am unhappy?</summary>
-              <div class="aw-faq__answer">
-                <p>
-                  Airwarm acknowledges promptly, establishes the facts, assigns ownership,
-                  agrees the next action and documents the outcome. If something
-                  goes wrong, we take ownership of it. Our published complaints
-                  procedure sets out the route, including escalation.
-                </p>
-                <!-- COMPLAINTS PROCEDURE: link this to the published procedure
-                     once it exists. It is named in the brand pack footer
-                     structure and is not yet written. -->
-              </div>
-            </details>
-
-            <details class="aw-faq__item">
-              <summary class="aw-faq__question">Do you cover my area?</summary>
-              <div class="aw-faq__answer">
-                <p>
-                  Launch coverage is Bradford, Leeds and Shipley, which includes
-                  Saltaire, Baildon, Windhill, Wrose, Frizinghall, Thackley,
-                  Idle and Nab Wood. Bingley, Ilkley, Keighley, Halifax,
-                  Huddersfield and Wakefield will be added only where there is
-                  genuine service coverage rather than a page on a website. If
-                  you are just outside, ask, and you will get an honest answer
-                  about whether we can help.
-                </p>
-              </div>
-            </details>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- FINAL CALL TO ACTION — repeated on every page, per the blueprint.
-           The assessment is the primary action; e-mail is the route for
-           anything unusual. This block is the same on every page: if you
-           change the wording, change it everywhere. -->
-      <section class="aw-section aw-section--navy aw-cta-band">
-        <div class="aw-wrap">
-          <h2>Start with your home, not a product</h2>
-          <p class="aw-hero__support">
-            The Home Energy Assessment takes a few minutes, asks for no
-            photographs at this stage and gives you an honest first view of whether an air
-            source heat pump is worth exploring for your property.
-          </p>
-          <div class="aw-btn-row">
-            <a class="aw-btn aw-btn--primary" href="../home-energy-assessment/">Start your Home Energy Assessment</a>
-          </div>
-          <p class="aw-small" style="margin-top:24px">
-            Unusual property? Listed building, off-grid, a renovation part way
-            through? <a href="mailto:hello@airwarm.co.uk">E-mail us</a> and describe it if the assessment does not fit your situation.
-          </p>
-        </div>
-      </section>
-  </main>
+  <main id="main" class="aw-page-compact"><nav class="aw-crumbs" aria-label="Breadcrumb">
+<div class="aw-wrap">
+<ol>
+<li><a href="../">Home</a>
+</li>
+<li aria-current="page">Contact</li>
+</ol>
+</div></nav>
+<section class="aw-hero aw-hero-pattern">
+<div class="aw-wrap"><span class="aw-positioning">Air Source Heat Pumps &bull; West Yorkshire</span>
+<h1>Talk to Airwarm</h1>
+<p class="aw-hero__support">Tell us about your home or ask a question. New enquiries normally receive a reply within two working days.</p>
+<div class="aw-btn-row"><a class="aw-btn aw-btn--primary" href="mailto:hello@airwarm.co.uk">Email Airwarm</a><a class="aw-btn aw-btn--secondary" href="tel:+441274947197">01274 947 197</a>
+</div>
+<p class="aw-small" style="margin-top:20px">hello@airwarm.co.uk</p>
+</div>
+</section>
+<section class="aw-section">
+<div class="aw-wrap aw-grid aw-grid--2">
+<div class="aw-card">
+<h2 class="aw-card__title">New enquiries</h2>
+<p>Considering a heat pump? Start with the <a href="../home-energy-assessment/">Home Energy Assessment</a> so we can review your property before arranging a survey.</p>
+<p>For a question, renovation or unusual property, email your town or postcode area, current heating and what you would like to do.</p>
+<p><a href="mailto:hello@airwarm.co.uk?subject=New%20enquiry">Email a new enquiry</a>
+</p>
+<p class="aw-small">Installations from April 2027. Assessments, Desktop Reviews, surveys and design are available now.</p>
+</div>
+<div class="aw-card">
+<h2 class="aw-card__title">Existing customers</h2>
+<p>For servicing, controls or a system problem, email or call us with your address and a short description. Leave a voicemail if we cannot answer.</p>
+<p><a href="mailto:hello@airwarm.co.uk?subject=Airwarm%20customer%20support">Contact customer support</a>
+</p>
+<p>Existing customers receive a response within 24 hours. This is a response commitment, rather than a guaranteed attendance time.</p>
+<p class="aw-small">We do not offer a public 24-hour emergency call-out service. Existing-customer faults are assessed remotely first, with support or attendance arranged as appropriate.</p>
+</div>
+</div>
+</section>
+<section class="aw-section aw-section--light">
+<div class="aw-wrap aw-split">
+<div class="aw-prose">
+<h2>Where we work</h2>
+<p>Our launch area covers <a href="../areas/bradford/">Bradford</a>, <a href="../areas/leeds/">Leeds</a> and <a href="../areas/shipley/">Shipley</a>, including Baildon and Saltaire. If you are just outside, contact us to check coverage.</p>
+</div>
+<div class="aw-card">
+<h2 class="aw-card__title">Registered office</h2>
+<p>AIRWARM LTD<br>2 Aireview Crescent, Baildon, Shipley, BD17 7LS<br>Company number 17362672</p>
+<p class="aw-small">Correspondence only; visits by arrangement.</p>
+<p><a href="../complaints/">Complaints procedure</a> &bull; <a href="../privacy/">Privacy policy</a>
+</p>
+</div>
+</div>
+</section></main>
 
   <!-- ============================================================= -->
   <!-- FOOTER — keep identical across pages                            -->

@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap">
 
   <!-- One stylesheet for the whole site. Colours live at the top of it. -->
-  <link rel="stylesheet" href="../../css/airwarm.css?v=20261029-ga1">
+  <link rel="stylesheet" href="../../css/airwarm.css?v=20261031-slim">
 </head>
 <body>
 
@@ -102,7 +102,7 @@
   </header>
   <!-- /HEADER -->
 
-  <main id="main">
+  <main id="main" class="aw-page-compact">
   <!-- Breadcrumbs: helps people and search engines see where this
        page sits. Update if you move the page. -->
   <nav class="aw-crumbs" aria-label="Breadcrumb">
@@ -134,7 +134,6 @@
               <li><a href="#why-it-matters">Why it matters for your home</a></li>
               <li><a href="#outdoor-unit">Where the outdoor unit goes</a></li>
               <li><a href="#what-airwarm-checks">What Airwarm checks</a></li>
-              <li><a href="#misconceptions">Common questions</a></li>
               <li><a href="#next">Next step</a></li>
               <li><a href="#faqs">Frequently asked questions</a></li>
             </ol>
@@ -278,50 +277,17 @@
               reviewed before a proposal is issued.
             </p>
 
-            <h2 id="misconceptions">Common questions</h2>
 
-            <p>
-              <strong>&ldquo;Heat pumps only work in new builds.&rdquo;</strong>
-              Not true. Plenty of older houses heat well with a heat pump. What
-              is true is that an older, less insulated house loses more heat,
-              so it needs more heat delivered, which usually means larger
-              emitters and sometimes fabric improvements first.
-            </p>
 
-            <p>
-              <strong>&ldquo;You have to rip out all your radiators.&rdquo;</strong>
-              Usually not all of them. Radiator output depends on the
-              temperature difference between the water and the room, so some
-              existing radiators are already large enough for lower-temperature
-              operation and some are not. It is normally
-              <a href="../../advice/radiators-and-emitters/">a per-room answer</a>,
-              not a whole-house one.
-            </p>
 
-            <p>
-              <strong>&ldquo;You need underfloor heating.&rdquo;</strong>
-              No. Underfloor heating is a good low-temperature emitter, but
-              correctly sized radiators work perfectly well.
-            </p>
 
-            <p>
-              <strong>&ldquo;My house is solid stone, so it is hopeless.&rdquo;</strong>
-              Solid-wall construction is common across
-              <a href="../../areas/bradford/">Bradford</a>,
-              <a href="../../areas/leeds/">Leeds</a> and
-              <a href="../../areas/shipley/">Shipley</a> and it does not rule a heat
-              pump out. It does mean heat loss needs calculating properly, and
-              the sensible order of work may be insulation or emitters first.
-            </p>
 
-            <p>
-              <strong>&ldquo;If I fail the assessment, that is the end of it.&rdquo;</strong>
-              Not necessarily. A &ldquo;potentially unsuitable&rdquo; result
-              means your answers show a significant constraint. The online
-              assessment is a first check, not a final engineering
-              determination, and it describes the building as it is today
-              rather than giving a permanent verdict.
-            </p>
+
+
+
+
+
+
 
             <h2 id="next">Next step</h2>
 
@@ -407,7 +373,7 @@
               </div>
             </details>
 
-          </div>
+          <details class="aw-faq__item"><summary class="aw-faq__question">Heat pumps only work in new builds.</summary><div class="aw-faq__answer"><p>Not true. Plenty of older houses heat well with a heat pump. What is true is that an older, less insulated house loses more heat, so it needs more heat delivered, which usually means larger emitters and sometimes fabric improvements first.</p></div></details><details class="aw-faq__item"><summary class="aw-faq__question">You have to rip out all your radiators.</summary><div class="aw-faq__answer"><p>Usually not all of them. Radiator output depends on the temperature difference between the water and the room, so some existing radiators are already large enough for lower-temperature operation and some are not. It is normally a per-room answer, not a whole-house one.</p></div></details><details class="aw-faq__item"><summary class="aw-faq__question">You need underfloor heating.</summary><div class="aw-faq__answer"><p>No. Underfloor heating is a good low-temperature emitter, but correctly sized radiators work perfectly well.</p></div></details><details class="aw-faq__item"><summary class="aw-faq__question">My house is solid stone, so it is hopeless.</summary><div class="aw-faq__answer"><p>Solid-wall construction is common across Bradford, Leeds and Shipley and it does not rule a heat pump out. It does mean heat loss needs calculating properly, and the sensible order of work may be insulation or emitters first.</p></div></details><details class="aw-faq__item"><summary class="aw-faq__question">If I fail the assessment, that is the end of it.</summary><div class="aw-faq__answer"><p>Not necessarily. A “potentially unsuitable” result means your answers show a significant constraint. The online assessment is a first check, not a final engineering determination, and it describes the building as it is today rather than giving a permanent verdict.</p></div></details></div>
         </div>
       </section>
 
@@ -425,7 +391,7 @@
             </a>
             <a class="aw-card aw-card--link" href="../../how-it-works/">
               <h3 class="aw-card__title"><svg class="aw-icon aw-icon--lg" aria-hidden="true" focusable="false"><use href="../../assets/icons.svg#icon-design"></use></svg> The Airwarm process</h3>
-              <p>All eight stages, from first enquiry to ongoing support, with a decision point at each.</p>
+              <p>Your journey from first enquiry to ongoing support.</p>
             </a>
           </div>
         </div>
@@ -434,19 +400,7 @@
       <!-- FINAL CALL TO ACTION — repeated on every page, per the blueprint.
            The assessment is the primary action; e-mail is the route for
            anything unusual. -->
-      <section class="aw-section aw-section--navy aw-cta-band">
-        <div class="aw-wrap">
-          <h2>Start with your home, not a product</h2>
-          <p class="aw-hero__support">
-            The Home Energy Assessment takes a few minutes, asks for no
-            photographs at this stage and gives you an honest first view of whether an air
-            source heat pump is worth exploring for your property.
-          </p>
-          <div class="aw-btn-row">
-            <a class="aw-btn aw-btn--primary" href="../../home-energy-assessment/">Start your Home Energy Assessment</a>
-          </div>
-        </div>
-      </section>
+      <section class="aw-section aw-section--navy aw-cta-band"><div class="aw-wrap"><h2>Could a heat pump work for your home?</h2><p class="aw-hero__support">Start with our five-minute Home Energy Assessment. No photographs or measurements needed.</p><div class="aw-btn-row"><a class="aw-btn aw-btn--primary" href="../../home-energy-assessment/">Check my home</a></div></div></section>
   </main>
 
   <!-- ============================================================= -->
