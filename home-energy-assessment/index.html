@@ -383,13 +383,14 @@
                 <fieldset class="aw-fieldset">
                   <legend>Is there space outside for the heat pump unit?</legend>
                   <span class="aw-field__hint">
-                    It needs roughly the footprint of a large washing machine,
-                    against an outside wall, with clear air around it.
+                    The unit needs outdoor space with clear airflow and access.
+                    Choose “not sure” if there may be space but you need advice
+                    on the position. Choose “no” only if no outdoor space is available.
                   </span>
                   <label class="aw-choice"><input type="radio" name="outdoorSpace" value="yesClearSpace" required> Yes &mdash; there is a clear spot with room around it</label>
-                  <label class="aw-choice"><input type="radio" name="outdoorSpace" value="possiblyTight" required> Possibly, but it would be tight</label>
-                  <label class="aw-choice"><input type="radio" name="outdoorSpace" value="noObviousLocation" required> No obvious location that I can see</label>
-                  <label class="aw-choice"><input type="radio" name="outdoorSpace" value="notSure" required> Not sure</label>
+                  <label class="aw-choice"><input type="radio" name="outdoorSpace" value="possiblyTight" required> There may be space, but it looks tight</label>
+                  <label class="aw-choice"><input type="radio" name="outdoorSpace" value="noObviousLocation" required> No &mdash; there is no outdoor space available for a unit</label>
+                  <label class="aw-choice"><input type="radio" name="outdoorSpace" value="notSure" required> Not sure &mdash; I need help identifying a position</label>
                 </fieldset>
 
                 <div class="aw-field">
@@ -532,13 +533,13 @@
                 <fieldset class="aw-fieldset">
                   <legend>Would you consider changing some radiators if the design needed it?</legend>
                   <span class="aw-field__hint">
-                    A heat pump runs at a lower temperature than a boiler, so
-                    some rooms often need a larger radiator. There is no wrong
-                    answer here &mdash; it just changes the advice.
+                    The design may require larger radiators in some rooms.
+                    We explain any necessary changes before you decide.
+                    We can only progress if you would consider work that the design requires.
                   </span>
                   <label class="aw-choice"><input type="radio" name="emitterWillingness" value="yesIfNeeded" required> Yes, if it is genuinely needed</label>
                   <label class="aw-choice"><input type="radio" name="emitterWillingness" value="maybeWithExplanation" required> Possibly &mdash; I would want it explained first</label>
-                  <label class="aw-choice"><input type="radio" name="emitterWillingness" value="notWilling" required> I would rather keep the radiators as they are</label>
+                  <label class="aw-choice"><input type="radio" name="emitterWillingness" value="notWilling" required> No &mdash; I would not replace radiators, even if the design requires it</label>
                 </fieldset>
 
                 <div class="aw-field">
@@ -728,6 +729,6 @@
   <!-- /FOOTER -->
 
   <!-- The assessment logic. Loaded only on this page. -->
-  <script src="../js/assessment.js"></script>
+  <script src="../js/assessment.js?v=20261031-qualify"></script>
 </body>
 </html>

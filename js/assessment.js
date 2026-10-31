@@ -140,7 +140,7 @@ var AIRWARM_TRIAGE_CONFIG = {
     outdoorSpace: {
       yesClearSpace: 3,
       possiblyTight: 1,
-      noObviousLocation: 0,   /* handled as a constraint below, not by points */
+      noObviousLocation: 0,   /* retained payload key: now an explicit no-space answer */
       notSure: 0
     },
     hotWaterSpace: {
@@ -205,10 +205,32 @@ var AIRWARM_TRIAGE_CONFIG = {
       value: "noObviousLocation",
       capAt: "notCurrently",
       kind: "constraint",
-      explanation: "You told us there is no obvious outdoor position for the " +
-        "heat pump unit. The unit has to sit outside with clear air around " +
-        "it, so without a workable position an installation may not be " +
-        "possible."
+      explanation: "You confirmed that no outdoor space is available for a " +
+        "heat pump unit. A workable outdoor position is essential, so we " +
+        "cannot progress to a Desktop Review on that basis."
+    },
+    /* Uncertain or tight outdoor space needs a Desktop Review before a
+       survey is offered, even when the other answers score highly.
+       Firm no-space and radiator-refusal answers remain AMBER. */
+    {
+      id: "outdoorPositionUncertain",
+      field: "outdoorSpace",
+      value: "notSure",
+      capAt: "potentially",
+      kind: "uncertainty",
+      explanation: "You need help identifying a position for the outdoor " +
+        "unit. We need to establish whether there is a realistic option " +
+        "during the Desktop Review before offering a heat-loss survey."
+    },
+    {
+      id: "outdoorPositionTight",
+      field: "outdoorSpace",
+      value: "possiblyTight",
+      capAt: "potentially",
+      kind: "uncertainty",
+      explanation: "You told us there may be outdoor space, but it looks " +
+        "tight. We need to check whether a position is realistic during " +
+        "the Desktop Review before offering a heat-loss survey."
     },
     {
       id: "noHotWaterSpace",
@@ -228,10 +250,10 @@ var AIRWARM_TRIAGE_CONFIG = {
       value: "notWilling",
       capAt: "notCurrently",
       kind: "constraint",
-      explanation: "You would rather keep the radiators exactly as they are. " +
-        "A heat pump runs at a lower temperature than a boiler, and most " +
-        "homes need at least some larger radiators to stay comfortable, so " +
-        "this could make an efficient installation difficult."
+      explanation: "You confirmed that you would not replace radiators, " +
+        "even if the design requires it. We can only progress where you " +
+        "would consider the changes needed for the system to work properly, " +
+        "so we cannot offer a Desktop Review on that basis."
     },
     {
       id: "poorFabricNoPlan",
@@ -1160,7 +1182,8 @@ var AIRWARM_TRIAGE_CONFIG = {
     html += '<div class="aw-enquiry">';
     html += '<h4 id="aw-enquiry-heading">' + step.heading + "</h4>";
     html += "<p>" + step.body + "</p>";
-    html += '<p><strong>You decide whether to go any further.</strong></p>';
+    html += '<p>We only offer a heat-loss survey where the Desktop Review ' +
+      'identifies a realistic route to installation. You decide whether to proceed.</p>';
 
     html += '<form id="aw-enquiry-form" novalidate aria-labelledby="aw-enquiry-heading">';
 
