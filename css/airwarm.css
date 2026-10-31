@@ -3605,3 +3605,22 @@ main .aw-card, main .aw-step, main .aw-faq__item {
   .aw-header .aw-nav { order: 3; flex: 1 1 100%; margin: 0; }
   .aw-header .aw-nav__list { justify-content: center; gap: 12px 28px; }
 }
+
+
+/* Homepage identity: centred, stacked tagline on phones only. */
+@media (max-width: 767px) {
+  .aw-home-hero h1 {
+    max-width: none;
+    text-align: center;
+  }
+  .aw-home-hero .aw-hero__brand-name { margin-bottom: 16px; }
+  .aw-home-hero .aw-hero__brand-lockup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(.8rem, 3.7vw, 1.1rem);
+    letter-spacing: .055em;
+  }
+  .aw-home-hero .aw-hero__lockup-sep { display: none; }
+}
